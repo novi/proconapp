@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import Himotoki
+import APIKit
+
+
+class MyAPI : API {
+    
+}
 
 class MasterViewController: UITableViewController {
 
