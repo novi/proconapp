@@ -36,7 +36,7 @@ class MasterViewController: UITableViewController {
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
         }
     
-        let request = GitHub.Endpoint.SearchRepositories(query: "APIKit")
+        /*let request = GitHub.Endpoint.SearchRepositories(query: "APIKit")
         
         GitHub.sendRequest(request) { response in
             switch response {
@@ -49,7 +49,24 @@ class MasterViewController: UITableViewController {
                 alertController.addAction(action)
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
+        }*/
+        
+        let d = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        println(d)
+        
+        let r = AppAPI.Endpoint.FetchUserInfo()
+        AppAPI.sendRequest(r) { res in
+            switch res {
+            case .Success(let box):
+                UserContext.me.saveAsMe(box.value)
+                println(box.value)
+            case .Failure(let box):
+                println(box.value)
+            }
         }
+        
+        let rr = AppAPI.Endpoint.UpdatePushToken(pushToken: "")
+        rr
     }
 
     override func didReceiveMemoryWarning() {
