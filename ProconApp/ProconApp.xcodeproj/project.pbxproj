@@ -409,6 +409,7 @@
 				524593221AD147D000196181 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		524593231AD147D000196181 /* Build configuration list for PBXNativeTarget "ProconAppTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				524593251AD147D000196181 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
