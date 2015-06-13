@@ -7,13 +7,8 @@
 //
 
 import UIKit
-import Himotoki
+import ProconBase
 import APIKit
-
-
-class MyAPI : API {
-    
-}
 
 class MasterViewController: UITableViewController {
 
@@ -39,6 +34,21 @@ class MasterViewController: UITableViewController {
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
+        }
+    
+        let request = GitHub.Endpoint.SearchRepositories(query: "APIKit")
+        
+        GitHub.sendRequest(request) { response in
+            switch response {
+            case .Success(let box):
+                println(box.value)
+                
+            case .Failure(let box):
+                let alertController = UIAlertController(title: "Error", message: box.value.localizedDescription, preferredStyle: .Alert)
+                let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(action)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
         }
     }
 

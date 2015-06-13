@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:ProconBase/ProconBase.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ProconApp/ProconApp.xcodeproj">
    </FileRef>
    <FileRef

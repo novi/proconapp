@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		523E74051B2C63B900F88F62 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E74041B2C63B900F88F62 /* APIKit.framework */; };
-		523E74081B2C63CB00F88F62 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E74071B2C63CB00F88F62 /* Box.framework */; };
-		523E740A1B2C63CF00F88F62 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E74091B2C63CF00F88F62 /* Result.framework */; };
-		523E740C1B2C63D300F88F62 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E740B1B2C63D300F88F62 /* Himotoki.framework */; };
 		524593051AD147D000196181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524593041AD147D000196181 /* AppDelegate.swift */; };
 		524593071AD147D000196181 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524593061AD147D000196181 /* FirstViewController.swift */; };
 		524593091AD147D000196181 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524593081AD147D000196181 /* SecondViewController.swift */; };
@@ -31,10 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		523E74041B2C63B900F88F62 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = "../External/APIKit/build/Debug-iphoneos/APIKit.framework"; sourceTree = "<group>"; };
-		523E74071B2C63CB00F88F62 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = "../External/APIKit/Carthage/Checkouts/Box/build/Debug-iphoneos/Box.framework"; sourceTree = "<group>"; };
-		523E74091B2C63CF00F88F62 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../External/APIKit/Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
-		523E740B1B2C63D300F88F62 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = "../External/Himotoki/build/Debug-iphoneos/Himotoki.framework"; sourceTree = "<group>"; };
 		524592FF1AD147D000196181 /* ProconApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProconApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524593031AD147D000196181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524593041AD147D000196181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,10 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523E740C1B2C63D300F88F62 /* Himotoki.framework in Frameworks */,
-				523E740A1B2C63CF00F88F62 /* Result.framework in Frameworks */,
-				523E74081B2C63CB00F88F62 /* Box.framework in Frameworks */,
-				523E74051B2C63B900F88F62 /* APIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,23 +58,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		523E74061B2C63BB00F88F62 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				523E740B1B2C63D300F88F62 /* Himotoki.framework */,
-				523E74091B2C63CF00F88F62 /* Result.framework */,
-				523E74071B2C63CB00F88F62 /* Box.framework */,
-				523E74041B2C63B900F88F62 /* APIKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		524592F61AD147D000196181 = {
 			isa = PBXGroup;
 			children = (
 				524593011AD147D000196181 /* ProconApp */,
 				524593191AD147D000196181 /* ProconAppTests */,
-				523E74061B2C63BB00F88F62 /* Frameworks */,
 				524593001AD147D000196181 /* Products */,
 			);
 			sourceTree = "<group>";

@@ -14,10 +14,7 @@
 		523E73CB1B2C5FA100F88F62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523E73CA1B2C5FA100F88F62 /* Images.xcassets */; };
 		523E73CE1B2C5FA100F88F62 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E73CC1B2C5FA100F88F62 /* LaunchScreen.xib */; };
 		523E73DA1B2C5FA100F88F62 /* ProconManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E73D91B2C5FA100F88F62 /* ProconManagerTests.swift */; };
-		523E73ED1B2C610500F88F62 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E73EC1B2C610500F88F62 /* Himotoki.framework */; };
-		523E73F01B2C620600F88F62 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E73EF1B2C620600F88F62 /* APIKit.framework */; };
-		523E74011B2C637400F88F62 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E74001B2C637400F88F62 /* Box.framework */; };
-		523E74031B2C637800F88F62 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E74021B2C637800F88F62 /* Result.framework */; };
+		523E743E1B2C673800F88F62 /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E743D1B2C673800F88F62 /* ProconBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +39,7 @@
 		523E73D31B2C5FA100F88F62 /* ProconManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProconManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		523E73D81B2C5FA100F88F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523E73D91B2C5FA100F88F62 /* ProconManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProconManagerTests.swift; sourceTree = "<group>"; };
-		523E73EC1B2C610500F88F62 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = "../External/Himotoki/build/Debug-iphoneos/Himotoki.framework"; sourceTree = "<group>"; };
-		523E73EF1B2C620600F88F62 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = "../External/APIKit/build/Debug-iphoneos/APIKit.framework"; sourceTree = "<group>"; };
-		523E74001B2C637400F88F62 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = "../External/APIKit/Carthage/Checkouts/Box/build/Debug-iphoneos/Box.framework"; sourceTree = "<group>"; };
-		523E74021B2C637800F88F62 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../External/APIKit/Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		523E743D1B2C673800F88F62 /* ProconBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProconBase.framework; path = "../ProconBase/build/Debug-iphoneos/ProconBase.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523E74031B2C637800F88F62 /* Result.framework in Frameworks */,
-				523E74011B2C637400F88F62 /* Box.framework in Frameworks */,
-				523E73F01B2C620600F88F62 /* APIKit.framework in Frameworks */,
-				523E73ED1B2C610500F88F62 /* Himotoki.framework in Frameworks */,
+				523E743E1B2C673800F88F62 /* ProconBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,9 +64,9 @@
 		523E73B31B2C5FA100F88F62 = {
 			isa = PBXGroup;
 			children = (
+				523E743D1B2C673800F88F62 /* ProconBase.framework */,
 				523E73BE1B2C5FA100F88F62 /* ProconManager */,
 				523E73D61B2C5FA100F88F62 /* ProconManagerTests */,
-				523E73EE1B2C61C800F88F62 /* Frameworks */,
 				523E73BD1B2C5FA100F88F62 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,17 +117,6 @@
 				523E73D81B2C5FA100F88F62 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		523E73EE1B2C61C800F88F62 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				523E74021B2C637800F88F62 /* Result.framework */,
-				523E74001B2C637400F88F62 /* Box.framework */,
-				523E73EF1B2C620600F88F62 /* APIKit.framework */,
-				523E73EC1B2C610500F88F62 /* Himotoki.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,13 +350,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/ito/Projects/proconapp/External/Himotoki/build/Debug-iphoneos",
-					"/Users/ito/Projects/proconapp/External/APIKit/build/Debug-iphoneos",
-					"/Users/ito/Projects/proconapp/External/APIKit/Carthage/Checkouts/Box/build/Debug-iphoneos",
-					"/Users/ito/Projects/proconapp/External/APIKit/Carthage/Checkouts/Result/build/Debug-iphoneos",
-				);
 				INFOPLIST_FILE = ProconManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -388,13 +361,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/ito/Projects/proconapp/External/Himotoki/build/Debug-iphoneos",
-					"/Users/ito/Projects/proconapp/External/APIKit/build/Debug-iphoneos",
-					"/Users/ito/Projects/proconapp/External/APIKit/Carthage/Checkouts/Box/build/Debug-iphoneos",
-					"/Users/ito/Projects/proconapp/External/APIKit/Carthage/Checkouts/Result/build/Debug-iphoneos",
-				);
 				INFOPLIST_FILE = ProconManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
