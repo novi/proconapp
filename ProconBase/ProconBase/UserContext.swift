@@ -13,26 +13,33 @@ public protocol UserIdentifier {
     var token: String { get }
 }
 
-public class UserContext: UserIdentifier {
-    
-    public static let me = UserContext()
-    
-    public var id: Int // UserInfo
-    public var token: String // UserInfo
-    init() {
-        self.id = 0
-        self.token = ""
-        
-        let ud = NSUserDefaults.standardUserDefaults()
-        if let id = ud.integerForKey(.UserID) as Int?, token = ud.stringForKey(.UserToken) as String? {
+struct MeIdentifier: UserIdentifier {
+    var id: Int
+    var token: String
+    init?(id: Int, tokenStr: String?) {
+        if let token = tokenStr as String? {
             self.id = id
             self.token = token
+            return
         }
+        return nil
+    }
+}
+
+public class UserContext {
+    
+    public static let defaultContext = UserContext()
+    
+    public var me: UserIdentifier?
+    
+    
+    init() {
+        let ud = NSUserDefaults.standardUserDefaults()
+        me = MeIdentifier(id: ud.integerForKey(.UserID), tokenStr: ud.stringForKey(.UserToken))
     }
     
     public func saveAsMe(user: UserIdentifier) {
-        self.id = user.id
-        self.token = user.token
+        me = MeIdentifier(id: user.id, tokenStr: user.token)
         let ud = NSUserDefaults.standardUserDefaults()
         ud.setInteger(user.id, forKey: .UserID)
         ud.setObject(user.token, forKey: .UserToken)

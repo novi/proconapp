@@ -14,6 +14,10 @@
 		5245930E1AD147D000196181 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5245930D1AD147D000196181 /* Images.xcassets */; };
 		524593111AD147D000196181 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5245930F1AD147D000196181 /* LaunchScreen.xib */; };
 		5245931D1AD147D000196181 /* ProconAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245931C1AD147D000196181 /* ProconAppTests.swift */; };
+		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
+		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
+		52CC1F3E1B4C08C3002AD754 /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CC1F3D1B4C08C3002AD754 /* ProconBase.framework */; };
+		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		524593161AD147D000196181 /* ProconAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProconAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5245931B1AD147D000196181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5245931C1AD147D000196181 /* ProconAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProconAppTests.swift; sourceTree = "<group>"; };
+		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
+		52CC1F3D1B4C08C3002AD754 /* ProconBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProconBase.framework; path = "../ProconBase/build/Debug-iphoneos/ProconBase.framework"; sourceTree = "<group>"; };
+		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CC1F3E1B4C08C3002AD754 /* ProconBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +70,7 @@
 		524592F61AD147D000196181 = {
 			isa = PBXGroup;
 			children = (
+				52CC1F3D1B4C08C3002AD754 /* ProconBase.framework */,
 				524593011AD147D000196181 /* ProconApp */,
 				524593191AD147D000196181 /* ProconAppTests */,
 				524593001AD147D000196181 /* Products */,
@@ -82,6 +92,9 @@
 				524593041AD147D000196181 /* AppDelegate.swift */,
 				524593061AD147D000196181 /* FirstViewController.swift */,
 				524593081AD147D000196181 /* SecondViewController.swift */,
+				52CC1F391B4C03FE002AD754 /* LoginViewController.swift */,
+				52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */,
+				52CC1F3F1B4C0E85002AD754 /* Utils.swift */,
 				5245930A1AD147D000196181 /* Main.storyboard */,
 				5245930D1AD147D000196181 /* Images.xcassets */,
 				5245930F1AD147D000196181 /* LaunchScreen.xib */,
@@ -215,9 +228,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */,
+				52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */,
 				524593091AD147D000196181 /* SecondViewController.swift in Sources */,
 				524593051AD147D000196181 /* AppDelegate.swift in Sources */,
 				524593071AD147D000196181 /* FirstViewController.swift in Sources */,
+				52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +357,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)"
+					"$(inherited)",
+					"/Users/ito/Projects/proconapp/ProconBase/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ProconApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -355,7 +372,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)"
+					"$(inherited)",
+					"/Users/ito/Projects/proconapp/ProconBase/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = ProconApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

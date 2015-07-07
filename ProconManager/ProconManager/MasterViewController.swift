@@ -54,7 +54,7 @@ class MasterViewController: UITableViewController {
         let d = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         println(d)
         
-        let r = AppAPI.Endpoint.FetchUserInfo()
+        /*let r = AppAPI.Endpoint.FetchUserInfo()
         AppAPI.sendRequest(r) { res in
             switch res {
             case .Success(let box):
@@ -66,7 +66,14 @@ class MasterViewController: UITableViewController {
         }
         
         let rr = AppAPI.Endpoint.UpdatePushToken(pushToken: "")
-        rr
+        AppAPI.sendRequest(r) { res in
+            switch res {
+            case .Success(let box):
+                println(box.value)
+            case .Failure(let box):
+                println(box.value)
+            }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {

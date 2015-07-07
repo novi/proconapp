@@ -18,6 +18,7 @@
 		523E74451B2C6CBA00F88F62 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E74441B2C6CBA00F88F62 /* Himotoki.framework */; };
 		523E74471B2C6CBD00F88F62 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E74461B2C6CBD00F88F62 /* Box.framework */; };
 		523E74491B2C6CC100F88F62 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E74481B2C6CC100F88F62 /* Result.framework */; };
+		52CC1F381B4C0357002AD754 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F371B4C0357002AD754 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		523E74441B2C6CBA00F88F62 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = "../External/Himotoki/build/Debug-iphoneos/Himotoki.framework"; sourceTree = "<group>"; };
 		523E74461B2C6CBD00F88F62 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = "../External/APIKit/Carthage/Checkouts/Box/build/Debug-iphoneos/Box.framework"; sourceTree = "<group>"; };
 		523E74481B2C6CC100F88F62 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../External/APIKit/Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		52CC1F371B4C0357002AD754 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				523E741C1B2C650100F88F62 /* ProconBase.h */,
+				52CC1F371B4C0357002AD754 /* Constants.swift */,
 				523E74391B2C65F200F88F62 /* UserContext.swift */,
 				523E74351B2C659900F88F62 /* ManageAPI.swift */,
 				523E743B1B2C660600F88F62 /* AppAPI.swift */,
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CC1F381B4C0357002AD754 /* Constants.swift in Sources */,
 				523E743A1B2C65F200F88F62 /* UserContext.swift in Sources */,
 				523E743C1B2C660600F88F62 /* AppAPI.swift in Sources */,
 				523E74361B2C659900F88F62 /* ManageAPI.swift in Sources */,
@@ -446,6 +450,7 @@
 				523E742F1B2C650100F88F62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		523E74301B2C650100F88F62 /* Build configuration list for PBXNativeTarget "ProconBaseTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +459,7 @@
 				523E74321B2C650100F88F62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

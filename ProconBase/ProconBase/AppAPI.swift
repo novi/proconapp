@@ -12,7 +12,7 @@ import Himotoki
 
 public class AppAPI: API {
     override public class var baseURL: NSURL {
-        return NSURL(string: "")! // TODO
+        return NSURL(string: Constants.APIBaseURL)!
     }
     
     public class Endpoint {
@@ -20,7 +20,7 @@ public class AppAPI: API {
         public class BaseRequest {
             
             var user: UserIdentifier
-            public init(user: UserIdentifier = UserContext.me) {
+            public init(user: UserIdentifier) {
                 self.user = user
             }
             
@@ -31,7 +31,11 @@ public class AppAPI: API {
             }
         }
         
-        public class CreateNewUser: BaseRequest, APIKit.Request {
+        public class CreateNewUser: APIKit.Request {
+            
+            public init() {
+                
+            }
             
             public var URLRequest: NSURLRequest? {
                 return AppAPI.URLRequest(
@@ -49,7 +53,8 @@ public class AppAPI: API {
             public var URLRequest: NSURLRequest? {
                 let req = AppAPI.URLRequest(
                     method: .GET,
-                    path: "/user/me/info"
+                    path: "/user/me/info",
+                    parameters: [:]
                 )
                 buildRequestHeader(req) // TODO
                 return req
@@ -72,7 +77,7 @@ public class AppAPI: API {
             }
             
             let pushToken: String
-            public init(user: UserIdentifier = UserContext.me, pushToken: String) {
+            public init(user: UserIdentifier, pushToken: String) {
                 self.pushToken = pushToken
                 super.init(user: user)
             }
