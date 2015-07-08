@@ -2,7 +2,7 @@
 //  ProconManagerTests.swift
 //  ProconManagerTests
 //
-//  Created by ito on 2015/06/13.
+//  Created by ito on 2015/07/09.
 //  Copyright (c) 2015年 Procon. All rights reserved.
 //
 

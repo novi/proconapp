@@ -2,11 +2,13 @@
 //  AppDelegate.swift
 //  ProconManager
 //
-//  Created by ito on 2015/06/13.
+//  Created by ito on 2015/07/09.
 //  Copyright (c) 2015年 Procon. All rights reserved.
 //
 
 import UIKit
+
+import ProconBase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -20,6 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
         navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         splitViewController.delegate = self
+        
+        #if DEBUG
+            println("debug flag is on")
+        #endif
+        
+        let _ = UserContext.defaultContext.me
+        
         return true
     }
 

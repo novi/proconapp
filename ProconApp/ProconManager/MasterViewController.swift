@@ -2,13 +2,11 @@
 //  MasterViewController.swift
 //  ProconManager
 //
-//  Created by ito on 2015/06/13.
+//  Created by ito on 2015/07/09.
 //  Copyright (c) 2015年 Procon. All rights reserved.
 //
 
 import UIKit
-import ProconBase
-import APIKit
 
 class MasterViewController: UITableViewController {
 
@@ -35,45 +33,6 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
         }
-    
-        /*let request = GitHub.Endpoint.SearchRepositories(query: "APIKit")
-        
-        GitHub.sendRequest(request) { response in
-            switch response {
-            case .Success(let box):
-                println(box.value)
-                
-            case .Failure(let box):
-                let alertController = UIAlertController(title: "Error", message: box.value.localizedDescription, preferredStyle: .Alert)
-                let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alertController.addAction(action)
-                self.presentViewController(alertController, animated: true, completion: nil)
-            }
-        }*/
-        
-        let d = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        println(d)
-        
-        /*let r = AppAPI.Endpoint.FetchUserInfo()
-        AppAPI.sendRequest(r) { res in
-            switch res {
-            case .Success(let box):
-                UserContext.me.saveAsMe(box.value)
-                println(box.value)
-            case .Failure(let box):
-                println(box.value)
-            }
-        }
-        
-        let rr = AppAPI.Endpoint.UpdatePushToken(pushToken: "")
-        AppAPI.sendRequest(r) { res in
-            switch res {
-            case .Success(let box):
-                println(box.value)
-            case .Failure(let box):
-                println(box.value)
-            }
-        }*/
     }
 
     override func didReceiveMemoryWarning() {
