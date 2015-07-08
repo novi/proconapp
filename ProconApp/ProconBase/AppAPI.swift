@@ -90,6 +90,7 @@ public class AppAPI: API {
     }
 }
 
+/*
 public class GitHub: API {
     override public class var baseURL: NSURL {
         return NSURL(string: "https://api.github.com")!
@@ -136,3 +137,4 @@ public class GitHub: API {
         
     }
 }
+*/

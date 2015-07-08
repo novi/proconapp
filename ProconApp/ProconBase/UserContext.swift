@@ -36,6 +36,7 @@ public class UserContext {
     init() {
         let ud = NSUserDefaults.standardUserDefaults()
         me = MeIdentifier(id: ud.integerForKey(.UserID), tokenStr: ud.stringForKey(.UserToken))
+        println("host:\(Constants.APIBaseURL)")
     }
     
     public func saveAsMe(user: UserIdentifier) {

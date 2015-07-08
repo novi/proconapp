@@ -32,3 +32,5 @@ DerivedData
 
 Carthage/Build
 Constants.swift
+Cartfile.resolved
+Carthage/

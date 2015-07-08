@@ -14,9 +14,22 @@
 		5245930E1AD147D000196181 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5245930D1AD147D000196181 /* Images.xcassets */; };
 		524593111AD147D000196181 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5245930F1AD147D000196181 /* LaunchScreen.xib */; };
 		5245931D1AD147D000196181 /* ProconAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5245931C1AD147D000196181 /* ProconAppTests.swift */; };
+		52538E951B4D7B3F00059FEC /* ProconBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 52538E941B4D7B3F00059FEC /* ProconBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		52538E9B1B4D7B3F00059FEC /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52538E901B4D7B3F00059FEC /* ProconBase.framework */; };
+		52538EA41B4D7B3F00059FEC /* ProconBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EA31B4D7B3F00059FEC /* ProconBaseTests.swift */; };
+		52538EA71B4D7B3F00059FEC /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52538E901B4D7B3F00059FEC /* ProconBase.framework */; };
+		52538EA81B4D7B3F00059FEC /* ProconBase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52538E901B4D7B3F00059FEC /* ProconBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52538EC01B4D7C4A00059FEC /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBB1B4D7C4A00059FEC /* AppAPI.swift */; };
+		52538EC11B4D7C4A00059FEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBC1B4D7C4A00059FEC /* Constants.swift */; };
+		52538EC21B4D7C4A00059FEC /* ManageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBD1B4D7C4A00059FEC /* ManageAPI.swift */; };
+		52538EC31B4D7C4A00059FEC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBE1B4D7C4A00059FEC /* Models.swift */; };
+		52538EC41B4D7C4A00059FEC /* UserContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBF1B4D7C4A00059FEC /* UserContext.swift */; };
+		5273DD071B4D780E00F8621A /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5273DD111B4D78F600F8621A /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0E1B4D78F600F8621A /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5273DD121B4D78F600F8621A /* Himotoki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0F1B4D78F600F8621A /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5273DD131B4D78F600F8621A /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD101B4D78F600F8621A /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
-		52CC1F3E1B4C08C3002AD754 /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52CC1F3D1B4C08C3002AD754 /* ProconBase.framework */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +41,45 @@
 			remoteGlobalIDString = 524592FE1AD147D000196181;
 			remoteInfo = ProconApp;
 		};
+		52538E9C1B4D7B3F00059FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524592F71AD147D000196181 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52538E8F1B4D7B3F00059FEC;
+			remoteInfo = ProconBase;
+		};
+		52538E9E1B4D7B3F00059FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524592F71AD147D000196181 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 524592FE1AD147D000196181;
+			remoteInfo = ProconApp;
+		};
+		52538EA51B4D7B3F00059FEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524592F71AD147D000196181 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52538E8F1B4D7B3F00059FEC;
+			remoteInfo = ProconBase;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5273DD041B4D77D200F8621A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5273DD111B4D78F600F8621A /* Box.framework in CopyFiles */,
+				5273DD121B4D78F600F8621A /* Himotoki.framework in CopyFiles */,
+				52538EA81B4D7B3F00059FEC /* ProconBase.framework in CopyFiles */,
+				5273DD131B4D78F600F8621A /* Result.framework in CopyFiles */,
+				5273DD071B4D780E00F8621A /* APIKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		524592FF1AD147D000196181 /* ProconApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProconApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,9 +93,23 @@
 		524593161AD147D000196181 /* ProconAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProconAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5245931B1AD147D000196181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5245931C1AD147D000196181 /* ProconAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProconAppTests.swift; sourceTree = "<group>"; };
+		52538E901B4D7B3F00059FEC /* ProconBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProconBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52538E931B4D7B3F00059FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52538E941B4D7B3F00059FEC /* ProconBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProconBase.h; sourceTree = "<group>"; };
+		52538E9A1B4D7B3F00059FEC /* ProconBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProconBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52538EA21B4D7B3F00059FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52538EA31B4D7B3F00059FEC /* ProconBaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProconBaseTests.swift; sourceTree = "<group>"; };
+		52538EBB1B4D7C4A00059FEC /* AppAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
+		52538EBC1B4D7C4A00059FEC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		52538EBD1B4D7C4A00059FEC /* ManageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageAPI.swift; sourceTree = "<group>"; };
+		52538EBE1B4D7C4A00059FEC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		52538EBF1B4D7C4A00059FEC /* UserContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserContext.swift; sourceTree = "<group>"; };
+		5273DD061B4D780E00F8621A /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = ../Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		5273DD0E1B4D78F600F8621A /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = ../Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
+		5273DD0F1B4D78F600F8621A /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = ../Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
+		5273DD101B4D78F600F8621A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
-		52CC1F3D1B4C08C3002AD754 /* ProconBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProconBase.framework; path = "../ProconBase/build/Debug-iphoneos/ProconBase.framework"; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52CC1F3E1B4C08C3002AD754 /* ProconBase.framework in Frameworks */,
+				52538EA71B4D7B3F00059FEC /* ProconBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,15 +129,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52538E8C1B4D7B3F00059FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52538E971B4D7B3F00059FEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52538E9B1B4D7B3F00059FEC /* ProconBase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		524592F61AD147D000196181 = {
 			isa = PBXGroup;
 			children = (
-				52CC1F3D1B4C08C3002AD754 /* ProconBase.framework */,
 				524593011AD147D000196181 /* ProconApp */,
 				524593191AD147D000196181 /* ProconAppTests */,
+				52538E911B4D7B3F00059FEC /* ProconBase */,
+				52538EA01B4D7B3F00059FEC /* ProconBaseTests */,
+				5273DD081B4D781D00F8621A /* Frameworks */,
 				524593001AD147D000196181 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +164,8 @@
 			children = (
 				524592FF1AD147D000196181 /* ProconApp.app */,
 				524593161AD147D000196181 /* ProconAppTests.xctest */,
+				52538E901B4D7B3F00059FEC /* ProconBase.framework */,
+				52538E9A1B4D7B3F00059FEC /* ProconBaseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,7 +212,68 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		52538E911B4D7B3F00059FEC /* ProconBase */ = {
+			isa = PBXGroup;
+			children = (
+				52538EBC1B4D7C4A00059FEC /* Constants.swift */,
+				52538EBB1B4D7C4A00059FEC /* AppAPI.swift */,
+				52538EBD1B4D7C4A00059FEC /* ManageAPI.swift */,
+				52538EBE1B4D7C4A00059FEC /* Models.swift */,
+				52538EBF1B4D7C4A00059FEC /* UserContext.swift */,
+				52538E941B4D7B3F00059FEC /* ProconBase.h */,
+				52538E921B4D7B3F00059FEC /* Supporting Files */,
+			);
+			path = ProconBase;
+			sourceTree = "<group>";
+		};
+		52538E921B4D7B3F00059FEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52538E931B4D7B3F00059FEC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52538EA01B4D7B3F00059FEC /* ProconBaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				52538EA31B4D7B3F00059FEC /* ProconBaseTests.swift */,
+				52538EA11B4D7B3F00059FEC /* Supporting Files */,
+			);
+			path = ProconBaseTests;
+			sourceTree = "<group>";
+		};
+		52538EA11B4D7B3F00059FEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52538EA21B4D7B3F00059FEC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5273DD081B4D781D00F8621A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5273DD061B4D780E00F8621A /* APIKit.framework */,
+				5273DD0E1B4D78F600F8621A /* Box.framework */,
+				5273DD0F1B4D78F600F8621A /* Himotoki.framework */,
+				5273DD101B4D78F600F8621A /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		52538E8D1B4D7B3F00059FEC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52538E951B4D7B3F00059FEC /* ProconBase.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		524592FE1AD147D000196181 /* ProconApp */ = {
@@ -138,10 +283,12 @@
 				524592FB1AD147D000196181 /* Sources */,
 				524592FC1AD147D000196181 /* Frameworks */,
 				524592FD1AD147D000196181 /* Resources */,
+				5273DD041B4D77D200F8621A /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				52538EA61B4D7B3F00059FEC /* PBXTargetDependency */,
 			);
 			name = ProconApp;
 			productName = ProconApp;
@@ -166,6 +313,43 @@
 			productReference = 524593161AD147D000196181 /* ProconAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		52538E8F1B4D7B3F00059FEC /* ProconBase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52538EA91B4D7B3F00059FEC /* Build configuration list for PBXNativeTarget "ProconBase" */;
+			buildPhases = (
+				52538E8B1B4D7B3F00059FEC /* Sources */,
+				52538E8C1B4D7B3F00059FEC /* Frameworks */,
+				52538E8D1B4D7B3F00059FEC /* Headers */,
+				52538E8E1B4D7B3F00059FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProconBase;
+			productName = ProconBase;
+			productReference = 52538E901B4D7B3F00059FEC /* ProconBase.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		52538E991B4D7B3F00059FEC /* ProconBaseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52538EAD1B4D7B3F00059FEC /* Build configuration list for PBXNativeTarget "ProconBaseTests" */;
+			buildPhases = (
+				52538E961B4D7B3F00059FEC /* Sources */,
+				52538E971B4D7B3F00059FEC /* Frameworks */,
+				52538E981B4D7B3F00059FEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52538E9D1B4D7B3F00059FEC /* PBXTargetDependency */,
+				52538E9F1B4D7B3F00059FEC /* PBXTargetDependency */,
+			);
+			name = ProconBaseTests;
+			productName = ProconBaseTests;
+			productReference = 52538E9A1B4D7B3F00059FEC /* ProconBaseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -181,6 +365,14 @@
 					};
 					524593151AD147D000196181 = {
 						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 524592FE1AD147D000196181;
+					};
+					52538E8F1B4D7B3F00059FEC = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Y9RM2H3NM6;
+					};
+					52538E991B4D7B3F00059FEC = {
+						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 524592FE1AD147D000196181;
 					};
 				};
@@ -200,6 +392,8 @@
 			targets = (
 				524592FE1AD147D000196181 /* ProconApp */,
 				524593151AD147D000196181 /* ProconAppTests */,
+				52538E8F1B4D7B3F00059FEC /* ProconBase */,
+				52538E991B4D7B3F00059FEC /* ProconBaseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,6 +410,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		524593141AD147D000196181 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52538E8E1B4D7B3F00059FEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52538E981B4D7B3F00059FEC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,6 +454,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52538E8B1B4D7B3F00059FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52538EC41B4D7C4A00059FEC /* UserContext.swift in Sources */,
+				52538EC01B4D7C4A00059FEC /* AppAPI.swift in Sources */,
+				52538EC11B4D7C4A00059FEC /* Constants.swift in Sources */,
+				52538EC21B4D7C4A00059FEC /* ManageAPI.swift in Sources */,
+				52538EC31B4D7C4A00059FEC /* Models.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52538E961B4D7B3F00059FEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52538EA41B4D7B3F00059FEC /* ProconBaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -253,6 +481,21 @@
 			isa = PBXTargetDependency;
 			target = 524592FE1AD147D000196181 /* ProconApp */;
 			targetProxy = 524593171AD147D000196181 /* PBXContainerItemProxy */;
+		};
+		52538E9D1B4D7B3F00059FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52538E8F1B4D7B3F00059FEC /* ProconBase */;
+			targetProxy = 52538E9C1B4D7B3F00059FEC /* PBXContainerItemProxy */;
+		};
+		52538E9F1B4D7B3F00059FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 524592FE1AD147D000196181 /* ProconApp */;
+			targetProxy = 52538E9E1B4D7B3F00059FEC /* PBXContainerItemProxy */;
+		};
+		52538EA61B4D7B3F00059FEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52538E8F1B4D7B3F00059FEC /* ProconBase */;
+			targetProxy = 52538EA51B4D7B3F00059FEC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -298,6 +541,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -307,6 +551,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -340,6 +585,205 @@
 			};
 			name = Release;
 		};
+		52538EAA1B4D7B3F00059FEC /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ProconBase/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG_LOG -DDEBUG -DHOST_STAGING";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Staging;
+		};
+		52538EAB1B4D7B3F00059FEC /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ProconBase/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG_LOG -DDEBUG -DHOST_DEV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Dev;
+		};
+		52538EAC1B4D7B3F00059FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ProconBase/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DHOST_RELEASE";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		52538EAE1B4D7B3F00059FEC /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ProconBaseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProconApp.app/ProconApp";
+			};
+			name = Staging;
+		};
+		52538EAF1B4D7B3F00059FEC /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ProconBaseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProconApp.app/ProconApp";
+			};
+			name = Dev;
+		};
+		52538EB01B4D7B3F00059FEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ProconBaseTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProconApp.app/ProconApp";
+			};
+			name = Release;
+		};
 		52CC1F411B4D6CB8002AD754 /* Dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -361,6 +805,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -378,6 +823,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG_LOG -DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -436,6 +882,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Build/iOS\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -453,6 +900,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG_LOG -DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -519,6 +967,26 @@
 				52CC1F461B4D6CBC002AD754 /* Staging */,
 				52CC1F431B4D6CB8002AD754 /* Dev */,
 				524593251AD147D000196181 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52538EA91B4D7B3F00059FEC /* Build configuration list for PBXNativeTarget "ProconBase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52538EAA1B4D7B3F00059FEC /* Staging */,
+				52538EAB1B4D7B3F00059FEC /* Dev */,
+				52538EAC1B4D7B3F00059FEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52538EAD1B4D7B3F00059FEC /* Build configuration list for PBXNativeTarget "ProconBaseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52538EAE1B4D7B3F00059FEC /* Staging */,
+				52538EAF1B4D7B3F00059FEC /* Dev */,
+				52538EB01B4D7B3F00059FEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

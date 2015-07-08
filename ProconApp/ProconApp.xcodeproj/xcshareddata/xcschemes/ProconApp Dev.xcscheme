@@ -34,6 +34,20 @@
                ReferencedContainer = "container:ProconApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "52538E991B4D7B3F00059FEC"
+               BuildableName = "ProconBaseTests.xctest"
+               BlueprintName = "ProconBaseTests"
+               ReferencedContainer = "container:ProconApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "524593151AD147D000196181"
                BuildableName = "ProconAppTests.xctest"
                BlueprintName = "ProconAppTests"
+               ReferencedContainer = "container:ProconApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "52538E991B4D7B3F00059FEC"
+               BuildableName = "ProconBaseTests.xctest"
+               BlueprintName = "ProconBaseTests"
                ReferencedContainer = "container:ProconApp.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -14,7 +14,6 @@
 		523E73CB1B2C5FA100F88F62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523E73CA1B2C5FA100F88F62 /* Images.xcassets */; };
 		523E73CE1B2C5FA100F88F62 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523E73CC1B2C5FA100F88F62 /* LaunchScreen.xib */; };
 		523E73DA1B2C5FA100F88F62 /* ProconManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523E73D91B2C5FA100F88F62 /* ProconManagerTests.swift */; };
-		523E743E1B2C673800F88F62 /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523E743D1B2C673800F88F62 /* ProconBase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 		523E73D31B2C5FA100F88F62 /* ProconManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProconManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		523E73D81B2C5FA100F88F62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523E73D91B2C5FA100F88F62 /* ProconManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProconManagerTests.swift; sourceTree = "<group>"; };
-		523E743D1B2C673800F88F62 /* ProconBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProconBase.framework; path = "../ProconBase/build/Debug-iphoneos/ProconBase.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				523E743E1B2C673800F88F62 /* ProconBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +61,6 @@
 		523E73B31B2C5FA100F88F62 = {
 			isa = PBXGroup;
 			children = (
-				523E743D1B2C673800F88F62 /* ProconBase.framework */,
 				523E73BE1B2C5FA100F88F62 /* ProconManager */,
 				523E73D61B2C5FA100F88F62 /* ProconManagerTests */,
 				523E73BD1B2C5FA100F88F62 /* Products */,
