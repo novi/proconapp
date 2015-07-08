@@ -1,6 +1,0 @@
-[submodule "External/Himotoki"]
-	path = External/Himotoki
-	url = https://github.com/ikesyo/Himotoki.git
-[submodule "External/APIKit"]
-	path = External/APIKit
-	url = https://github.com/ishkawa/APIKit.git

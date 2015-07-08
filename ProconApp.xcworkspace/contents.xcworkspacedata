@@ -10,20 +10,4 @@
    <FileRef
       location = "group:ProconManager/ProconManager.xcodeproj">
    </FileRef>
-   <Group
-      location = "container:"
-      name = "External">
-      <FileRef
-         location = "group:External/Himotoki/Himotoki.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:External/APIKit/APIKit.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:External/APIKit/Carthage/Checkouts/Box/Box.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:External/APIKit/Carthage/Checkouts/Result/Result.xcodeproj">
-      </FileRef>
-   </Group>
 </Workspace>
