@@ -30,7 +30,7 @@ public class UserContext {
     
     public static let defaultContext = UserContext()
     
-    public var me: UserIdentifier?
+    public var me: UserIdentifier? // if nil, not logged in
     
     
     init() {
