@@ -516,6 +516,7 @@
 					};
 					52538E8F1B4D7B3F00059FEC = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Y9RM2H3NM6;
 					};
 					52538E991B4D7B3F00059FEC = {
 						CreatedOnToolsVersion = 6.4;
@@ -523,6 +524,7 @@
 					};
 					52538EC81B4D7F5E00059FEC = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Y9RM2H3NM6;
 					};
 					52538EDE1B4D7F5F00059FEC = {
 						CreatedOnToolsVersion = 6.4;
@@ -1390,6 +1392,7 @@
 				52538EEA1B4D7F5F00059FEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		52538EEB1B4D7F5F00059FEC /* Build configuration list for PBXNativeTarget "ProconManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -1399,6 +1402,7 @@
 				52538EEE1B4D7F5F00059FEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

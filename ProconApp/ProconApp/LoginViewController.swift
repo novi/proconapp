@@ -26,6 +26,7 @@ class LoginViewController: UIViewController {
             switch res {
             case .Success(let box):
                 UserContext.defaultContext.saveAsMe(box.value)
+                UIApplication.sharedApplication().activatePushNotification()
                 self.dismissViewControllerAnimated(true, completion: nil)
                 println(box.value)
             case .Failure(let box):
