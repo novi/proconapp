@@ -35,7 +35,7 @@ public struct Notice: Decodable, Printable {
     public let title: String
     public let summary: String
     public let text: String?
-//    public let publishedAt: NSDate
+    public let publishedAt: NSDate
     
     public static func decode(e: Extractor) -> Notice? {
         let c = { Notice($0) }
@@ -43,12 +43,13 @@ public struct Notice: Decodable, Printable {
             e <| "id",
             e <| "title",
             e <| "summary",
-            e <| "text"
+            e <| "text",
+            (e <| "published_at").flatMap { NSDate(timeIntervalSince1970: $0) }
             ).map(c)
     }
     
     public var description: String {
-        return "id = \(id), \(title) \(summary)"
+        return "id = \(id), \(title) \(summary) at \(publishedAt)"
     }
     
 }
@@ -62,7 +63,7 @@ public struct Player: Decodable, Printable {
     public static func decode(e: Extractor) -> Player? {
         let c = { Player($0) }
         return build(
-            e <| "_id",
+            e <| "id",
             e <| "name",
             e <| "short_name"
             ).map(c)
@@ -72,26 +73,4 @@ public struct Player: Decodable, Printable {
         return "id = \(id), \(fullName)(\(shortName))"
     }
     
-}
-
-// DEMO
-public struct Repository: Decodable, Printable {
-    let id: Int
-    let name: String
-    //let owner: User
-    
-    public static func decode(e: Extractor) -> Repository? {
-        let create = { Repository($0) }
-        return build(
-            e <| "id",
-            e <| "name"
-            //e <| "owner"
-            ).map(create)
-    }
-    
-    public var description: String {
-        get {
-            return "\(id)-\(name)"
-        }
-    }
 }

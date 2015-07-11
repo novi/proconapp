@@ -17,3 +17,34 @@ extension UIStoryboard {
         return self.instantiateViewControllerWithIdentifier(identifier.rawValue) as! UIViewController
     }
 }
+
+extension UITableView {
+    enum CellIdentifier: String {
+        case NotificationSettingCell = "Cell"
+    }
+    
+    func dequeueReusableCellWithIdentifier(identifier: CellIdentifier, forIndexPath indexPath: NSIndexPath) -> AnyObject {
+        return self.dequeueReusableCellWithIdentifier(identifier.rawValue, forIndexPath: indexPath)
+    }
+}
+
+extension UIViewController {
+    enum UnwindSegueIdentifier: String {
+        case UnwindNotificationSetting = "NotificationSettingDone"
+    }
+    
+    func performSegueWithIdentifier(identifier: UnwindSegueIdentifier, sender: AnyObject?) {
+        self.performSegueWithIdentifier(identifier.rawValue, sender: sender)
+    }
+}
+
+
+protocol ContentsReloading {
+    func reloadContents()
+}
+
+/*
+extension UIViewController: ContentsReloading {
+    
+}
+*/

@@ -151,54 +151,46 @@ public class AppAPI: API {
             }
         }
         
-    }
-}
-
-/*
-public class GitHub: API {
-    override public class var baseURL: NSURL {
-        return NSURL(string: "https://api.github.com")!
-    }
-    
-    public class Endpoint {
-        // https://developer.github.com/v3/search/#search-repositories
-        public class SearchRepositories: APIKit.Request {
-            public enum Sort: String {
-                case Stars = "stars"
-                case Forks = "forks"
-                case Updated = "updated"
-            }
-            
-            public enum Order: String {
-                case Ascending = "asc"
-                case Descending = "desc"
-            }
-            
-            public typealias Response = [Repository]
-            
-            let query: String
-            let sort: Sort
-            let order: Order
+        public class FetchGameNotificationSettings: BaseRequest, APIKit.Request {
             
             public var URLRequest: NSURLRequest? {
-                return GitHub.URLRequest(
+                let req = AppAPI.URLRequest(
                     method: .GET,
-                    path: "/search/repositories",
-                    parameters: ["q": query, "sort": sort.rawValue, "order": order.rawValue]
+                    path: "/user/me/game_notification"
+                    //parameters: ]
                 )
+                buildRequestHeader(req) // TODO
+                return req
             }
             
-            public init(query: String, sort: Sort = .Stars, order: Order = .Ascending) {
-                self.query = query
-                self.sort = sort
-                self.order = order
+            public class func responseFromObject(object: AnyObject) -> [Int]? {
+                return object["ids"] as? [Int]
+            }
+        }
+        
+        public class UpdateGameNotificationSettings: BaseRequest, APIKit.Request {
+            
+            var ids:[Int]
+            public var URLRequest: NSURLRequest? {
+                let req = AppAPI.URLRequest(
+                    method: .PUT,
+                    path: "/user/me/game_notification",
+                    parameters: ["ids":ids]
+                )
+                buildRequestHeader(req) // TODO
+                return req
             }
             
-            public class func responseFromObject(object: AnyObject) -> Response? {
-                return object["items"].flatMap(decode) ?? []
+            public init(user: UserIdentifier, ids: [Int]) {
+                self.ids = ids
+                super.init(user: user)
+            }
+            
+            public class func responseFromObject(object: AnyObject) -> AnyObject? {
+                return object
             }
         }
         
     }
 }
-*/
+

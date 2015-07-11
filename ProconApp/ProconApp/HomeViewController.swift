@@ -10,7 +10,7 @@ import UIKit
 import ProconBase
 import APIKit
 
-class FirstViewController: UIViewController {
+class HomeViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,25 +69,15 @@ class FirstViewController: UIViewController {
                 }
             }
         }
-        
-        if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchAllPlayers(user: me)
-            AppAPI.sendRequest(r) { res in
-                switch res {
-                case .Success(let box):
-                    println(box.value)
-                case .Failure(let box):
-                    println(box.value)
-                }
-            }
-        }
+
         
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: Notification Settings
+    
+    @IBAction func notificationSettingDone(segue: UIStoryboardSegue) {
+        
     }
 
 

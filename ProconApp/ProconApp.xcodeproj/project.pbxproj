@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52311B911B512DC100F2F494 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52311B901B512DC100F2F494 /* Types.swift */; };
+		52311B931B51318200F2F494 /* NotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52311B921B51318200F2F494 /* NotificationSettingViewController.swift */; };
 		524593051AD147D000196181 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524593041AD147D000196181 /* AppDelegate.swift */; };
-		524593071AD147D000196181 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524593061AD147D000196181 /* FirstViewController.swift */; };
-		524593091AD147D000196181 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524593081AD147D000196181 /* SecondViewController.swift */; };
+		524593071AD147D000196181 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524593061AD147D000196181 /* HomeViewController.swift */; };
 		5245930C1AD147D000196181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5245930A1AD147D000196181 /* Main.storyboard */; };
 		5245930E1AD147D000196181 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5245930D1AD147D000196181 /* Images.xcassets */; };
 		524593111AD147D000196181 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5245930F1AD147D000196181 /* LaunchScreen.xib */; };
@@ -123,11 +124,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52311B901B512DC100F2F494 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		52311B921B51318200F2F494 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
 		524592FF1AD147D000196181 /* ProconApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProconApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524593031AD147D000196181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524593041AD147D000196181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		524593061AD147D000196181 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		524593081AD147D000196181 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		524593061AD147D000196181 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5245930B1AD147D000196181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5245930D1AD147D000196181 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		524593101AD147D000196181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -245,9 +247,9 @@
 			isa = PBXGroup;
 			children = (
 				524593041AD147D000196181 /* AppDelegate.swift */,
-				524593061AD147D000196181 /* FirstViewController.swift */,
-				524593081AD147D000196181 /* SecondViewController.swift */,
+				524593061AD147D000196181 /* HomeViewController.swift */,
 				52CC1F391B4C03FE002AD754 /* LoginViewController.swift */,
+				52311B921B51318200F2F494 /* NotificationSettingViewController.swift */,
 				52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */,
 				52CC1F3F1B4C0E85002AD754 /* Utils.swift */,
 				5245930A1AD147D000196181 /* Main.storyboard */,
@@ -290,6 +292,7 @@
 				52538EBB1B4D7C4A00059FEC /* AppAPI.swift */,
 				52538EBD1B4D7C4A00059FEC /* ManageAPI.swift */,
 				52538EBE1B4D7C4A00059FEC /* Models.swift */,
+				52311B901B512DC100F2F494 /* Types.swift */,
 				52538EBF1B4D7C4A00059FEC /* UserContext.swift */,
 				52538E941B4D7B3F00059FEC /* ProconBase.h */,
 				52538E921B4D7B3F00059FEC /* Supporting Files */,
@@ -611,11 +614,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52311B931B51318200F2F494 /* NotificationSettingViewController.swift in Sources */,
 				52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */,
 				52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */,
-				524593091AD147D000196181 /* SecondViewController.swift in Sources */,
 				524593051AD147D000196181 /* AppDelegate.swift in Sources */,
-				524593071AD147D000196181 /* FirstViewController.swift in Sources */,
+				524593071AD147D000196181 /* HomeViewController.swift in Sources */,
 				52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +638,7 @@
 				52538EC41B4D7C4A00059FEC /* UserContext.swift in Sources */,
 				52538EC01B4D7C4A00059FEC /* AppAPI.swift in Sources */,
 				52538EC11B4D7C4A00059FEC /* Constants.swift in Sources */,
+				52311B911B512DC100F2F494 /* Types.swift in Sources */,
 				52538EC21B4D7C4A00059FEC /* ManageAPI.swift in Sources */,
 				52538EC31B4D7C4A00059FEC /* Models.swift in Sources */,
 			);
