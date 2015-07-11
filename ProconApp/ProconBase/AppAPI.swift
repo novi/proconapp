@@ -8,6 +8,7 @@
 
 import Foundation
 import APIKit
+import Result
 import Himotoki
 
 public class AppAPI: API {
@@ -84,6 +85,69 @@ public class AppAPI: API {
             
             public class func responseFromObject(object: AnyObject) -> AnyObject? {
                 return object
+            }
+        }
+        
+        public class FetchNotices: BaseRequest, APIKit.Request {
+            let page: Int
+            
+            public var URLRequest: NSURLRequest? {
+                let req = AppAPI.URLRequest(
+                    method: .GET,
+                    path: "/notices/list",
+                    parameters: ["page": page]
+                )
+                buildRequestHeader(req) // TODO
+                return req
+            }
+            
+            public init(user: UserIdentifier, page: Int = 0) {
+                self.page = page
+                super.init(user: user)
+            }
+            
+            public class func responseFromObject(object: AnyObject) -> [Notice]? {
+                return decodeArray(object)
+            }
+        }
+        
+        public class FetchNoticeText: BaseRequest, APIKit.Request {
+            let notice: Notice
+            
+            public var URLRequest: NSURLRequest? {
+                let req = AppAPI.URLRequest(
+                    method: .GET,
+                    path: "/notices/info",
+                    parameters: ["id": notice.id]
+                )
+                buildRequestHeader(req) // TODO
+                return req
+            }
+            
+            public init(user: UserIdentifier, notice: Notice) {
+                self.notice = notice
+                super.init(user: user)
+            }
+            
+            public class func responseFromObject(object: AnyObject) -> Notice? {
+                return decode(object)
+            }
+        }
+        
+        public class FetchAllPlayers: BaseRequest, APIKit.Request {
+            
+            public var URLRequest: NSURLRequest? {
+                let req = AppAPI.URLRequest(
+                    method: .GET,
+                    path: "/players"
+                    //parameters: ]
+                )
+                buildRequestHeader(req) // TODO
+                return req
+            }
+            
+            public class func responseFromObject(object: AnyObject) -> [Player]? {
+                return decodeArray(object)
             }
         }
         

@@ -26,10 +26,52 @@ public struct User: Decodable, Printable, UserIdentifier {
     }
     
     public var description: String {
-        get {
-            return "user id = \(id)"
-        }
+        return "user id = \(id)"
     }
+}
+
+public struct Notice: Decodable, Printable {
+    public let id: Int
+    public let title: String
+    public let summary: String
+    public let text: String?
+//    public let publishedAt: NSDate
+    
+    public static func decode(e: Extractor) -> Notice? {
+        let c = { Notice($0) }
+        return build(
+            e <| "id",
+            e <| "title",
+            e <| "summary",
+            e <| "text"
+            ).map(c)
+    }
+    
+    public var description: String {
+        return "id = \(id), \(title) \(summary)"
+    }
+    
+}
+
+public struct Player: Decodable, Printable {
+    
+    public let id: Int
+    public let fullName: String
+    public let shortName: String
+    
+    public static func decode(e: Extractor) -> Player? {
+        let c = { Player($0) }
+        return build(
+            e <| "_id",
+            e <| "name",
+            e <| "short_name"
+            ).map(c)
+    }
+    
+    public var description: String {
+        return "id = \(id), \(fullName)(\(shortName))"
+    }
+    
 }
 
 // DEMO

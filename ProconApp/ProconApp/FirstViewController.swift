@@ -43,6 +43,46 @@ class FirstViewController: UIViewController {
             }
         }
         
+        // TEST
+        
+        if let me = UserContext.defaultContext.me {
+            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0)
+            AppAPI.sendRequest(r) { res in
+                switch res {
+                case .Success(let box):
+                    println(box.value)
+                    
+                    if let n = box.value[0] as Notice? {
+                        let r = AppAPI.Endpoint.FetchNoticeText(user: me, notice: n)
+                        AppAPI.sendRequest(r) { res in
+                            switch res {
+                            case .Success(let box):
+                                println(box.value)
+                            case .Failure(let box):
+                                println(box.value)
+                            }
+                        }
+                    }
+                    
+                case .Failure(let box):
+                    println(box.value)
+                }
+            }
+        }
+        
+        if let me = UserContext.defaultContext.me {
+            let r = AppAPI.Endpoint.FetchAllPlayers(user: me)
+            AppAPI.sendRequest(r) { res in
+                switch res {
+                case .Success(let box):
+                    println(box.value)
+                case .Failure(let box):
+                    println(box.value)
+                }
+            }
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
