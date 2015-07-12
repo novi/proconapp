@@ -164,7 +164,7 @@ public class AppAPI: API {
             }
             
             public class func responseFromObject(object: AnyObject) -> [Int]? {
-                return object["ids"] as? [Int]
+                return (object["ids"] as? [Int]) ?? []
             }
         }
         
@@ -188,6 +188,29 @@ public class AppAPI: API {
             
             public class func responseFromObject(object: AnyObject) -> AnyObject? {
                 return object
+            }
+        }
+        
+        public class FetchGameResults: BaseRequest, APIKit.Request {
+            
+            var count:Int
+            public var URLRequest: NSURLRequest? {
+                let req = AppAPI.URLRequest(
+                    method: .GET,
+                    path: "/game/game_results",
+                    parameters: ["count": count]
+                )
+                buildRequestHeader(req) // TODO
+                return req
+            }
+            
+            public init(user: UserIdentifier, count:Int = 5) {
+                self.count = count
+                super.init(user: user)
+            }
+            
+            public class func responseFromObject(object: AnyObject) -> [GameResult]? {
+                return decodeArray(object)
             }
         }
         

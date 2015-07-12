@@ -40,28 +40,33 @@ class NotificationSettingViewController: UITableViewController, ContentsReloadin
                     self.players = box.value
                     
                     self.settings.removeAll(keepCapacity: true)
-                    for p in self.players {
-                        self.settings[p.id] = true
+                    
+                    let r = AppAPI.Endpoint.FetchGameNotificationSettings(user: me)
+                    AppAPI.sendRequest(r) { res in
+                        switch res {
+                        case .Success(let box):
+                            for p in self.players {
+                                self.settings[p.id] = false
+                            }
+                            for id in box.value {
+                                self.settings[id] = true
+                            }
+                            self.reloadContents()
+                        case .Failure(let box):
+                            // TODO, error
+                            println(box.value)
+                        }
                     }
                     
                     self.reloadContents()
                 case .Failure(let box):
+                    // TODO, error
                     println(box.value)
                 }
             }
         }
         
-        if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchGameNotificationSettings(user: me)
-            AppAPI.sendRequest(r) { res in
-                switch res {
-                case .Success(let box):
-                    println(box.value)
-                case .Failure(let box):
-                    println(box.value)
-                }
-            }
-        }
+        
         
     }
     
@@ -82,6 +87,7 @@ class NotificationSettingViewController: UITableViewController, ContentsReloadin
         
         let sw = Switch(player: player)
         sw.on = self.settings[player.id] ?? true
+        sw.enabled = settings[player.id] != nil ? true: false
         
         cell.accessoryView = sw
         

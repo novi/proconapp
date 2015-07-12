@@ -21,6 +21,9 @@ extension UIStoryboard {
 extension UITableView {
     enum CellIdentifier: String {
         case NotificationSettingCell = "Cell"
+        
+        case HomeNoticeCell = "NoticeCell"
+        case HomeGameResultCell = "GameResultCell"
     }
     
     func dequeueReusableCellWithIdentifier(identifier: CellIdentifier, forIndexPath indexPath: NSIndexPath) -> AnyObject {

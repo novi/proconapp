@@ -63,7 +63,7 @@ public struct Player: Decodable, Printable {
     public static func decode(e: Extractor) -> Player? {
         let c = { Player($0) }
         return build(
-            e <| "id",
+            (e <| "id" ?? e <| "_id"),
             e <| "name",
             e <| "short_name"
             ).map(c)
@@ -71,6 +71,48 @@ public struct Player: Decodable, Printable {
     
     public var description: String {
         return "id = \(id), \(fullName)(\(shortName))"
+    }
+    
+}
+
+public struct GameResult: Decodable, Printable {
+    
+    public struct Result: Decodable, Printable {
+        public let score: Float
+        public let player: Player
+        
+        public static func decode(e: Extractor) -> Result? {
+            let c = { Result($0) }
+            return build(
+                e <| "score",
+                e <| "player"
+                ).map(c)
+        }
+        
+        public var description: String {
+            return "score:\(score) \(player)"
+        }
+    }
+    
+    public let id: Int
+    public let title: String
+    public let startedAt: NSDate
+    public let finishedAt: NSDate?
+    public var results: [Result]
+    
+    public static func decode(e: Extractor) -> GameResult? {
+        let c = { GameResult($0) }
+        return build(
+            e <| "id",
+            e <| "title",
+            (e <| "started_at").flatMap { NSDate(timeIntervalSince1970: $0) },
+            (e <| "finished_at").flatMap { NSDate(timeIntervalSince1970: $0) },
+            (e <|| "result").flatMap { $0 }
+            ).map(c)
+    }
+    
+    public var description: String {
+        return "id = \(id), \(title) \(startedAt) - \(finishedAt), result count = \(results.count)"
     }
     
 }
