@@ -10,6 +10,8 @@ import Foundation
 import Himotoki
 
 
+// TODO: id type struct
+
 public struct User: Decodable, Printable, UserIdentifier {
     public let id: Int
     public let token: String

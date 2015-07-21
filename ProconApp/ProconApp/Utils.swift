@@ -41,7 +41,7 @@ class LocalSettings {
     
     func registerAndUploadPushDeviceToken(token: String) {
 
-        // TODO: save current push token
+        // TODO: save current push token to user defaults
         
         if let me = UserContext.defaultContext.me {
             let r = AppAPI.Endpoint.UpdatePushToken(user: me, pushToken: token)

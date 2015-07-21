@@ -44,6 +44,35 @@ extension UIViewController {
 
 protocol ContentsReloading {
     func reloadContents()
+    
+    var isContentsLoading: Bool { get }
+    var contentsLoadingCount: Int { get }
+    
+    func startContentsLoading()
+    func endContentsLoading()
+    
+    // todo: use protocol extension
+}
+
+class TableViewController: UITableViewController, ContentsReloading {
+    
+    func reloadContents() {
+        
+    }
+    
+    var contentsLoadingCount: Int = 0
+    
+    var isContentsLoading: Bool {
+        return contentsLoadingCount > 0
+    }
+    
+    func startContentsLoading() {
+        contentsLoadingCount++
+    }
+    
+    func endContentsLoading() {
+        contentsLoadingCount--
+    }
 }
 
 /*

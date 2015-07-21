@@ -9,7 +9,7 @@
 import UIKit
 import ProconBase
 
-class NotificationSettingViewController: UITableViewController, ContentsReloading {
+class NotificationSettingViewController: TableViewController {
     
     class Switch: UISwitch {
         let player: Player
@@ -28,10 +28,12 @@ class NotificationSettingViewController: UITableViewController, ContentsReloadin
     
     var settings: [Int:Bool] = [:]
     
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         if let me = UserContext.defaultContext.me {
+            startContentsLoading()
             let r = AppAPI.Endpoint.FetchAllPlayers(user: me)
             AppAPI.sendRequest(r) { res in
                 switch res {
@@ -45,8 +47,13 @@ class NotificationSettingViewController: UITableViewController, ContentsReloadin
                     AppAPI.sendRequest(r) { res in
                         switch res {
                         case .Success(let box):
+                            println("current game settings", box.value)
                             for p in self.players {
-                                self.settings[p.id] = false
+                                if box.value.count == 0 {
+                                    self.settings[p.id] = true // 一つも設定されていない時はオールオン
+                                } else {
+                                    self.settings[p.id] = false
+                                }
                             }
                             for id in box.value {
                                 self.settings[id] = true
@@ -56,11 +63,14 @@ class NotificationSettingViewController: UITableViewController, ContentsReloadin
                             // TODO, error
                             println(box.value)
                         }
+                        
+                        self.endContentsLoading()
                     }
                     
                     self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
+                    self.endContentsLoading()
                     println(box.value)
                 }
             }
@@ -70,9 +80,14 @@ class NotificationSettingViewController: UITableViewController, ContentsReloadin
         
     }
     
-    func reloadContents() {
+    // MARK: Contents Loading
+    
+    override func reloadContents() {
         tableView.reloadData()
     }
+    
+    // MARK:
+
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count
@@ -86,6 +101,7 @@ class NotificationSettingViewController: UITableViewController, ContentsReloadin
         cell.textLabel?.text = "\(player.fullName) (\(player.shortName))"
         
         let sw = Switch(player: player)
+        sw.addTarget(self, action: "switchChanged:", forControlEvents: .ValueChanged)
         sw.on = self.settings[player.id] ?? true
         sw.enabled = settings[player.id] != nil ? true: false
         
@@ -100,6 +116,10 @@ class NotificationSettingViewController: UITableViewController, ContentsReloadin
     }
     
     @IBAction func doneTapped(sender: UIBarButtonItem?) {
+        
+        if isContentsLoading {
+            return
+        }
         
         sender?.enabled = false
         

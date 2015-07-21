@@ -10,7 +10,7 @@ import UIKit
 import ProconBase
 import APIKit
 
-class HomeViewController: UITableViewController, ContentsReloading {
+class HomeViewController: TableViewController {
     
     enum Section: Int {
         case Notices = 0
@@ -93,7 +93,7 @@ class HomeViewController: UITableViewController, ContentsReloading {
         
     }
     
-    func reloadContents() {
+    override func reloadContents() {
         tableView.reloadData()
     }
     
