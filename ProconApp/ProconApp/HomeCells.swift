@@ -96,6 +96,7 @@ class NoticeCell: UITableViewCell {
                 titleLabel.text = notice.title
                 dateLabel.text = notice.publishedAt.relativeDateString
                 self.accessoryType = notice.hasBody ? .DisclosureIndicator : .None
+                self.userInteractionEnabled = notice.hasBody ? true: false
             }
         }
     }

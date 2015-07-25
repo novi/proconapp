@@ -93,19 +93,21 @@ public class AppAPI: API {
         
         public class FetchNotices: BaseRequest, APIKit.Request {
             let page: Int
+            let count: Int
             
             public var URLRequest: NSURLRequest? {
                 let req = AppAPI.URLRequest(
                     method: .GET,
                     path: "/notices/list",
-                    parameters: ["page": page]
+                    parameters: ["page": page, "count":count]
                 )
                 buildRequestHeader(req) // TODO
                 return req
             }
             
-            public init(user: UserIdentifier, page: Int = 0) {
+            public init(user: UserIdentifier, page: Int = 0, count: Int = 3) {
                 self.page = page
+                self.count = count
                 super.init(user: user)
             }
             

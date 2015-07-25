@@ -48,5 +48,16 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>jp.gr.procon.scheme.proconapp</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>proconapp</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>

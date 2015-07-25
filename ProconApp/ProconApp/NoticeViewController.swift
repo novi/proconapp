@@ -29,7 +29,7 @@ class NoticeViewController: ViewController {
         }
         
         if let notice = notice {
-            if notice.body == nil {
+            if notice.body == nil && notice.hasBody {
                 // fetch body
                 if let me = UserContext.defaultContext.me {
                     let req = AppAPI.Endpoint.FetchNoticeText(user: me, notice: notice)

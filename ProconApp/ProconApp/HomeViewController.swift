@@ -42,6 +42,14 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return "競技部門速報"
             }
         }
+        var showAllSegueIdentifier: UIViewController.SegueIdentifier {
+            switch self {
+            case .Notices:
+                return .HomeShowNoticeList
+            case .GameResults:
+                return .HomeShowGameResultList
+            }
+        }
         static let count = 2
     }
     
@@ -87,7 +95,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         }
         
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0)
+            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count: 3)
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
@@ -147,9 +155,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         case .Notices:
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!, forIndexPath: indexPath) as! NoticeCell
             
-            let notice = self.notices[indexPath.row]
-            
-            cell.notice = notice
+            cell.notice = self.notices[indexPath.row]
             
             return cell
         case .GameResults:
@@ -168,8 +174,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(.HomeHeaderView) as! HomeHeaderView
-        let section = Section(rawValue: section)!
-        cell.section = section
+        cell.section = Section(rawValue: section)!
         cell.delegate = self
         return cell
     }
@@ -179,7 +184,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     }
     
     func homeHeaderView(view: HomeHeaderView, didTapShowAllforSection section: HomeViewController.Section) {
-        
+        performSegueWithIdentifier(section.showAllSegueIdentifier, sender: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

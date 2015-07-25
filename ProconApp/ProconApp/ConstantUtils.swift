@@ -26,10 +26,13 @@ extension UITableView {
         case HomeGameResultCellRank = "GameResultCellRank"
         case HomeGameResultCellScore = "GameResultCellScore"
         
+        case NoticeListCell = "NoticeListCell"
+        
+        case GameResultListCell = "GameResultListCell"
     }
     
     enum HeaderViewIdentifier: String {
-        case HomeHeaderView = "HeaderCell"
+        case HomeHeaderView = "HomeHeaderView"
     }
     enum HeaderViewNib: String {
         case HomeHeaderNib = "HomeHeaderView"
@@ -49,6 +52,12 @@ extension UITableView {
 }
 
 extension UIViewController {
+    
+    enum SegueIdentifier: String {
+        case HomeShowNoticeList = "ShowNoticeList"
+        case HomeShowGameResultList = "GameResultList"
+    }
+    
     enum UnwindSegueIdentifier: String {
         case UnwindNotificationSetting = "NotificationSettingDone"
     }
@@ -56,11 +65,16 @@ extension UIViewController {
     func performSegueWithIdentifier(identifier: UnwindSegueIdentifier, sender: AnyObject?) {
         self.performSegueWithIdentifier(identifier.rawValue, sender: sender)
     }
+    
+    func performSegueWithIdentifier(identifier: SegueIdentifier, sender: AnyObject?) {
+        self.performSegueWithIdentifier(identifier.rawValue, sender: sender)
+    }
 }
 
 
 protocol ContentsReloading {
     func reloadContents()
+    func fetchContents()
     
     var isContentsLoading: Bool { get }
     var contentsLoadingCount: Int { get }
@@ -74,6 +88,10 @@ protocol ContentsReloading {
 class ViewController: UIViewController, ContentsReloading {
     
     func reloadContents() {
+        
+    }
+    
+    func fetchContents() {
         
     }
     
@@ -108,6 +126,11 @@ class TableViewController: UITableViewController, ContentsReloading {
     func reloadContents() {
         
     }
+    
+    func fetchContents() {
+        
+    }
+    
     
     var contentsLoadingCount: Int = 0
     
