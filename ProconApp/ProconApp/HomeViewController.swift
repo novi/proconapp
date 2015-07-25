@@ -10,7 +10,7 @@ import UIKit
 import ProconBase
 import APIKit
 
-class HomeViewController: TableViewController {
+class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     
     enum Section: Int {
         case Notices = 0
@@ -34,14 +34,29 @@ class HomeViewController: TableViewController {
         var indexSet: NSIndexSet {
             return NSIndexSet(index: self.rawValue)
         }
+        var sectionName: String {
+            switch self {
+            case .Notices:
+                return "お知らせ"
+            case .GameResults:
+                return "競技部門速報"
+            }
+        }
         static let count = 2
     }
     
     var notices: [Notice] = []
     var gameResults: [GameResult] = []
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        let nib = UINib(nibName: "HomeHeaderView", bundle: nil)
+        tableView.registerNib(.HomeHeaderNib, forHeaderFooterViewReuseIdentifier: .HomeHeaderView)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
     }
@@ -150,6 +165,22 @@ class HomeViewController: TableViewController {
             
             return cell
         }
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(.HomeHeaderView) as! HomeHeaderView
+        let section = Section(rawValue: section)!
+        cell.section = section
+        cell.delegate = self
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func homeHeaderView(view: HomeHeaderView, didTapShowAllforSection section: HomeViewController.Section) {
+        
     }
 
 }

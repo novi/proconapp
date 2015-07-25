@@ -59,3 +59,28 @@ class GameResultRankCell: GameResultCell {
         }
     }
 }
+
+protocol HomeHeaderViewDelegate : NSObjectProtocol {
+    func homeHeaderView(view: HomeHeaderView, didTapShowAllforSection section: HomeViewController.Section)
+}
+
+class HomeHeaderView: UITableViewHeaderFooterView {
+    
+    @IBOutlet weak var titleLabel: UILabel!
+
+    @IBAction func showAllTapped(sender: UIButton) {
+        println("show all tapped")
+        if let section = section {
+            delegate?.homeHeaderView(self, didTapShowAllforSection: section)
+        }
+    }
+    
+    weak var delegate: HomeHeaderViewDelegate?
+    
+    var section: HomeViewController.Section? {
+        didSet {
+            titleLabel.text = section?.sectionName
+        }
+    }
+    
+}

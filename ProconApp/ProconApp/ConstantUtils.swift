@@ -25,10 +25,26 @@ extension UITableView {
         case HomeNoticeCell = "NoticeCell"
         case HomeGameResultCellRank = "GameResultCellRank"
         case HomeGameResultCellScore = "GameResultCellScore"
+        
+    }
+    
+    enum HeaderViewIdentifier: String {
+        case HomeHeaderView = "HeaderCell"
+    }
+    enum HeaderViewNib: String {
+        case HomeHeaderNib = "HomeHeaderView"
     }
     
     func dequeueReusableCellWithIdentifier(identifier: CellIdentifier, forIndexPath indexPath: NSIndexPath) -> AnyObject {
         return self.dequeueReusableCellWithIdentifier(identifier.rawValue, forIndexPath: indexPath)
+    }
+    func dequeueReusableHeaderFooterViewWithIdentifier(identifier: HeaderViewIdentifier) -> AnyObject? {
+        return self.dequeueReusableHeaderFooterViewWithIdentifier(identifier.rawValue)
+    }
+    
+    func registerNib(nibName: HeaderViewNib, forHeaderFooterViewReuseIdentifier identifier: HeaderViewIdentifier) {
+        let nib = UINib(nibName: nibName.rawValue, bundle: nil)
+        self.registerNib(nib, forHeaderFooterViewReuseIdentifier: identifier.rawValue)
     }
 }
 
@@ -69,10 +85,21 @@ class TableViewController: UITableViewController, ContentsReloading {
     
     func startContentsLoading() {
         contentsLoadingCount++
+        // TODO
+        if contentsLoadingCount > 0 {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        } else {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
     }
     
     func endContentsLoading() {
         contentsLoadingCount--
+        if contentsLoadingCount > 0 {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        } else {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
     }
 }
 

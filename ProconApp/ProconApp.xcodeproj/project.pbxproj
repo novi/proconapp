@@ -43,6 +43,7 @@
 		5273DD121B4D78F600F8621A /* Himotoki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0F1B4D78F600F8621A /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD131B4D78F600F8621A /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD101B4D78F600F8621A /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		528151311B635864002152DA /* HomeCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528151301B635864002152DA /* HomeCells.swift */; };
+		528151331B6365BA002152DA /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528151321B6365BA002152DA /* HomeHeaderView.xib */; };
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
@@ -164,6 +165,7 @@
 		5273DD0F1B4D78F600F8621A /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = ../Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		5273DD101B4D78F600F8621A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		528151301B635864002152DA /* HomeCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCells.swift; sourceTree = "<group>"; };
+		528151321B6365BA002152DA /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */,
 				52CC1F3F1B4C0E85002AD754 /* Utils.swift */,
 				5245930A1AD147D000196181 /* Main.storyboard */,
+				528151321B6365BA002152DA /* HomeHeaderView.xib */,
 				5245930D1AD147D000196181 /* Images.xcassets */,
 				5245930F1AD147D000196181 /* LaunchScreen.xib */,
 				524593021AD147D000196181 /* Supporting Files */,
@@ -566,6 +569,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528151331B6365BA002152DA /* HomeHeaderView.xib in Resources */,
 				5245930C1AD147D000196181 /* Main.storyboard in Resources */,
 				524593111AD147D000196181 /* LaunchScreen.xib in Resources */,
 				5245930E1AD147D000196181 /* Images.xcassets in Resources */,
