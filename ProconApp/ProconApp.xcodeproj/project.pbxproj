@@ -44,6 +44,7 @@
 		5273DD131B4D78F600F8621A /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD101B4D78F600F8621A /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		528151311B635864002152DA /* HomeCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528151301B635864002152DA /* HomeCells.swift */; };
 		528151331B6365BA002152DA /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528151321B6365BA002152DA /* HomeHeaderView.xib */; };
+		528151351B636E45002152DA /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528151341B636E45002152DA /* NoticeViewController.swift */; };
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
@@ -166,6 +167,7 @@
 		5273DD101B4D78F600F8621A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = ../Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		528151301B635864002152DA /* HomeCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCells.swift; sourceTree = "<group>"; };
 		528151321B6365BA002152DA /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
+		528151341B636E45002152DA /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				524593061AD147D000196181 /* HomeViewController.swift */,
 				528151301B635864002152DA /* HomeCells.swift */,
 				52CC1F391B4C03FE002AD754 /* LoginViewController.swift */,
+				528151341B636E45002152DA /* NoticeViewController.swift */,
 				52311B921B51318200F2F494 /* NotificationSettingViewController.swift */,
 				52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */,
 				52CC1F3F1B4C0E85002AD754 /* Utils.swift */,
@@ -627,6 +630,7 @@
 				52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */,
 				524593051AD147D000196181 /* AppDelegate.swift in Sources */,
 				524593071AD147D000196181 /* HomeViewController.swift in Sources */,
+				528151351B636E45002152DA /* NoticeViewController.swift in Sources */,
 				52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

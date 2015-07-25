@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -139,25 +140,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeCell" textLabel="jSD-X0-jK4" detailTextLabel="T43-I2-9tj" style="IBUITableViewCellStyleValue1" id="paA-23-aCk">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeCell" id="paA-23-aCk" customClass="NoticeCell" customModule="ProconApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="paA-23-aCk" id="t3i-eS-Xjw">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jSD-X0-jK4">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99分前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqE-je-QC4">
+                                            <rect key="frame" x="8" y="11" width="76" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T43-I2-9tj">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="本文" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T6-Uu-NZD">
+                                            <rect key="frame" x="92" y="8" width="500" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="GqE-je-QC4" id="l72-60-JNZ"/>
+                                    <outlet property="titleLabel" destination="8T6-Uu-NZD" id="IFn-KV-gtm"/>
+                                    <segue destination="2dl-hw-sVn" kind="show" id="dNq-m9-GCb"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameResultCellScore" id="aIO-PI-NMv" customClass="GameResultScoreCell" customModule="ProconApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -273,7 +279,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WaM-hJ-spM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664" y="-290"/>
+            <point key="canvasLocation" x="1664" y="-295"/>
         </scene>
         <!--通知設定-->
         <scene sceneID="BCs-4p-euF">
@@ -335,6 +341,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOS-KQ-XNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2438" y="-416"/>
+        </scene>
+        <!--Notice View Controller-->
+        <scene sceneID="s4T-dk-63B">
+            <objects>
+                <viewController id="2dl-hw-sVn" customClass="NoticeViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1WI-YR-omt"/>
+                        <viewControllerLayoutGuide type="bottom" id="dyD-RI-rGk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FQs-SY-0Hm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="dummy body text" translatesAutoresizingMaskIntoConstraints="NO" id="Qdd-P6-CMH">
+                                <rect key="frame" x="16" y="0.0" width="568" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qdd-P6-CMH" firstAttribute="bottom" secondItem="FQs-SY-0Hm" secondAttribute="bottomMargin" id="GnX-bG-Xw7"/>
+                            <constraint firstItem="Qdd-P6-CMH" firstAttribute="leading" secondItem="FQs-SY-0Hm" secondAttribute="leadingMargin" id="OiB-df-wtS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qdd-P6-CMH" secondAttribute="trailing" id="QCG-Iq-eRp"/>
+                            <constraint firstItem="Qdd-P6-CMH" firstAttribute="top" secondItem="FQs-SY-0Hm" secondAttribute="topMargin" id="j0i-94-Qti"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Qdd-P6-CMH" id="2Px-q9-9Dm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1BO-Rh-5DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="262"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="dCj-Rb-Xok">

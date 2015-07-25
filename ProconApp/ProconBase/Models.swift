@@ -35,8 +35,8 @@ public struct User: Decodable, Printable, UserIdentifier {
 public struct Notice: Decodable, Printable {
     public let id: Int
     public let title: String
-    public let summary: String
-    public let text: String?
+    public let summary: String // TODO: 廃止?
+    public let body: String?
     public let publishedAt: NSDate
     
     public static func decode(e: Extractor) -> Notice? {
@@ -45,13 +45,17 @@ public struct Notice: Decodable, Printable {
             e <| "id",
             e <| "title",
             e <| "summary",
-            e <| "text",
+            e <| "text", // TODO: bodyに変更
             (e <| "published_at").flatMap { NSDate(timeIntervalSince1970: $0) }
             ).map(c)
     }
     
     public var description: String {
         return "id = \(id), \(title) \(summary) at \(publishedAt)"
+    }
+    
+    public var hasBody: Bool {
+        return true // TODO
     }
     
 }

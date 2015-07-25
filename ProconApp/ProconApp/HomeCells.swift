@@ -84,3 +84,19 @@ class HomeHeaderView: UITableViewHeaderFooterView {
     }
     
 }
+
+class NoticeCell: UITableViewCell {
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var notice: Notice? {
+        didSet {
+            if let notice = notice {
+                titleLabel.text = notice.title
+                dateLabel.text = notice.publishedAt.relativeDateString
+                self.accessoryType = notice.hasBody ? .DisclosureIndicator : .None
+            }
+        }
+    }
+}

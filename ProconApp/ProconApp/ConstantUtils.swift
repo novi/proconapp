@@ -71,6 +71,38 @@ protocol ContentsReloading {
     // todo: use protocol extension
 }
 
+class ViewController: UIViewController, ContentsReloading {
+    
+    func reloadContents() {
+        
+    }
+    
+    var contentsLoadingCount: Int = 0
+    
+    var isContentsLoading: Bool {
+        return contentsLoadingCount > 0
+    }
+    
+    func startContentsLoading() {
+        contentsLoadingCount++
+        // TODO
+        if contentsLoadingCount > 0 {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        } else {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
+    
+    func endContentsLoading() {
+        contentsLoadingCount--
+        if contentsLoadingCount > 0 {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        } else {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        }
+    }
+}
+
 class TableViewController: UITableViewController, ContentsReloading {
     
     func reloadContents() {

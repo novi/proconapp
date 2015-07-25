@@ -145,12 +145,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         let section = Section(rawValue: indexPath.section)!
         switch section {
         case .Notices:
-            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!, forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!, forIndexPath: indexPath) as! NoticeCell
             
             let notice = self.notices[indexPath.row]
             
-            cell.textLabel?.text = notice.title
-            cell.detailTextLabel?.text = notice.publishedAt.description
+            cell.notice = notice
             
             return cell
         case .GameResults:
@@ -181,6 +180,13 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     
     func homeHeaderView(view: HomeHeaderView, didTapShowAllforSection section: HomeViewController.Section) {
         
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? NoticeCell {
+            let dst = segue.destinationViewController as! NoticeViewController
+            dst.notice = cell.notice
+        }
     }
 
 }
