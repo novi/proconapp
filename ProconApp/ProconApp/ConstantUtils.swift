@@ -23,7 +23,8 @@ extension UITableView {
         case NotificationSettingCell = "Cell"
         
         case HomeNoticeCell = "NoticeCell"
-        case HomeGameResultCell = "GameResultCell"
+        case HomeGameResultCellRank = "GameResultCellRank"
+        case HomeGameResultCellScore = "GameResultCellScore"
     }
     
     func dequeueReusableCellWithIdentifier(identifier: CellIdentifier, forIndexPath indexPath: NSIndexPath) -> AnyObject {

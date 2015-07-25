@@ -83,6 +83,8 @@ public struct GameResult: Decodable, Printable {
         public let score: Float
         public let player: Player
         
+        // TODO: Rank
+        
         public static func decode(e: Extractor) -> Result? {
             let c = { Result($0) }
             return build(
@@ -102,6 +104,8 @@ public struct GameResult: Decodable, Printable {
     public let finishedAt: NSDate?
     public var results: [Result]
     
+    // TODO: Status
+    
     public static func decode(e: Extractor) -> GameResult? {
         let c = { GameResult($0) }
         return build(
@@ -115,6 +119,22 @@ public struct GameResult: Decodable, Printable {
     
     public var description: String {
         return "id = \(id), \(title) \(startedAt) - \(finishedAt), result count = \(results.count)"
+    }
+    
+    public var isInGame: Bool {
+        return false // TODO
+    }
+    
+    public var resultsByScore: [Result] {
+        return results.sorted({ (a: Result, b: Result) -> Bool in
+            return b.score - a.score > 0
+        })
+    }
+    
+    public var resultsByRank: [Result] {
+        return results.sorted({ (a: Result, b: Result) -> Bool in
+            return true //TODO
+        })
     }
     
 }

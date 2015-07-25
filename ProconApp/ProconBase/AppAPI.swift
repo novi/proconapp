@@ -29,6 +29,9 @@ public class AppAPI: API {
                 if (user.token as NSString).length > 0 {
                     req?.setValue(user.token, forHTTPHeaderField: "X-User-Token")
                 }
+                
+                // TODO: set timeout globally
+                req?.timeoutInterval = 15
             }
         }
         

@@ -57,3 +57,22 @@ class LocalSettings {
     }
     
 }
+
+extension NSDate {
+    var relativeDateString: String {
+        let timeDelta = NSDate().timeIntervalSince1970 - self.timeIntervalSince1970
+        if timeDelta < 3600*24 {
+            let hours = Int(timeDelta/3600)
+            if hours >= 0 {
+                if hours == 0 {
+                    return "\(Int(timeDelta/60))分前"
+                }
+                return "\(Int(hours))時間前"
+            }
+        }
+        
+        // n日前
+        let days = Int(timeDelta/(3600*24))
+        return "\(days)日前"
+    }
+}

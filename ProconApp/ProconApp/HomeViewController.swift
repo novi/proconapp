@@ -15,12 +15,20 @@ class HomeViewController: TableViewController {
     enum Section: Int {
         case Notices = 0
         case GameResults = 1
-        var CellIdentifier: UITableView.CellIdentifier {
+        
+        var cellIdentifier: UITableView.CellIdentifier? {
             switch self {
             case .Notices:
                 return .HomeNoticeCell
-            case .GameResults:
-                return .HomeGameResultCell
+            default:
+                return nil
+            }
+        }
+        func cellIdentifierForGameResult(result: GameResult) -> UITableView.CellIdentifier {
+            if result.isInGame {
+                return .HomeGameResultCellScore
+            } else {
+                return .HomeGameResultCellRank
             }
         }
         var indexSet: NSIndexSet {
@@ -122,7 +130,7 @@ class HomeViewController: TableViewController {
         let section = Section(rawValue: indexPath.section)!
         switch section {
         case .Notices:
-            let cell = tableView.dequeueReusableCellWithIdentifier(section.CellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!, forIndexPath: indexPath) as! UITableViewCell
             
             let notice = self.notices[indexPath.row]
             
@@ -131,14 +139,14 @@ class HomeViewController: TableViewController {
             
             return cell
         case .GameResults:
-            let cell = tableView.dequeueReusableCellWithIdentifier(section.CellIdentifier, forIndexPath: indexPath) as! UITableViewCell
             
             let result = self.gameResults[indexPath.row]
             
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifierForGameResult(result), forIndexPath: indexPath) as! GameResultCell
+            
             println("result \(result.id): \(result.results)")
             
-            cell.textLabel?.text = result.title
-            cell.detailTextLabel?.text = result.startedAt.description
+            cell.result = result
             
             return cell
         }
