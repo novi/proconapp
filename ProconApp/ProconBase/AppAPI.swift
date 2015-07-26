@@ -123,7 +123,7 @@ public class AppAPI: API {
                 let req = AppAPI.URLRequest(
                     method: .GET,
                     path: "/notices/info",
-                    parameters: ["id": notice.id]
+                    parameters: ["id": notice.id.val]
                 )
                 buildRequestHeader(req) // TODO
                 return req
@@ -168,25 +168,25 @@ public class AppAPI: API {
                 return req
             }
             
-            public class func responseFromObject(object: AnyObject) -> [Int]? {
-                return (object["ids"] as? [Int]) ?? []
+            public class func responseFromObject(object: AnyObject) -> [PlayerID]? {
+                return ((object["ids"] as? [Int]) ?? []).map { PlayerID($0) }
             }
         }
         
         public class UpdateGameNotificationSettings: BaseRequest, APIKit.Request {
             
-            var ids:[Int]
+            var ids:[PlayerID]
             public var URLRequest: NSURLRequest? {
                 let req = AppAPI.URLRequest(
                     method: .PUT,
                     path: "/user/me/game_notification",
-                    parameters: ["ids":ids]
+                    parameters: ["ids":ids.map { $0.val } ]
                 )
                 buildRequestHeader(req) // TODO
                 return req
             }
             
-            public init(user: UserIdentifier, ids: [Int]) {
+            public init(user: UserIdentifier, ids: [PlayerID]) {
                 self.ids = ids
                 super.init(user: user)
             }

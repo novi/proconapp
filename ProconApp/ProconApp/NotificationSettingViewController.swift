@@ -26,7 +26,7 @@ class NotificationSettingViewController: TableViewController {
     
     var players: [Player] = []
     
-    var settings: [Int:Bool] = [:]
+    var settings: [PlayerID:Bool] = [:]
     
     
     override func viewWillAppear(animated: Bool) {
@@ -124,7 +124,7 @@ class NotificationSettingViewController: TableViewController {
         sender?.enabled = false
         
         if let me = UserContext.defaultContext.me {
-            var enableIds:[Int] = []
+            var enableIds:[PlayerID] = []
             for (id, enabled) in settings {
                 if enabled {
                     enableIds.append(id)

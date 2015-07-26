@@ -8,6 +8,57 @@
 
 import Foundation
 
-struct a {
+// TODO: use protocol extenstion
+
+public struct PlayerID: Printable {
+    let id: Int
+    init(_ id: Int) {
+        self.id = id
+    }
+    public var description: String {
+        return "id:\(id)"
+    }
+    var val: Int {
+        return id
+    }
+}
+
+extension PlayerID: Hashable {
+    public var hashValue: Int {
+        return id.hashValue
+    }
+}
+
+extension PlayerID: Equatable {
     
+}
+
+public func ==(lhs: PlayerID, rhs: PlayerID) -> Bool {
+    return lhs.val == rhs.val
+}
+
+public struct NoticeID: Printable {
+    let id: Int
+    init(_ id: Int) {
+        self.id = id
+    }
+    public var description: String {
+        return "id:\(id)"
+    }
+    var val: Int {
+        return id
+    }
+}
+
+public struct GameResultID: Printable {
+    let id: Int
+    init(_ id: Int) {
+        self.id = id
+    }
+    public var description: String {
+        return "id:\(id)"
+    }
+    var val: Int {
+        return id
+    }
 }
