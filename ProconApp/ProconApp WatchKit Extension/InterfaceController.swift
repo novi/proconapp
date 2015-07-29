@@ -8,6 +8,7 @@
 
 import WatchKit
 import Foundation
+import ProconBase
 
 
 class InterfaceController: WKInterfaceController {
@@ -16,6 +17,22 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        
+        if let me = UserContext.defaultContext.me {
+            // logged in
+            let r = AppAPI.Endpoint.FetchUserInfo(user: me)
+            AppAPI.sendRequest(r) { res in
+                switch res {
+                case .Success(let box):
+                    println(box.value)
+                case .Failure(let box):
+                    println(box.value)
+                }
+            }
+        } else {
+            // TODO: share user token and ids
+            println("not logged in")
+        }
     }
 
     override func willActivate() {

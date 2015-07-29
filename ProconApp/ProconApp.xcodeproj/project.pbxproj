@@ -46,6 +46,8 @@
 		5260BA221B68F68600ED9EEF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5260BA201B68F68600ED9EEF /* Interface.storyboard */; };
 		5260BA241B68F68600ED9EEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5260BA231B68F68600ED9EEF /* Images.xcassets */; };
 		5260BA271B68F68600ED9EEF /* ProconApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5260BA0A1B68F68600ED9EEF /* ProconApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5260BA3C1B68FA3400ED9EEF /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; };
+		5260BA3D1B68FA3400ED9EEF /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD071B4D780E00F8621A /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD111B4D78F600F8621A /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0E1B4D78F600F8621A /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD121B4D78F600F8621A /* Himotoki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0F1B4D78F600F8621A /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -143,6 +145,17 @@
 				5260BA271B68F68600ED9EEF /* ProconApp WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5260BA3E1B68FA3400ED9EEF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5260BA3D1B68FA3400ED9EEF /* APIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5273DD041B4D77D200F8621A /* CopyFiles */ = {
@@ -271,6 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5260BA3C1B68FA3400ED9EEF /* APIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +632,7 @@
 				5260BA061B68F68600ED9EEF /* Sources */,
 				5260BA071B68F68600ED9EEF /* Frameworks */,
 				5260BA081B68F68600ED9EEF /* Resources */,
+				5260BA3E1B68FA3400ED9EEF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1405,6 +1420,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ito/Projects/proconapp/Carthage/Build/iOS,
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1437,6 +1456,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ito/Projects/proconapp/Carthage/Build/iOS,
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "ProconApp WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -1451,6 +1474,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ito/Projects/proconapp/Carthage/Build/iOS,
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "ProconApp WatchKit Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
