@@ -16,6 +16,9 @@ class InterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
+        let appGroup = AppGroup.sharedInstance
+        println(appGroup.valueForKey("test"))
+        
         // Configure interface objects here.
         
         if let me = UserContext.defaultContext.me {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProconBase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
             println("debug flag is on")
         #endif
+        
+        // app group test
+        
+        let group = NSUserDefaults.appGroup
+        group.setValue(NSDate(), forKey: "test")
+        
+        let appGroup = AppGroup.sharedInstance
+        println(appGroup.valueForKey("test"))
         
         return true
     }
