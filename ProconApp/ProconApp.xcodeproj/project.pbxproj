@@ -229,6 +229,8 @@
 		5260BA211B68F68600ED9EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5260BA231B68F68600ED9EEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		526469701B69107400FEEBBA /* LocalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalSettings.swift; sourceTree = "<group>"; };
+		526469761B6917BD00FEEBBA /* Entitlements */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Entitlements; path = ProconApp/Entitlements; sourceTree = "<group>"; };
+		526469771B69186D00FEEBBA /* Entitlements */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Entitlements; sourceTree = "<group>"; };
 		5273DD061B4D780E00F8621A /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = ../Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		5273DD0E1B4D78F600F8621A /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = ../Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
 		5273DD0F1B4D78F600F8621A /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = ../Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		524592F61AD147D000196181 = {
 			isa = PBXGroup;
 			children = (
+				526469761B6917BD00FEEBBA /* Entitlements */,
 				524593011AD147D000196181 /* ProconApp */,
 				524593191AD147D000196181 /* ProconAppTests */,
 				52538E911B4D7B3F00059FEC /* ProconBase */,
@@ -461,6 +464,7 @@
 		5260BA0B1B68F68600ED9EEF /* ProconApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				526469771B69186D00FEEBBA /* Entitlements */,
 				5260BA0F1B68F68600ED9EEF /* InterfaceController.swift */,
 				5260BA111B68F68600ED9EEF /* NotificationController.swift */,
 				5260BA131B68F68600ED9EEF /* GlanceController.swift */,
@@ -682,6 +686,11 @@
 					524592FE1AD147D000196181 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = Y9RM2H3NM6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					524593151AD147D000196181 = {
 						CreatedOnToolsVersion = 6.2;
@@ -706,6 +715,11 @@
 					5260BA091B68F68600ED9EEF = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = Y9RM2H3NM6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					5260BA181B68F68600ED9EEF = {
 						CreatedOnToolsVersion = 6.4;
@@ -1021,6 +1035,7 @@
 			buildSettings = {
 				APP_NAME = Procon26;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ProconApp/Entitlements/ProconApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ProconApp/Info.plist;
@@ -1433,7 +1448,9 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "ProconApp WatchKit Extension/Entitlements/ProconApp WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1462,6 +1479,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1471,7 +1489,9 @@
 		5260BA291B68F68600ED9EEF /* Dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "ProconApp WatchKit Extension/Entitlements/ProconApp WatchKit Extension-Dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1482,6 +1502,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Dev;
@@ -1489,7 +1510,9 @@
 		5260BA2A1B68F68600ED9EEF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "ProconApp WatchKit Extension/Entitlements/ProconApp WatchKit Extension-Staging.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1500,6 +1523,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -1638,6 +1662,7 @@
 			buildSettings = {
 				APP_NAME = "(Dev)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ProconApp/Entitlements/ProconApp-Dev.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ProconApp/Info.plist;
@@ -1716,6 +1741,7 @@
 			buildSettings = {
 				APP_NAME = "(Staging)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "ProconApp/Entitlements/ProconApp-Staging.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = ProconApp/Info.plist;

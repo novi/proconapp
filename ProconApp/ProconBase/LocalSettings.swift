@@ -36,6 +36,7 @@ extension NSUserDefaults {
     }
     
     public static var appGroup: NSUserDefaults {
+        println(Constants.AppGroupID)
         return AppGroup.sharedInstance
     }
 }

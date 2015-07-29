@@ -25,10 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // app group test
         
         let group = NSUserDefaults.appGroup
-        group.setValue(NSDate(), forKey: "test")
+        group.setObject(NSDate(), forKey: "test")
         
         let appGroup = AppGroup.sharedInstance
-        println(appGroup.valueForKey("test"))
+        println(appGroup.objectForKey("test"))
         
         return true
     }

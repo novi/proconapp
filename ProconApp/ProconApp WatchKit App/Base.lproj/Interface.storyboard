@@ -12,6 +12,9 @@
                     <items>
                         <label alignment="left" text="test" id="wpu-OO-rZc"/>
                     </items>
+                    <connections>
+                        <outlet property="testLabel" destination="wpu-OO-rZc" id="Vs3-RT-bHb"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>

@@ -13,13 +13,17 @@ import ProconBase
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var testLabel: WKInterfaceLabel!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        let appGroup = AppGroup.sharedInstance
-        println(appGroup.valueForKey("test"))
+        let appGroup = NSUserDefaults.appGroup
+        println(appGroup.objectForKey("test"))
+        testLabel.setText((appGroup.objectForKey("test") as AnyObject? ?? "").description)
         
         // Configure interface objects here.
+        
         
         if let me = UserContext.defaultContext.me {
             // logged in
