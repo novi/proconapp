@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5260BA181B68F68600ED9EEF"
+               BuildableName = "ProconApp WatchKit App.app"
+               BlueprintName = "ProconApp WatchKit App"
+               ReferencedContainer = "container:ProconApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "524592FE1AD147D000196181"
                BuildableName = "ProconApp.app"
                BlueprintName = "ProconApp"
@@ -23,28 +37,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "524593151AD147D000196181"
-               BuildableName = "ProconAppTests.xctest"
-               BlueprintName = "ProconAppTests"
-               ReferencedContainer = "container:ProconApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52538E991B4D7B3F00059FEC"
-               BuildableName = "ProconBaseTests.xctest"
-               BlueprintName = "ProconBaseTests"
+               BlueprintIdentifier = "5260BA091B68F68600ED9EEF"
+               BuildableName = "ProconApp WatchKit Extension.appex"
+               BlueprintName = "ProconApp WatchKit Extension"
                ReferencedContainer = "container:ProconApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -56,33 +56,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Release">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "524593151AD147D000196181"
-               BuildableName = "ProconAppTests.xctest"
-               BlueprintName = "ProconAppTests"
-               ReferencedContainer = "container:ProconApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52538E991B4D7B3F00059FEC"
-               BuildableName = "ProconBaseTests.xctest"
-               BlueprintName = "ProconBaseTests"
-               ReferencedContainer = "container:ProconApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "524592FE1AD147D000196181"
-            BuildableName = "ProconApp.app"
-            BlueprintName = "ProconApp"
+            BlueprintIdentifier = "5260BA181B68F68600ED9EEF"
+            BuildableName = "ProconApp WatchKit App.app"
+            BlueprintName = "ProconApp WatchKit App"
             ReferencedContainer = "container:ProconApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -95,17 +75,29 @@
       buildConfiguration = "Release"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
-      allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      allowLocationSimulation = "YES"
+      notificationPayloadFile = "ProconApp WatchKit Extension/PushNotificationPayload.apns">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/ProconApp">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "524592FE1AD147D000196181"
-            BuildableName = "ProconApp.app"
-            BlueprintName = "ProconApp"
+            BlueprintIdentifier = "5260BA181B68F68600ED9EEF"
+            BuildableName = "ProconApp WatchKit App.app"
+            BlueprintName = "ProconApp WatchKit App"
             ReferencedContainer = "container:ProconApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5260BA181B68F68600ED9EEF"
+            BuildableName = "ProconApp WatchKit App.app"
+            BlueprintName = "ProconApp WatchKit App"
+            ReferencedContainer = "container:ProconApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -115,16 +107,27 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard"
+         RemotePath = "/ProconApp">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "524592FE1AD147D000196181"
-            BuildableName = "ProconApp.app"
-            BlueprintName = "ProconApp"
+            BlueprintIdentifier = "5260BA181B68F68600ED9EEF"
+            BuildableName = "ProconApp WatchKit App.app"
+            BlueprintName = "ProconApp WatchKit App"
             ReferencedContainer = "container:ProconApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5260BA181B68F68600ED9EEF"
+            BuildableName = "ProconApp WatchKit App.app"
+            BlueprintName = "ProconApp WatchKit App"
+            ReferencedContainer = "container:ProconApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Release">

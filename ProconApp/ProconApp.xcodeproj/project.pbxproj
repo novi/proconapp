@@ -38,6 +38,14 @@
 		52538EF31B4D803900059FEC /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD101B4D78F600F8621A /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52538EF51B4D810700059FEC /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52538E901B4D7B3F00059FEC /* ProconBase.framework */; };
 		52538EF61B4D810700059FEC /* ProconBase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52538E901B4D7B3F00059FEC /* ProconBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5260BA101B68F68600ED9EEF /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BA0F1B68F68600ED9EEF /* InterfaceController.swift */; };
+		5260BA121B68F68600ED9EEF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BA111B68F68600ED9EEF /* NotificationController.swift */; };
+		5260BA141B68F68600ED9EEF /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5260BA131B68F68600ED9EEF /* GlanceController.swift */; };
+		5260BA161B68F68600ED9EEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5260BA151B68F68600ED9EEF /* Images.xcassets */; };
+		5260BA1A1B68F68600ED9EEF /* ProconApp WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 5260BA191B68F68600ED9EEF /* ProconApp WatchKit App.app */; };
+		5260BA221B68F68600ED9EEF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5260BA201B68F68600ED9EEF /* Interface.storyboard */; };
+		5260BA241B68F68600ED9EEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5260BA231B68F68600ED9EEF /* Images.xcassets */; };
+		5260BA271B68F68600ED9EEF /* ProconApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5260BA0A1B68F68600ED9EEF /* ProconApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5273DD071B4D780E00F8621A /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD111B4D78F600F8621A /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0E1B4D78F600F8621A /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD121B4D78F600F8621A /* Himotoki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0F1B4D78F600F8621A /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -95,6 +103,20 @@
 			remoteGlobalIDString = 52538E8F1B4D7B3F00059FEC;
 			remoteInfo = ProconBase;
 		};
+		5260BA1B1B68F68600ED9EEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524592F71AD147D000196181 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5260BA181B68F68600ED9EEF;
+			remoteInfo = "ProconApp WatchKit App";
+		};
+		5260BA251B68F68600ED9EEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524592F71AD147D000196181 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5260BA091B68F68600ED9EEF;
+			remoteInfo = "ProconApp WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,6 +132,17 @@
 				52538EF21B4D803900059FEC /* Himotoki.framework in CopyFiles */,
 				52538EF31B4D803900059FEC /* Result.framework in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5260BA301B68F68600ED9EEF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5260BA271B68F68600ED9EEF /* ProconApp WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5273DD041B4D77D200F8621A /* CopyFiles */ = {
@@ -163,6 +196,17 @@
 		52538EDF1B4D7F5F00059FEC /* ProconManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProconManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52538EE41B4D7F5F00059FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52538EE51B4D7F5F00059FEC /* ProconManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProconManagerTests.swift; sourceTree = "<group>"; };
+		5260BA0A1B68F68600ED9EEF /* ProconApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ProconApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5260BA0D1B68F68600ED9EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5260BA0E1B68F68600ED9EEF /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5260BA0F1B68F68600ED9EEF /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5260BA111B68F68600ED9EEF /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		5260BA131B68F68600ED9EEF /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		5260BA151B68F68600ED9EEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5260BA191B68F68600ED9EEF /* ProconApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProconApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5260BA1F1B68F68600ED9EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5260BA211B68F68600ED9EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5260BA231B68F68600ED9EEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5273DD061B4D780E00F8621A /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = ../Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		5273DD0E1B4D78F600F8621A /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = ../Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
 		5273DD0F1B4D78F600F8621A /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = ../Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -223,6 +267,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5260BA071B68F68600ED9EEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -235,6 +286,8 @@
 				52538EA01B4D7B3F00059FEC /* ProconBaseTests */,
 				52538ECA1B4D7F5E00059FEC /* ProconManager */,
 				52538EE21B4D7F5F00059FEC /* ProconManagerTests */,
+				5260BA0B1B68F68600ED9EEF /* ProconApp WatchKit Extension */,
+				5260BA1D1B68F68600ED9EEF /* ProconApp WatchKit App */,
 				5273DD081B4D781D00F8621A /* Frameworks */,
 				524593001AD147D000196181 /* Products */,
 			);
@@ -249,6 +302,8 @@
 				52538E9A1B4D7B3F00059FEC /* ProconBaseTests.xctest */,
 				52538EC91B4D7F5E00059FEC /* ProconManager.app */,
 				52538EDF1B4D7F5F00059FEC /* ProconManagerTests.xctest */,
+				5260BA0A1B68F68600ED9EEF /* ProconApp WatchKit Extension.appex */,
+				5260BA191B68F68600ED9EEF /* ProconApp WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -379,6 +434,45 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5260BA0B1B68F68600ED9EEF /* ProconApp WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5260BA0F1B68F68600ED9EEF /* InterfaceController.swift */,
+				5260BA111B68F68600ED9EEF /* NotificationController.swift */,
+				5260BA131B68F68600ED9EEF /* GlanceController.swift */,
+				5260BA151B68F68600ED9EEF /* Images.xcassets */,
+				5260BA0C1B68F68600ED9EEF /* Supporting Files */,
+			);
+			path = "ProconApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		5260BA0C1B68F68600ED9EEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5260BA0D1B68F68600ED9EEF /* Info.plist */,
+				5260BA0E1B68F68600ED9EEF /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5260BA1D1B68F68600ED9EEF /* ProconApp WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				5260BA201B68F68600ED9EEF /* Interface.storyboard */,
+				5260BA231B68F68600ED9EEF /* Images.xcassets */,
+				5260BA1E1B68F68600ED9EEF /* Supporting Files */,
+			);
+			path = "ProconApp WatchKit App";
+			sourceTree = "<group>";
+		};
+		5260BA1E1B68F68600ED9EEF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5260BA1F1B68F68600ED9EEF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5273DD081B4D781D00F8621A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,11 +506,13 @@
 				524592FC1AD147D000196181 /* Frameworks */,
 				524592FD1AD147D000196181 /* Resources */,
 				5273DD041B4D77D200F8621A /* CopyFiles */,
+				5260BA301B68F68600ED9EEF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				52538EA61B4D7B3F00059FEC /* PBXTargetDependency */,
+				5260BA261B68F68600ED9EEF /* PBXTargetDependency */,
 			);
 			name = ProconApp;
 			productName = ProconApp;
@@ -515,13 +611,46 @@
 			productReference = 52538EDF1B4D7F5F00059FEC /* ProconManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5260BA091B68F68600ED9EEF /* ProconApp WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5260BA2F1B68F68600ED9EEF /* Build configuration list for PBXNativeTarget "ProconApp WatchKit Extension" */;
+			buildPhases = (
+				5260BA061B68F68600ED9EEF /* Sources */,
+				5260BA071B68F68600ED9EEF /* Frameworks */,
+				5260BA081B68F68600ED9EEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5260BA1C1B68F68600ED9EEF /* PBXTargetDependency */,
+			);
+			name = "ProconApp WatchKit Extension";
+			productName = "ProconApp WatchKit Extension";
+			productReference = 5260BA0A1B68F68600ED9EEF /* ProconApp WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		5260BA181B68F68600ED9EEF /* ProconApp WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5260BA2E1B68F68600ED9EEF /* Build configuration list for PBXNativeTarget "ProconApp WatchKit App" */;
+			buildPhases = (
+				5260BA171B68F68600ED9EEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ProconApp WatchKit App";
+			productName = "ProconApp WatchKit App";
+			productReference = 5260BA191B68F68600ED9EEF /* ProconApp WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		524592F71AD147D000196181 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Procon;
 				TargetAttributes = {
 					524592FE1AD147D000196181 = {
@@ -548,6 +677,14 @@
 						CreatedOnToolsVersion = 6.4;
 						TestTargetID = 52538EC81B4D7F5E00059FEC;
 					};
+					5260BA091B68F68600ED9EEF = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Y9RM2H3NM6;
+					};
+					5260BA181B68F68600ED9EEF = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = Y9RM2H3NM6;
+					};
 				};
 			};
 			buildConfigurationList = 524592FA1AD147D000196181 /* Build configuration list for PBXProject "ProconApp" */;
@@ -569,6 +706,8 @@
 				52538E991B4D7B3F00059FEC /* ProconBaseTests */,
 				52538EC81B4D7F5E00059FEC /* ProconManager */,
 				52538EDE1B4D7F5F00059FEC /* ProconManagerTests */,
+				5260BA091B68F68600ED9EEF /* ProconApp WatchKit Extension */,
+				5260BA181B68F68600ED9EEF /* ProconApp WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -620,6 +759,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5260BA081B68F68600ED9EEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5260BA161B68F68600ED9EEF /* Images.xcassets in Resources */,
+				5260BA1A1B68F68600ED9EEF /* ProconApp WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5260BA171B68F68600ED9EEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5260BA221B68F68600ED9EEF /* Interface.storyboard in Resources */,
+				5260BA241B68F68600ED9EEF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +847,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5260BA061B68F68600ED9EEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5260BA121B68F68600ED9EEF /* NotificationController.swift in Sources */,
+				5260BA101B68F68600ED9EEF /* InterfaceController.swift in Sources */,
+				5260BA141B68F68600ED9EEF /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -722,6 +889,16 @@
 			isa = PBXTargetDependency;
 			target = 52538E8F1B4D7B3F00059FEC /* ProconBase */;
 			targetProxy = 52538EF71B4D810700059FEC /* PBXContainerItemProxy */;
+		};
+		5260BA1C1B68F68600ED9EEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5260BA181B68F68600ED9EEF /* ProconApp WatchKit App */;
+			targetProxy = 5260BA1B1B68F68600ED9EEF /* PBXContainerItemProxy */;
+		};
+		5260BA261B68F68600ED9EEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5260BA091B68F68600ED9EEF /* ProconApp WatchKit Extension */;
+			targetProxy = 5260BA251B68F68600ED9EEF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -756,6 +933,14 @@
 				52538ED91B4D7F5E00059FEC /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		5260BA201B68F68600ED9EEF /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5260BA211B68F68600ED9EEF /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1199,6 +1384,166 @@
 			};
 			name = Release;
 		};
+		5260BA281B68F68600ED9EEF /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "ProconApp WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Staging;
+		};
+		5260BA291B68F68600ED9EEF /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "ProconApp WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Dev;
+		};
+		5260BA2A1B68F68600ED9EEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "ProconApp WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5260BA2B1B68F68600ED9EEF /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IBSC_MODULE = ProconApp_WatchKit_Extension;
+				INFOPLIST_FILE = "ProconApp WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Staging;
+		};
+		5260BA2C1B68F68600ED9EEF /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = ProconApp_WatchKit_Extension;
+				INFOPLIST_FILE = "ProconApp WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Dev;
+		};
+		5260BA2D1B68F68600ED9EEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = ProconApp_WatchKit_Extension;
+				INFOPLIST_FILE = "ProconApp WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		52CC1F411B4D6CB8002AD754 /* Dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1427,6 +1772,24 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		5260BA2E1B68F68600ED9EEF /* Build configuration list for PBXNativeTarget "ProconApp WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5260BA2B1B68F68600ED9EEF /* Staging */,
+				5260BA2C1B68F68600ED9EEF /* Dev */,
+				5260BA2D1B68F68600ED9EEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5260BA2F1B68F68600ED9EEF /* Build configuration list for PBXNativeTarget "ProconApp WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5260BA281B68F68600ED9EEF /* Staging */,
+				5260BA291B68F68600ED9EEF /* Dev */,
+				5260BA2A1B68F68600ED9EEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
