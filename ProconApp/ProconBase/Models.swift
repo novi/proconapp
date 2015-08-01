@@ -137,3 +137,28 @@ public struct GameResult: Decodable, Printable {
     }
     
 }
+
+public struct PhotoInfo: Decodable, Printable {
+    
+    let id: Int
+    public let title: String
+    public let thumbnailURL: NSURL
+    public let originalURL: NSURL
+    public let createdAt: NSDate
+    
+    public static func decode(e: Extractor) -> PhotoInfo? {
+        let c = { PhotoInfo($0) }
+        return build(
+            e <| "id",
+            e <| "title",
+            (e <| "thumbnail_url").flatMap { NSURL(string: $0)! },
+            (e <| "original_url").flatMap { NSURL(string: $0)! },
+            (e <| "created_at").flatMap { NSDate(timeIntervalSince1970: $0) }
+            ).map(c)
+    }
+    
+    public var description: String {
+        return "id = \(id), \(title), \(originalURL)"
+    }
+    
+}

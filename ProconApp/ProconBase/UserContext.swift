@@ -34,17 +34,25 @@ public class UserContext {
     
     
     init() {
-        let ud = NSUserDefaults.standardUserDefaults()
-        me = MeIdentifier(id: ud.integerForKey(.UserID), tokenStr: ud.stringForKey(.UserToken))
+        let uds = [NSUserDefaults.standardUserDefaults(), AppGroup.sharedInstance]
+        for ud in uds {
+            me = MeIdentifier(id: ud.integerForKey(.UserID), tokenStr: ud.stringForKey(.UserToken))
+            if me != nil {
+                break
+            }
+        }
         println("host:\(Constants.APIBaseURL)")
     }
     
     public func saveAsMe(user: UserIdentifier) {
         me = MeIdentifier(id: user.id, tokenStr: user.token)
-        let ud = NSUserDefaults.standardUserDefaults()
-        ud.setInteger(user.id, forKey: .UserID)
-        ud.setObject(user.token, forKey: .UserToken)
-        ud.synchronize()
+        // save user token to both the app and its extension
+        let uds = [NSUserDefaults.standardUserDefaults(), AppGroup.sharedInstance]
+        for ud in uds {
+            ud.setInteger(user.id, forKey: .UserID)
+            ud.setObject(user.token, forKey: .UserToken)
+            ud.synchronize()
+        }
     }
     
 }

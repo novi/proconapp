@@ -219,6 +219,29 @@ public class AppAPI: API {
             }
         }
         
+        public class FetchPhotos: BaseRequest, APIKit.Request {
+            
+            var count:Int
+            public var URLRequest: NSURLRequest? {
+                let req = AppAPI.URLRequest(
+                    method: .GET,
+                    path: "/game/photos",
+                    parameters: ["count": count]
+                )
+                buildRequestHeader(req) // TODO
+                return req
+            }
+            
+            public init(user: UserIdentifier, count:Int = 5) {
+                self.count = count
+                super.init(user: user)
+            }
+            
+            public class func responseFromObject(object: AnyObject) -> [PhotoInfo]? {
+                return decodeArray(object)
+            }
+        }
+        
     }
 }
 

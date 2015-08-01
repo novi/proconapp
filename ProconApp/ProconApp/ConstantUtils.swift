@@ -23,12 +23,15 @@ extension UITableView {
         case NotificationSettingCell = "Cell"
         
         case HomeNoticeCell = "NoticeCell"
+        case HomePhotoCell = "HomePhoto"
         case HomeGameResultCellRank = "GameResultCellRank"
         case HomeGameResultCellScore = "GameResultCellScore"
         
         case NoticeListCell = "NoticeListCell"
         
         case GameResultListCell = "GameResultListCell"
+        
+        case PhotoListCell = "PhotoListCell"
     }
     
     enum HeaderViewIdentifier: String {
@@ -56,6 +59,7 @@ extension UIViewController {
     enum SegueIdentifier: String {
         case HomeShowNoticeList = "ShowNoticeList"
         case HomeShowGameResultList = "GameResultList"
+        case HomeShowPhotoList = "PhotoList"
     }
     
     enum UnwindSegueIdentifier: String {
@@ -88,11 +92,11 @@ protocol ContentsReloading {
 class ViewController: UIViewController, ContentsReloading {
     
     func reloadContents() {
-        
+        fatalError("should be overridden on subclass")
     }
     
     func fetchContents() {
-        
+        fatalError("should be overridden on subclass")
     }
     
     var contentsLoadingCount: Int = 0
@@ -124,13 +128,22 @@ class ViewController: UIViewController, ContentsReloading {
 class TableViewController: UITableViewController, ContentsReloading {
     
     func reloadContents() {
-        
+        fatalError("should be overridden on subclass")
     }
     
     func fetchContents() {
-        
+        fatalError("should be overridden on subclass")
     }
     
+    func fetchContentsIfNeeded() {
+        if isNeedRefreshContents {
+            fetchContents()
+        }
+    }
+    
+    var isNeedRefreshContents: Bool {
+        return false
+    }
     
     var contentsLoadingCount: Int = 0
     

@@ -11,19 +11,42 @@ import Foundation
 import ProconBase
 
 
-class InterfaceController: WKInterfaceController {
+class MainInterfaceController: InterfaceController {
 
     @IBOutlet weak var testLabel: WKInterfaceLabel!
+    
+    var user: User?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        let appGroup = NSUserDefaults.appGroup
+        /*let appGroup = AppGroup.sharedInstance
         println(appGroup.objectForKey("test"))
         testLabel.setText((appGroup.objectForKey("test") as AnyObject? ?? "").description)
+        */
         
         // Configure interface objects here.
-        
+        fetchContents()
+    }
+
+    override func willActivate() {
+        // This method is called when watch view controller is about to be visible to user
+        super.willActivate()
+        reloadContents()
+    }
+
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        super.didDeactivate()
+    }
+    
+    override func reloadContents() {
+        if let user = self.user {
+            self.testLabel.setText("user id = \(user.id)")
+        }
+    }
+    
+    override func fetchContents() {
         
         if let me = UserContext.defaultContext.me {
             // logged in
@@ -32,24 +55,16 @@ class InterfaceController: WKInterfaceController {
                 switch res {
                 case .Success(let box):
                     println(box.value)
+                    self.user = box.value
+                    self.reloadContents()
                 case .Failure(let box):
                     println(box.value)
                 }
             }
         } else {
-            // TODO: share user token and ids
             println("not logged in")
         }
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+        
     }
 
 }

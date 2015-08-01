@@ -15,11 +15,14 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     enum Section: Int {
         case Notices = 0
         case GameResults = 1
+        case Photos = 2
         
         var cellIdentifier: UITableView.CellIdentifier? {
             switch self {
             case .Notices:
                 return .HomeNoticeCell
+            case .Photos:
+                return .HomePhotoCell
             default:
                 return nil
             }
@@ -40,6 +43,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return "お知らせ"
             case .GameResults:
                 return "競技部門速報"
+            case .Photos:
+                return "会場フォト"
             }
         }
         var showAllSegueIdentifier: UIViewController.SegueIdentifier {
@@ -48,13 +53,16 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return .HomeShowNoticeList
             case .GameResults:
                 return .HomeShowGameResultList
+            case .Photos:
+                return .HomeShowPhotoList
             }
         }
-        static let count = 2
+        static let count = 3
     }
     
     var notices: [Notice] = []
     var gameResults: [GameResult] = []
+    var photos: [PhotoInfo] = []
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -120,6 +128,18 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                     println(box.value)
                 }
             }
+            
+            let photoReq = AppAPI.Endpoint.FetchPhotos(user: me, count: 1)
+            AppAPI.sendRequest(photoReq) { res in
+                switch res {
+                case .Success(let box):
+                    self.photos = box.value
+                    self.tableView.reloadSections(Section.Photos.indexSet, withRowAnimation: .Automatic)
+                case .Failure(let box):
+                    // TODO, error
+                    println(box.value)
+                }
+            }
         }
         
     }
@@ -146,6 +166,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             return notices.count
         case .GameResults:
             return gameResults.count
+        case .Photos:
+            return photos.count
         }
     }
 
@@ -169,6 +191,12 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             cell.result = result
             
             return cell
+            
+        case .Photos:
+            let photo = self.photos[indexPath.row]
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!, forIndexPath: indexPath) as! PhotoCell
+            cell.photoInfo = photo
+            return cell
         }
     }
     
@@ -191,6 +219,9 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         if let cell = sender as? NoticeCell {
             let dst = segue.destinationViewController as! NoticeViewController
             dst.notice = cell.notice
+        } else if let cell = sender as? PhotoCell {
+            let dst = segue.destinationViewController as! PhotoViewController
+            dst.photo = cell.photoInfo
         }
     }
 

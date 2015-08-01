@@ -36,10 +36,14 @@ class GameResultListViewController: TableViewController {
         tableView.reloadData()
     }
     
+    override var isNeedRefreshContents: Bool {
+        return allGameResult.count == 0
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchContents()
+        fetchContentsIfNeeded()
     }
     
     override func awakeFromNib() {

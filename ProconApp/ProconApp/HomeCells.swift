@@ -101,3 +101,21 @@ class NoticeCell: UITableViewCell {
         }
     }
 }
+
+class PhotoCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var thumbnailImageView: LoadingImageView!
+    
+    var photoInfo: PhotoInfo? {
+        didSet {
+            if let info = photoInfo {
+                dateLabel.text = info.createdAt.relativeDateString
+                titleLabel.text = info.title
+                thumbnailImageView.imageURL = info.thumbnailURL
+            }
+        }
+    }
+}

@@ -35,8 +35,8 @@ extension NSUserDefaults {
         setInteger(value, forKey: defaultName.rawValue)
     }
     
-    public static var appGroup: NSUserDefaults {
+    /*public static var appGroup: NSUserDefaults {
         println(Constants.AppGroupID)
         return AppGroup.sharedInstance
-    }
+    }*/
 }

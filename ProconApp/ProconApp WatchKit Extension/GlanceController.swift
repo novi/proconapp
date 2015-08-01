@@ -10,17 +10,19 @@ import WatchKit
 import Foundation
 
 
-class GlanceController: WKInterfaceController {
+class GlanceController: InterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        fetchContents()
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        reloadContents()
     }
 
     override func didDeactivate() {

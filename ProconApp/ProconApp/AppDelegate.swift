@@ -23,12 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #endif
         
         // app group test
-        
-        let group = NSUserDefaults.appGroup
+        /*let group = AppGroup.sharedInstance
         group.setObject(NSDate(), forKey: "test")
         
         let appGroup = AppGroup.sharedInstance
         println(appGroup.objectForKey("test"))
+        */
         
         return true
     }

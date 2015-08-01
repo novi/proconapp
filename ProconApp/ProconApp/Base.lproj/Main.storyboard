@@ -261,6 +261,35 @@
                                     <outletCollection property="playerNames" destination="Usf-7K-wgp" collectionClass="NSMutableArray" id="kdK-tf-b7m"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HomePhoto" rowHeight="115" id="e4y-x6-Jc3" customClass="PhotoCell" customModule="ProconApp" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e4y-x6-Jc3" id="gRe-go-mrU">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99分前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aE-Mg-xas">
+                                            <rect key="frame" x="8" y="11" width="82" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-dh-xYN" customClass="LoadingImageView" customModule="ProconApp" customModuleProvider="target">
+                                            <rect key="frame" x="98" y="11" width="225" height="95.5"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOW-pj-sDX">
+                                            <rect key="frame" x="8" y="40" width="82" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="3aE-Mg-xas" id="bOe-wQ-IXL"/>
+                                    <outlet property="thumbnailImageView" destination="XsW-dh-xYN" id="dN9-MQ-5VC"/>
+                                    <outlet property="titleLabel" destination="pOW-pj-sDX" id="3CC-26-lAA"/>
+                                    <segue destination="bwq-VR-dPo" kind="show" id="7fL-0P-ho5"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Xge-ds-JWg" id="nkx-A8-Frm"/>
@@ -279,6 +308,7 @@
                     <connections>
                         <segue destination="Uzo-sw-7hc" kind="show" identifier="ShowNoticeList" id="8V6-0G-RFS"/>
                         <segue destination="cw5-As-gRF" kind="show" identifier="GameResultList" id="PAp-z8-35C"/>
+                        <segue destination="264-zA-Yiy" kind="show" identifier="PhotoList" id="G5U-BI-67m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WaM-hJ-spM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -425,6 +455,100 @@
             </objects>
             <point key="canvasLocation" x="3146" y="262"/>
         </scene>
+        <!--Photo List View Controller-->
+        <scene sceneID="ecD-pe-Zmp">
+            <objects>
+                <tableViewController id="264-zA-Yiy" customClass="PhotoListViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="22" sectionFooterHeight="22" id="K33-C6-VYq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PhotoListCell" rowHeight="140" id="yUK-th-Al6" customClass="PhotoCell" customModule="ProconApp" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yUK-th-Al6" id="opV-KE-bA9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgc-dK-nR5">
+                                            <rect key="frame" x="8" y="8" width="34" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="VqR-VU-YQU"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2H-VJ-SHa">
+                                            <rect key="frame" x="8" y="37" width="28" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W5J-nF-5oz" customClass="LoadingImageView" customModule="ProconApp" customModuleProvider="target">
+                                            <rect key="frame" x="58" y="-1" width="501" height="139.5"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Rgc-dK-nR5" firstAttribute="top" secondItem="opV-KE-bA9" secondAttribute="topMargin" id="4K5-Vc-AXt"/>
+                                        <constraint firstItem="W5J-nF-5oz" firstAttribute="top" secondItem="opV-KE-bA9" secondAttribute="topMargin" constant="-9" id="JeR-Yp-kJM"/>
+                                        <constraint firstItem="W5J-nF-5oz" firstAttribute="leading" secondItem="opV-KE-bA9" secondAttribute="leadingMargin" constant="50" id="Qcg-dp-ezA"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="W5J-nF-5oz" secondAttribute="bottom" constant="-7" id="XEu-AL-evV"/>
+                                        <constraint firstItem="Rgc-dK-nR5" firstAttribute="leading" secondItem="opV-KE-bA9" secondAttribute="leadingMargin" id="iJY-LQ-s0v"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="W5J-nF-5oz" secondAttribute="trailing" id="pUH-C4-G7n"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Rgc-dK-nR5" id="ixT-wq-tfB"/>
+                                    <outlet property="thumbnailImageView" destination="W5J-nF-5oz" id="Xoi-AH-xdH"/>
+                                    <outlet property="titleLabel" destination="S2H-VJ-SHa" id="cOg-fe-RU0"/>
+                                    <segue destination="bwq-VR-dPo" kind="show" id="IuW-X4-kfF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="264-zA-Yiy" id="Dq4-K7-2EN"/>
+                            <outlet property="delegate" destination="264-zA-Yiy" id="13G-OC-6ZU"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgI-ts-ykF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="964"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="aoG-tJ-3LC">
+            <objects>
+                <viewController id="bwq-VR-dPo" customClass="PhotoViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ONX-DW-vZa"/>
+                        <viewControllerLayoutGuide type="bottom" id="tfB-YW-EzD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eFS-qm-Abh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p45-DM-ReP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="p45-DM-ReP" secondAttribute="trailing" constant="-16" id="7ff-bK-5Sp"/>
+                            <constraint firstItem="p45-DM-ReP" firstAttribute="top" secondItem="eFS-qm-Abh" secondAttribute="topMargin" id="Zz6-i3-ooz"/>
+                            <constraint firstItem="tfB-YW-EzD" firstAttribute="top" secondItem="p45-DM-ReP" secondAttribute="bottom" constant="-44" id="mSv-t0-TOA"/>
+                            <constraint firstItem="p45-DM-ReP" firstAttribute="leading" secondItem="eFS-qm-Abh" secondAttribute="leadingMargin" constant="-16" id="xzc-Ss-gZr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="p45-DM-ReP" id="Y2P-yM-vga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBX-EB-d9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="964"/>
+        </scene>
         <!--Game Result List View Controller-->
         <scene sceneID="PWD-3w-LKG">
             <objects>
@@ -480,4 +604,7 @@
             <point key="canvasLocation" x="844" y="-290"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="IuW-X4-kfF"/>
+    </inferredMetricsTieBreakers>
 </document>
