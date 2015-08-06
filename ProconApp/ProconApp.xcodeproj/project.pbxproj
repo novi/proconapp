@@ -21,7 +21,6 @@
 		52538EA71B4D7B3F00059FEC /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52538E901B4D7B3F00059FEC /* ProconBase.framework */; };
 		52538EA81B4D7B3F00059FEC /* ProconBase.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 52538E901B4D7B3F00059FEC /* ProconBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52538EC01B4D7C4A00059FEC /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBB1B4D7C4A00059FEC /* AppAPI.swift */; };
-		52538EC11B4D7C4A00059FEC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBC1B4D7C4A00059FEC /* Constants.swift */; };
 		52538EC21B4D7C4A00059FEC /* ManageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBD1B4D7C4A00059FEC /* ManageAPI.swift */; };
 		52538EC31B4D7C4A00059FEC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBE1B4D7C4A00059FEC /* Models.swift */; };
 		52538EC41B4D7C4A00059FEC /* UserContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBF1B4D7C4A00059FEC /* UserContext.swift */; };
@@ -66,6 +65,7 @@
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
+		5D6A07C11B73CF9C00FC6307 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A07C01B73CF9C00FC6307 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,7 +207,6 @@
 		52538EA21B4D7B3F00059FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52538EA31B4D7B3F00059FEC /* ProconBaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProconBaseTests.swift; sourceTree = "<group>"; };
 		52538EBB1B4D7C4A00059FEC /* AppAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
-		52538EBC1B4D7C4A00059FEC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52538EBD1B4D7C4A00059FEC /* ManageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageAPI.swift; sourceTree = "<group>"; };
 		52538EBE1B4D7C4A00059FEC /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		52538EBF1B4D7C4A00059FEC /* UserContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserContext.swift; sourceTree = "<group>"; };
@@ -253,6 +252,7 @@
 		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5D6A07C01B73CF9C00FC6307 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,7 +398,7 @@
 		52538E911B4D7B3F00059FEC /* ProconBase */ = {
 			isa = PBXGroup;
 			children = (
-				52538EBC1B4D7C4A00059FEC /* Constants.swift */,
+				5D6A07C01B73CF9C00FC6307 /* Constants.swift */,
 				52538EBB1B4D7C4A00059FEC /* AppAPI.swift */,
 				52538EBD1B4D7C4A00059FEC /* ManageAPI.swift */,
 				52538EBE1B4D7C4A00059FEC /* Models.swift */,
@@ -874,8 +874,8 @@
 				52538EC41B4D7C4A00059FEC /* UserContext.swift in Sources */,
 				52538EC01B4D7C4A00059FEC /* AppAPI.swift in Sources */,
 				526469711B69107400FEEBBA /* LocalSettings.swift in Sources */,
-				52538EC11B4D7C4A00059FEC /* Constants.swift in Sources */,
 				52311B911B512DC100F2F494 /* Types.swift in Sources */,
+				5D6A07C11B73CF9C00FC6307 /* Constants.swift in Sources */,
 				52538EC21B4D7C4A00059FEC /* ManageAPI.swift in Sources */,
 				52538EC31B4D7C4A00059FEC /* Models.swift in Sources */,
 			);

@@ -20,22 +20,32 @@
                         <action selector="showAllTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="zlF-U5-3G2"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Zl-dh-3je">
+                    <rect key="frame" x="8" y="4" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="02k-KY-npF"/>
+                        <constraint firstAttribute="width" constant="30" id="XWf-Pe-Oir"/>
+                    </constraints>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71a-OY-2cr">
-                    <rect key="frame" x="8" y="8" width="42" height="21"/>
+                    <rect key="frame" x="46" y="8" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstItem="71a-OY-2cr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="4r5-2N-3IH"/>
+                <constraint firstItem="71a-OY-2cr" firstAttribute="leading" secondItem="4Zl-dh-3je" secondAttribute="trailing" constant="8" id="I0u-tQ-khC"/>
+                <constraint firstAttribute="centerY" secondItem="71a-OY-2cr" secondAttribute="centerY" id="RMZ-sn-Dfb"/>
+                <constraint firstItem="4Zl-dh-3je" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Xg5-eU-8T1"/>
                 <constraint firstAttribute="centerY" secondItem="5XU-2f-gfg" secondAttribute="centerY" id="eKu-PM-30u"/>
                 <constraint firstItem="5XU-2f-gfg" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="iTX-D0-UUD"/>
-                <constraint firstAttribute="centerY" secondItem="71a-OY-2cr" secondAttribute="centerY" id="lrL-iU-m7Z"/>
+                <constraint firstAttribute="centerY" secondItem="4Zl-dh-3je" secondAttribute="centerY" id="ktc-Yb-A8t"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="imageView" destination="4Zl-dh-3je" id="Ylu-Iz-TC7"/>
                 <outlet property="titleLabel" destination="71a-OY-2cr" id="WfU-ny-FHR"/>
             </connections>
             <point key="canvasLocation" x="245" y="-90.5"/>

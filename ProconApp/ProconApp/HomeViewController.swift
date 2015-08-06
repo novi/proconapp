@@ -27,6 +27,16 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return nil
             }
         }
+        var sectionImage: UIImage {
+            switch self {
+            case .Notices:
+                return UIImage(named: "notice")!
+            case .GameResults:
+                return UIImage(named: "result")!
+            case .Photos:
+                return UIImage(named: "photo")!
+            }
+        }
         func cellIdentifierForGameResult(result: GameResult) -> UITableView.CellIdentifier {
             if result.isInGame {
                 return .HomeGameResultCellScore

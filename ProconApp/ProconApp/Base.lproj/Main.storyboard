@@ -132,7 +132,7 @@ text</string>
         <scene sceneID="ilh-63-1Pi">
             <objects>
                 <navigationController id="CQI-Tl-im4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ソーシャル" id="RBb-SI-l59"/>
+                    <tabBarItem key="tabBarItem" title="ソーシャル" image="social_off" id="RBb-SI-l59"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PVh-m3-Uyw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -670,7 +670,7 @@ text</string>
         <scene sceneID="dCj-Rb-Xok">
             <objects>
                 <navigationController id="bsl-Ve-hHY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ホーム" id="Bk2-jA-vfy"/>
+                    <tabBarItem key="tabBarItem" title="ホーム" image="home_off" id="Bk2-jA-vfy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QMP-Rk-Zjg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -684,6 +684,10 @@ text</string>
             <point key="canvasLocation" x="844" y="-290"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home_off" width="32" height="32"/>
+        <image name="social_off" width="32" height="32"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IuW-X4-kfF"/>
     </inferredMetricsTieBreakers>
