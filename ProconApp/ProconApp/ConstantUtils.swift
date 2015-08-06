@@ -32,6 +32,9 @@ extension UITableView {
         case GameResultListCell = "GameResultListCell"
         
         case PhotoListCell = "PhotoListCell"
+        
+        case SocialTweetCell = "SocialTweetCell"
+        case SocialMoreCell = "SocialMoreCell"
     }
     
     enum HeaderViewIdentifier: String {

@@ -162,3 +162,52 @@ public struct PhotoInfo: Decodable, Printable {
     }
     
 }
+
+public struct Twitter {
+    
+    public struct User: Decodable, Printable {
+        
+        let idStr: String
+        public let screenName: String
+        public let userName: String
+        public let profileImageURL: NSURL
+        
+        public static func decode(e: Extractor) -> User? {
+            let c = { User($0) }
+            return build(
+                e <| "id_str",
+                e <| "screen_name",
+                e <| "name",
+                (e <| "profile_image_url_https").flatMap { NSURL(string: $0)! }
+                ).map(c)
+        }
+        
+        public var description: String {
+            return "id = \(idStr), @\(screenName), \(userName)"
+        }
+        
+    }
+    
+    public struct Tweet: Decodable, Printable {
+        
+        let idStr: String
+        public let text: String
+        public let user: User
+        public let createdAt: String
+        
+        public static func decode(e: Extractor) -> Tweet? {
+            let c = { Tweet($0) }
+            return build(
+                e <| "id_str",
+                e <| "text",
+                e <| "user",
+                e <| "created_at"
+                ).map(c)
+        }
+        
+        public var description: String {
+            return "id = \(idStr), \(text), by @\(user.screenName)"
+        }
+    }
+}
+

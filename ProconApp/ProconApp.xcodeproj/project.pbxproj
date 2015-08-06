@@ -62,6 +62,7 @@
 		52A7EFFE1B6CCB4D002BFF7D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7EFFD1B6CCB4D002BFF7D /* ImageView.swift */; };
 		52A7F0001B6CCE0F002BFF7D /* PhotoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7EFFF1B6CCE0F002BFF7D /* PhotoListController.swift */; };
 		52A7F0021B6CD243002BFF7D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7F0011B6CD243002BFF7D /* PhotoViewController.swift */; };
+		52A7F0041B738192002BFF7D /* SocialFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7F0031B738192002BFF7D /* SocialFeedViewController.swift */; };
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
@@ -248,6 +249,7 @@
 		52A7EFFD1B6CCB4D002BFF7D /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		52A7EFFF1B6CCE0F002BFF7D /* PhotoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListController.swift; sourceTree = "<group>"; };
 		52A7F0011B6CD243002BFF7D /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		52A7F0031B738192002BFF7D /* SocialFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialFeedViewController.swift; sourceTree = "<group>"; };
 		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				52311B921B51318200F2F494 /* NotificationSettingViewController.swift */,
 				52A7EFFF1B6CCE0F002BFF7D /* PhotoListController.swift */,
 				52A7F0011B6CD243002BFF7D /* PhotoViewController.swift */,
+				52A7F0031B738192002BFF7D /* SocialFeedViewController.swift */,
 				52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */,
 				52CC1F3F1B4C0E85002AD754 /* Utils.swift */,
 				52A7EFFD1B6CCB4D002BFF7D /* ImageView.swift */,
@@ -840,6 +843,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528151311B635864002152DA /* HomeCells.swift in Sources */,
+				52A7F0041B738192002BFF7D /* SocialFeedViewController.swift in Sources */,
 				528151371B6375E8002152DA /* NoticeListViewController.swift in Sources */,
 				52311B931B51318200F2F494 /* NotificationSettingViewController.swift in Sources */,
 				528151391B637DA6002152DA /* GameResultListViewController.swift in Sources */,
