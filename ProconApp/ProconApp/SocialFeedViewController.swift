@@ -8,6 +8,7 @@
 
 import UIKit
 import ProconBase
+import Social
 
 class TweetCell: UITableViewCell {
     
@@ -34,25 +35,52 @@ class TweetCell: UITableViewCell {
     }
 }
 
+class SocialFeedHeaderView: UIView {
+    
+    @IBOutlet weak var textLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textLabel.text = "Twitterからの検索結果 #\(SocialFeedViewController.HASH_TAG) を表示しています。"
+    }
+}
 
 class SocialFeedViewController: TableViewController {
+    
+    static let HASH_TAG = "procon26"
     
     var tweets:[Twitter.Tweet] = []
     
     enum Section: Int {
         case Tweets = 0
         case More = 1
-
         
         static let count = 2
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //self.title = "#\(HASH_TAG)"
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.addTarget(self, action: "pullToRefresh:", forControlEvents: .ValueChanged)
+    }
+    
+    func pullToRefresh(sender: UIRefreshControl) {
+        fetchContents()
     }
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
             let r = AppAPI.Endpoint.FetchTwitterFeed(user: me)
             startContentsLoading()
+            self.refreshControl?.beginRefreshing()
             AppAPI.sendRequest(r) { res in
                 self.endContentsLoading()
+                self.refreshControl?.endRefreshing()
                 switch res {
                 case .Success(let box):
                     println(box.value)
@@ -71,7 +99,7 @@ class SocialFeedViewController: TableViewController {
     }
     
     override var isNeedRefreshContents: Bool {
-        return tweets.count == 0
+        return tweets.count == 0 && !(self.refreshControl?.refreshing ?? false)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -112,5 +140,47 @@ class SocialFeedViewController: TableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier(.SocialMoreCell, forIndexPath: indexPath) as! UITableViewCell
             return cell
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch Section(rawValue: indexPath.section)! {
+        case .Tweets:
+            let tweet = tweets[indexPath.row]
+            if isTwitterInstalled {
+                UIApplication.sharedApplication().openURL(tweet.URLSchemeForThisTweet)
+            } else {
+                UIApplication.sharedApplication().openURL(tweet.URLForThisTweet)
+            }
+        case .More:
+            let hashTag = SocialFeedViewController.HASH_TAG
+            if isTwitterInstalled {
+                UIApplication.sharedApplication().openURL(NSURL(string: "twitter://search?query=%23\(hashTag)")!)
+            } else {
+                UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/search?q=%23\(hashTag)")!)
+            }
+        }
+        if let selected = tableView.indexPathForSelectedRow() {
+            tableView.deselectRowAtIndexPath(selected, animated: true)
+        }
+    }
+    // MARK: Twitter App
+    
+    @IBAction func tweetTapped(sender: AnyObject) {
+        
+        let hashTag = SocialFeedViewController.HASH_TAG
+        
+        if isTwitterInstalled {
+            let message = "%23\(hashTag)"
+            let url = "twitter://post?message=\(message)"
+            UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+        } else {
+            let vc = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            vc.setInitialText("#\(hashTag)")
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+    
+    var isTwitterInstalled: Bool {
+        return UIApplication.sharedApplication().canOpenURL(NSURL(string: "twitter://post")!)
     }
 }
