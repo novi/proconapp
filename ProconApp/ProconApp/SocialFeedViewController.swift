@@ -29,7 +29,7 @@ class TweetCell: UITableViewCell {
                 nameLabel.text = tw.user.userName
                 screenNameLabel.text = tw.user.screenName
                 bodyLabel.text = tw.text
-                dateLabel.text = tw.createdAt
+                dateLabel.text = tw.createdAt.relativeDateString
             }
         }
     }

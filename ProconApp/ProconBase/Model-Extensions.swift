@@ -19,3 +19,13 @@ extension Twitter.Tweet {
         return NSURL(string: "https://twitter.com/\(user.screenName)/status/\(idStr)")!
     }
 }
+
+extension Twitter {
+    
+    static let dateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.locale = NSLocale(localeIdentifier:"en_US")
+        formatter.dateFormat = "EEE MMM dd HH:mm:ss Z yyyy"
+        return formatter
+    }()
+}

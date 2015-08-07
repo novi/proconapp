@@ -193,7 +193,7 @@ public struct Twitter {
         let idStr: String
         public let text: String
         public let user: User
-        public let createdAt: String
+        public let createdAt: NSDate
         
         public static func decode(e: Extractor) -> Tweet? {
             let c = { Tweet($0) }
@@ -201,7 +201,7 @@ public struct Twitter {
                 e <| "id_str",
                 e <| "text",
                 e <| "user",
-                e <| "created_at"
+                (e <| "created_at").flatMap{ Twitter.dateFormatter.dateFromString($0) ?? NSDate() }
                 ).map(c)
         }
         

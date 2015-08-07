@@ -34,6 +34,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="lLX-KX-rZz" customClass="SocialFeedHeaderView" customModule="ProconApp" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLF-U2-x0R">
+                                    <rect key="frame" x="8" y="8" width="584" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="TLF-U2-x0R" firstAttribute="bottom" secondItem="lLX-KX-rZz" secondAttribute="bottomMargin" id="GhW-Wg-Hsz"/>
+                                <constraint firstItem="TLF-U2-x0R" firstAttribute="leading" secondItem="lLX-KX-rZz" secondAttribute="leadingMargin" id="qRd-2c-sCe"/>
+                                <constraint firstItem="TLF-U2-x0R" firstAttribute="trailing" secondItem="lLX-KX-rZz" secondAttribute="trailingMargin" id="qrd-da-auo"/>
+                                <constraint firstItem="TLF-U2-x0R" firstAttribute="top" secondItem="lLX-KX-rZz" secondAttribute="topMargin" id="ycu-6I-h8N"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="textLabel" destination="TLF-U2-x0R" id="RvQ-zN-8nX"/>
+                            </connections>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SocialTweetCell" rowHeight="80" id="TCA-Mc-VgX" customClass="TweetCell" customModule="ProconApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -58,18 +80,18 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSR-kG-qvk">
+                                            <rect key="frame" x="561" y="8" width="30.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlY-Mh-S50">
                                             <rect key="frame" x="80" y="29" width="512" height="42.5"/>
                                             <string key="text">Label
 text</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSR-kG-qvk">
-                                            <rect key="frame" x="561" y="8" width="30.5" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -127,7 +149,13 @@ text</string>
                             <outlet property="delegate" destination="Kke-PQ-YrT" id="dhu-F0-A1f"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ソーシャル" id="Hbj-Ji-u95"/>
+                    <navigationItem key="navigationItem" title="ソーシャル" id="Hbj-Ji-u95">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="fMb-Hn-ozv">
+                            <connections>
+                                <action selector="tweetTapped:" destination="Kke-PQ-YrT" id="Etp-xQ-BFd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7W-3T-tFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
