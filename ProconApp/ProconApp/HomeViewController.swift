@@ -30,11 +30,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         var sectionImage: UIImage {
             switch self {
             case .Notices:
-                return UIImage(named: "notice")!
+                return UIImage(image: .HeaderNotice)!
             case .GameResults:
-                return UIImage(named: "result")!
+                return UIImage(image: .HeaderGameResult)!
             case .Photos:
-                return UIImage(named: "photo")!
+                return UIImage(image: .HeaderPhoto)!
             }
         }
         func cellIdentifierForGameResult(result: GameResult) -> UITableView.CellIdentifier {

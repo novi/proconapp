@@ -78,101 +78,20 @@ extension UIViewController {
     }
 }
 
-
-protocol ContentsReloading {
-    func reloadContents()
-    func fetchContents()
+extension UIImage {
     
-    var isContentsLoading: Bool { get }
-    var contentsLoadingCount: Int { get }
+    enum Image: String {
+        case HeaderNotice = "header-notice"
+        case HeaderGameResult = "header-result"
+        case HeaderPhoto = "header-photo"
+    }
     
-    func startContentsLoading()
-    func endContentsLoading()
+    convenience init?(image: Image) {
+        self.init(named:image.rawValue)
+    }
     
-    // todo: use protocol extension
 }
 
-class ViewController: UIViewController, ContentsReloading {
-    
-    func reloadContents() {
-        fatalError("should be overridden on subclass")
-    }
-    
-    func fetchContents() {
-        fatalError("should be overridden on subclass")
-    }
-    
-    var contentsLoadingCount: Int = 0
-    
-    var isContentsLoading: Bool {
-        return contentsLoadingCount > 0
-    }
-    
-    func startContentsLoading() {
-        contentsLoadingCount++
-        // TODO
-        if contentsLoadingCount > 0 {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        } else {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        }
-    }
-    
-    func endContentsLoading() {
-        contentsLoadingCount--
-        if contentsLoadingCount > 0 {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        } else {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        }
-    }
-}
-
-class TableViewController: UITableViewController, ContentsReloading {
-    
-    func reloadContents() {
-        fatalError("should be overridden on subclass")
-    }
-    
-    func fetchContents() {
-        fatalError("should be overridden on subclass")
-    }
-    
-    func fetchContentsIfNeeded() {
-        if isNeedRefreshContents {
-            fetchContents()
-        }
-    }
-    
-    var isNeedRefreshContents: Bool {
-        return false
-    }
-    
-    var contentsLoadingCount: Int = 0
-    
-    var isContentsLoading: Bool {
-        return contentsLoadingCount > 0
-    }
-    
-    func startContentsLoading() {
-        contentsLoadingCount++
-        // TODO
-        if contentsLoadingCount > 0 {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        } else {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        }
-    }
-    
-    func endContentsLoading() {
-        contentsLoadingCount--
-        if contentsLoadingCount > 0 {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        } else {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        }
-    }
-}
 
 /*
 extension UIViewController: ContentsReloading {
