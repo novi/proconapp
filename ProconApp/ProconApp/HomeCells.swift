@@ -67,7 +67,8 @@ protocol HomeHeaderViewDelegate : NSObjectProtocol {
 class HomeHeaderView: UITableViewHeaderFooterView {
     
     @IBOutlet weak var titleLabel: UILabel!
-
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBAction func showAllTapped(sender: UIButton) {
         println("show all tapped")
         if let section = section {
@@ -80,6 +81,7 @@ class HomeHeaderView: UITableViewHeaderFooterView {
     var section: HomeViewController.Section? {
         didSet {
             titleLabel.text = section?.sectionName
+            imageView.image = section?.sectionImage
         }
     }
     
