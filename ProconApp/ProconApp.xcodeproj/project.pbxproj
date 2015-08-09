@@ -68,6 +68,7 @@
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
 		5D6A07C11B73CF9C00FC6307 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A07C01B73CF9C00FC6307 /* Constants.swift */; };
+		5D6F448B1B77757600DEDC0D /* ResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D6F448A1B77757600DEDC0D /* ResultHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -257,6 +258,7 @@
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5D6A07C01B73CF9C00FC6307 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5D6F448A1B77757600DEDC0D /* ResultHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,6 +370,7 @@
 				527A37FD1B74EE640089EDDB /* BaseViewController.swift */,
 				5245930A1AD147D000196181 /* Main.storyboard */,
 				528151321B6365BA002152DA /* HomeHeaderView.xib */,
+				5D6F448A1B77757600DEDC0D /* ResultHeaderView.xib */,
 				5245930D1AD147D000196181 /* Images.xcassets */,
 				5245930F1AD147D000196181 /* LaunchScreen.xib */,
 				524593021AD147D000196181 /* Supporting Files */,
@@ -782,6 +785,7 @@
 				5245930C1AD147D000196181 /* Main.storyboard in Resources */,
 				524593111AD147D000196181 /* LaunchScreen.xib in Resources */,
 				5245930E1AD147D000196181 /* Images.xcassets in Resources */,
+				5D6F448B1B77757600DEDC0D /* ResultHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

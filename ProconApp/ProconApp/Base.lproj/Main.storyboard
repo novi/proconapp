@@ -844,26 +844,52 @@ text</string>
         <scene sceneID="PWD-3w-LKG">
             <objects>
                 <tableViewController id="cw5-As-gRF" customClass="GameResultListViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cZL-Pe-Shq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="38" sectionHeaderHeight="22" sectionFooterHeight="22" id="cZL-Pe-Shq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameResultListCell" id="B6Y-gG-HFw" customClass="GameResultListCell" customModule="ProconApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GameResultListCell" rowHeight="36" id="B6Y-gG-HFw" customClass="GameResultListCell" customModule="ProconApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B6Y-gG-HFw" id="N22-3W-KLS">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnE-If-fLS">
-                                            <rect key="frame" x="20" y="11" width="239" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLZ-GI-6PF">
+                                            <rect key="frame" x="554" y="7" width="38" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnE-If-fLS">
+                                            <rect key="frame" x="47" y="7" width="79" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SR2-SY-7uI">
+                                            <rect key="frame" x="15" y="6" width="24" height="24"/>
+                                            <color key="backgroundColor" red="0.18039215689999999" green="0.2470588235" blue="0.4941176471" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="JLZ-GI-6PF" firstAttribute="trailing" secondItem="N22-3W-KLS" secondAttribute="trailingMargin" id="cqq-f7-0gV"/>
+                                        <constraint firstItem="JLZ-GI-6PF" firstAttribute="top" secondItem="N22-3W-KLS" secondAttribute="topMargin" constant="-1" id="emV-Mt-M2W"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="JLZ-GI-6PF" secondAttribute="bottom" constant="-0.5" id="gCO-u6-Mhf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="gameNameLabel" destination="hnE-If-fLS" id="xWi-wC-Yzo"/>
+                                    <outlet property="rankLabel" destination="SR2-SY-7uI" id="weV-OB-nsy"/>
+                                    <outlet property="scoreLabel" destination="JLZ-GI-6PF" id="RdH-T4-qYl"/>
+                                    <outlet property="titleLabel" destination="hnE-If-fLS" id="ej3-zG-X8z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

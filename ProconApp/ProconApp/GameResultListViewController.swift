@@ -49,32 +49,67 @@ class GameResultListViewController: TableViewController {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.title = "競技結果"
+        
+        tableView.registerNib(.ResultHeaderNib, forHeaderFooterViewReuseIdentifier: .ResultHeaderView)
     }
     
     // MARK: Table View
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var row = 0
+        if (allGameResult.count > 0) {
+            row = allGameResult[section].results.count
+        }
+        
+        return row
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return allGameResult.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(.GameResultListCell, forIndexPath: indexPath) as! GameResultListCell
-        cell.gameResult = allGameResult[indexPath.row]
+        cell.result = allGameResult[indexPath.section].resultsByRank[indexPath.row]
         return cell
     }
     
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(.ResultHeaderView) as! ResultHeaderView
+        cell.gameResult = allGameResult[section]
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
+    }
 }
 
 
 class GameResultListCell: UITableViewCell {
     
-    @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
+    var result: GameResult.Result? {
+        didSet {
+            titleLabel.text = result?.player.fullName
+            rankLabel.text = "\(result!.rank)"
+            scoreLabel.text = "\(Int(result!.score))"
+        }
+    }
+}
+
+class ResultHeaderView: UITableViewHeaderFooterView {
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     var gameResult: GameResult? {
         didSet {
-            println(gameResult)
-            gameNameLabel.text = gameResult?.title
+            titleLabel.text = gameResult?.title
         }
     }
+    
 }
