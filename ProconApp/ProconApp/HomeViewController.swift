@@ -37,24 +37,12 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return UIImage(image: .HeaderPhoto)!
             }
         }
-        var cellHeight: UITableView.CellHeight {
-            switch self {
-            case .Notices:
-                return .NoticeCellHeight
-            case .GameResults:
-                return .GameResultCellHeight
-            case .Photos:
-                return .PhotoCellHeight
-            }
-        }
-        
         func cellIdentifierForGameResult(result: GameResult) -> UITableView.CellIdentifier {
-            // 速報はフォーマットを統一させるか、スコア表示と順位表示を明確に分けたほうがいい
-            //if result.isInGame {
+            if result.isInGame {
                 return .HomeGameResultCellScore
-            //} else {
-            //    return .HomeGameResultCellRank
-            //}
+            } else {
+                return .HomeGameResultCellRank
+            }
         }
         var indexSet: NSIndexSet {
             return NSIndexSet(index: self.rawValue)
@@ -197,7 +185,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         let section = Section(rawValue: indexPath.section)!
         switch section {
         case .Notices:
-            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!, forIndexPath: indexPath) as! NoticeCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! NoticeCell
             
             cell.notice = self.notices[indexPath.row]
             
@@ -207,7 +195,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             let result = self.gameResults[indexPath.row]
             
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifierForGameResult(result), forIndexPath: indexPath) as! GameResultCell
-            
+            cell.selectionStyle = .None
             println("result \(result.id): \(result.results)")
             
             cell.result = result
@@ -235,7 +223,26 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let section = Section(rawValue: indexPath.section)!
-        return section.cellHeight.rawValue
+        var height: CGFloat = 0
+        
+        switch section {
+        case .Notices:
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! NoticeCell
+            cell.titleLabel.text = self.notices[indexPath.row].title
+            var maxSize = self.view.frame.size
+            
+            height = cell.titleLabel.sizeThatFits(maxSize).height + cell.margin
+        case .GameResults:
+            //let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! GameResultCell
+            height = 78
+            
+        case .Photos:
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! PhotoCell
+            cell.thumbnailImageView.imageURL = self.photos[indexPath.row].thumbnailURL
+            
+            height = cell.thumbnailImageView.frame.height + cell.margin
+        }
+        return height
     }
     
     func homeHeaderView(view: HomeHeaderView, didTapShowAllforSection section: HomeViewController.Section) {

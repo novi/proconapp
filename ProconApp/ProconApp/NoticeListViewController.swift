@@ -72,4 +72,12 @@ class NoticeListViewController: TableViewController {
         cell.notice = allNotices[indexPath.row]
         return cell
     }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let cell = tableView.dequeueReusableCellWithIdentifier(.NoticeListCell) as! NoticeCell
+        cell.titleLabel.text = self.allNotices[indexPath.row].title
+        var maxSize = self.view.frame.size
+        
+        var height = cell.titleLabel.sizeThatFits(maxSize).height + cell.margin
+        return height
+    }
 }

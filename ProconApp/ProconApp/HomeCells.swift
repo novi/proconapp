@@ -13,6 +13,7 @@ import ProconBase
 
 class GameResultCell: UITableViewCell {
     var result: GameResult?
+    let margin: CGFloat = 78
 }
 
 class GameResultScoreCell: GameResultCell {
@@ -20,13 +21,11 @@ class GameResultScoreCell: GameResultCell {
     @IBOutlet var scores: [UILabel]!
     @IBOutlet var playerNames: [UILabel]!
     @IBOutlet weak var gameNameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
     
     override var result: GameResult? {
         didSet {
             if let results = result?.resultsByScore {
-                dateLabel.text = result!.startedAt.relativeDateString
-                gameNameLabel.text = result?.title
+                gameNameLabel.text = "\(result!.title) の得点"
                 for i in 0..<scores.count {
                     if i<results.count {
                         scores[i].text = "\(Int(results[i].score))"
@@ -50,17 +49,27 @@ class GameResultRankCell: GameResultCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet var playerNames: [UILabel]!
+    @IBOutlet var ranks: [UILabel]!
+    
+    @IBOutlet weak var gameNameLabel: UILabel!
     
     override var result: GameResult? {
         didSet {
             if let result = result {
                 dateLabel.text = result.startedAt.relativeDateString
+                gameNameLabel.text = "\(result.title) の順位"
                 let results = result.resultsByRank
                 for i in 0..<playerNames.count {
                     if i<results.count {
                         playerNames[i].text = results[i].player.shortName
+                        ranks[i].text = "\(results[i].rank)"
+                        playerNames[i].hidden = false
+                        ranks[i].hidden = false
                     } else {
                         playerNames[i].text = nil
+                        ranks[i].text = nil
+                        playerNames[i].hidden = true
+                        ranks[i].hidden = true
                     }
                 }
             }
@@ -99,7 +108,7 @@ class NoticeCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    
+    let margin: CGFloat = 27
     var notice: Notice? {
         didSet {
             if let notice = notice {
@@ -118,6 +127,7 @@ class PhotoCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: LoadingImageView!
+    let margin: CGFloat = 60
     
     var photoInfo: PhotoInfo? {
         didSet {
