@@ -19,17 +19,25 @@ class GameResultScoreCell: GameResultCell {
     
     @IBOutlet var scores: [UILabel]!
     @IBOutlet var playerNames: [UILabel]!
+    @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override var result: GameResult? {
         didSet {
             if let results = result?.resultsByScore {
+                dateLabel.text = result!.startedAt.relativeDateString
+                gameNameLabel.text = result?.title
                 for i in 0..<scores.count {
                     if i<results.count {
-                        scores[i].text = "\(results[i].score)"
+                        scores[i].text = "\(Int(results[i].score))"
                         playerNames[i].text = results[i].player.shortName
+                        playerNames[i].hidden = false
+                        scores[i].hidden = false
                     } else {
                         scores[i].text = nil
                         playerNames[i].text = nil
+                        playerNames[i].hidden = true
+                        scores[i].hidden = true
                     }
                 }
             }

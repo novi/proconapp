@@ -289,19 +289,19 @@ text</string>
                                     <segue destination="2dl-hw-sVn" kind="show" id="dNq-m9-GCb"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameResultCellScore" id="aIO-PI-NMv" customClass="GameResultScoreCell" customModule="ProconApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameResultCellScore" rowHeight="78" id="aIO-PI-NMv" customClass="GameResultScoreCell" customModule="ProconApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aIO-PI-NMv" id="wSh-6O-yRj">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="試合中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="RlA-64-wQv">
                                             <rect key="frame" x="16" y="11" width="60" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-6U-XId">
-                                            <rect key="frame" x="84" y="11" width="44" height="21"/>
+                                            <rect key="frame" x="16" y="40" width="32" height="21"/>
                                             <color key="backgroundColor" red="0.1803921568627451" green="0.24705882352941178" blue="0.49411764705882355" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -313,14 +313,14 @@ text</string>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-rN-R9V">
-                                            <rect key="frame" x="136" y="11" width="44" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="gdf-rN-R9V">
+                                            <rect key="frame" x="56" y="40" width="56" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-xY-mcK">
-                                            <rect key="frame" x="188" y="11" width="44" height="21"/>
+                                            <rect key="frame" x="120" y="40" width="32" height="21"/>
                                             <color key="backgroundColor" red="0.1803921568627451" green="0.24705882352941178" blue="0.49411764705882355" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -332,14 +332,14 @@ text</string>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wi-2M-U6k">
-                                            <rect key="frame" x="240" y="11" width="44" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="3Wi-2M-U6k">
+                                            <rect key="frame" x="160" y="40" width="56" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-u0-rRw">
-                                            <rect key="frame" x="292" y="11" width="44" height="21"/>
+                                            <rect key="frame" x="224" y="40" width="32" height="21"/>
                                             <color key="backgroundColor" red="0.1803921568627451" green="0.24705882352941178" blue="0.49411764705882355" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -351,8 +351,14 @@ text</string>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-h2-wFG">
-                                            <rect key="frame" x="344" y="11" width="44" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="第3回戦 3問目" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="YU6-uF-EYM">
+                                            <rect key="frame" x="84" y="11" width="140" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="学校3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-h2-wFG">
+                                            <rect key="frame" x="264" y="40" width="56" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -360,6 +366,8 @@ text</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="RlA-64-wQv" id="IdH-WC-tlm"/>
+                                    <outlet property="gameNameLabel" destination="YU6-uF-EYM" id="AxU-TJ-ott"/>
                                     <outletCollection property="scores" destination="sgy-6U-XId" collectionClass="NSMutableArray" id="v6s-mB-S3N"/>
                                     <outletCollection property="playerNames" destination="gdf-rN-R9V" collectionClass="NSMutableArray" id="mnV-qa-pSk"/>
                                     <outletCollection property="scores" destination="9QS-xY-mcK" collectionClass="NSMutableArray" id="BvX-Es-JmC"/>
@@ -406,27 +414,39 @@ text</string>
                                     <outletCollection property="playerNames" destination="Usf-7K-wgp" collectionClass="NSMutableArray" id="kdK-tf-b7m"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HomePhoto" rowHeight="115" id="e4y-x6-Jc3" customClass="PhotoCell" customModule="ProconApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HomePhoto" rowHeight="200" id="e4y-x6-Jc3" customClass="PhotoCell" customModule="ProconApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e4y-x6-Jc3" id="gRe-go-mrU">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99分前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="3aE-Mg-xas">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="99分前" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="3aE-Mg-xas">
                                             <rect key="frame" x="16" y="11" width="60" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOW-pj-sDX">
-                                            <rect key="frame" x="16" y="40" width="60" height="21"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-dh-xYN" customClass="LoadingImageView" customModule="ProconApp" customModuleProvider="target">
+                                            <rect key="frame" x="16" y="40" width="543" height="129"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOW-pj-sDX">
+                                            <rect key="frame" x="16" y="170" width="543" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XsW-dh-xYN" customClass="LoadingImageView" customModule="ProconApp" customModuleProvider="target">
-                                            <rect key="frame" x="84" y="8" width="225" height="95.5"/>
-                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pOW-pj-sDX" firstAttribute="trailing" secondItem="gRe-go-mrU" secondAttribute="trailingMargin" id="0Vh-km-gKi"/>
+                                        <constraint firstItem="pOW-pj-sDX" firstAttribute="top" secondItem="XsW-dh-xYN" secondAttribute="bottom" constant="1" id="1O0-hg-aJV"/>
+                                        <constraint firstItem="XsW-dh-xYN" firstAttribute="leading" secondItem="gRe-go-mrU" secondAttribute="leadingMargin" constant="8" id="2CU-GY-U2b"/>
+                                        <constraint firstItem="XsW-dh-xYN" firstAttribute="top" secondItem="3aE-Mg-xas" secondAttribute="bottom" constant="8" id="899-Qr-m41"/>
+                                        <constraint firstItem="XsW-dh-xYN" firstAttribute="top" secondItem="3aE-Mg-xas" secondAttribute="bottom" constant="8" id="V8R-9A-qQ8"/>
+                                        <constraint firstItem="3aE-Mg-xas" firstAttribute="leading" secondItem="gRe-go-mrU" secondAttribute="leadingMargin" constant="8" id="hfL-IU-6Sa"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="pOW-pj-sDX" secondAttribute="bottom" constant="0.5" id="k8Y-qW-gix"/>
+                                        <constraint firstItem="3aE-Mg-xas" firstAttribute="top" secondItem="gRe-go-mrU" secondAttribute="topMargin" constant="3" id="qCw-YU-7M7"/>
+                                        <constraint firstItem="pOW-pj-sDX" firstAttribute="leading" secondItem="gRe-go-mrU" secondAttribute="leadingMargin" constant="8" id="rkg-7q-Hg4"/>
+                                        <constraint firstItem="XsW-dh-xYN" firstAttribute="trailing" secondItem="gRe-go-mrU" secondAttribute="trailingMargin" id="s56-LC-B6e"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="3aE-Mg-xas" id="bOe-wQ-IXL"/>

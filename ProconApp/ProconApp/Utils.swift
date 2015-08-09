@@ -74,5 +74,12 @@ extension NSDate {
         // n日前
         let days = Int(timeDelta/(3600*24))
         return "\(days)日前"
+        
+    }
+}
+
+extension UIColor {
+    class func appMainColor() -> UIColor {
+        return UIColor(red:46/255.0,green:63/255.0,blue:126/255.0,alpha:1.0)
     }
 }

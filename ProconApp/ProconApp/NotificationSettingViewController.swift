@@ -101,6 +101,8 @@ class NotificationSettingViewController: TableViewController {
         cell.textLabel?.text = "\(player.fullName) (\(player.shortName))"
         
         let sw = Switch(player: player)
+        sw.tintColor = UIColor.appMainColor()
+        sw.onTintColor = UIColor.appMainColor()
         sw.addTarget(self, action: "switchChanged:", forControlEvents: .ValueChanged)
         sw.on = self.settings[player.id] ?? true
         sw.enabled = settings[player.id] != nil ? true: false

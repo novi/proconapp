@@ -37,12 +37,24 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return UIImage(image: .HeaderPhoto)!
             }
         }
-        func cellIdentifierForGameResult(result: GameResult) -> UITableView.CellIdentifier {
-            if result.isInGame {
-                return .HomeGameResultCellScore
-            } else {
-                return .HomeGameResultCellRank
+        var cellHeight: UITableView.CellHeight {
+            switch self {
+            case .Notices:
+                return .NoticeCellHeight
+            case .GameResults:
+                return .GameResultCellHeight
+            case .Photos:
+                return .PhotoCellHeight
             }
+        }
+        
+        func cellIdentifierForGameResult(result: GameResult) -> UITableView.CellIdentifier {
+            // 速報はフォーマットを統一させるか、スコア表示と順位表示を明確に分けたほうがいい
+            //if result.isInGame {
+                return .HomeGameResultCellScore
+            //} else {
+            //    return .HomeGameResultCellRank
+            //}
         }
         var indexSet: NSIndexSet {
             return NSIndexSet(index: self.rawValue)
@@ -218,7 +230,12 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 30
+        return 36
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let section = Section(rawValue: indexPath.section)!
+        return section.cellHeight.rawValue
     }
     
     func homeHeaderView(view: HomeHeaderView, didTapShowAllforSection section: HomeViewController.Section) {

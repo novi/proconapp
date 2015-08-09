@@ -44,6 +44,12 @@ extension UITableView {
         case HomeHeaderNib = "HomeHeaderView"
     }
     
+    enum CellHeight: CGFloat {
+        case NoticeCellHeight = 44.0
+        case GameResultCellHeight = 78.0
+        case PhotoCellHeight = 200.0
+    }
+    
     func dequeueReusableCellWithIdentifier(identifier: CellIdentifier, forIndexPath indexPath: NSIndexPath) -> AnyObject {
         return self.dequeueReusableCellWithIdentifier(identifier.rawValue, forIndexPath: indexPath)
     }
