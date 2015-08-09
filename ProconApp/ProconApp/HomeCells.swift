@@ -28,7 +28,7 @@ class GameResultScoreCell: GameResultCell {
                 gameNameLabel.text = "\(result!.title) の得点"
                 for i in 0..<scores.count {
                     if i<results.count {
-                        scores[i].text = "\(Int(results[i].score))"
+                        scores[i].text = "\(Int(results[i].score))\(results[i].scoreUnit)"
                         playerNames[i].text = results[i].player.shortName
                         playerNames[i].hidden = false
                         scores[i].hidden = false

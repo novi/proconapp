@@ -85,13 +85,15 @@ public struct GameResult: Decodable, Printable {
         public let score: Float
         public let rank: Int
         public let player: Player
+        public let scoreUnit: String
         
         public static func decode(e: Extractor) -> Result? {
             let c = { Result($0) }
             return build(
                 e <| "score",
                 e <| "rank",
-                e <| "player"
+                e <| "player",
+                (e <|? "score_unit").map { $0 ?? "zk" } // TODO
                 ).map(c)
         }
         

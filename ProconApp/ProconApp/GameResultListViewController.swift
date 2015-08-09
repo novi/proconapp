@@ -95,9 +95,11 @@ class GameResultListCell: UITableViewCell {
     
     var result: GameResult.Result? {
         didSet {
-            titleLabel.text = result?.player.fullName
-            rankLabel.text = "\(result!.rank)"
-            scoreLabel.text = "\(Int(result!.score))"
+            if let result = self.result {
+                titleLabel.text = result.player.fullName
+                rankLabel.text = "\(result.rank)"
+                scoreLabel.text = "\(Int(result.score))\(result.scoreUnit)"
+            }
         }
     }
 }
