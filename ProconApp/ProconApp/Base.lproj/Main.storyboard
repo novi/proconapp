@@ -732,6 +732,7 @@ text</string>
                                 <connections>
                                     <outlet property="dateLabel" destination="ZeM-d2-Lbe" id="XgV-Q7-Rmx"/>
                                     <outlet property="titleLabel" destination="cYz-yN-Oxy" id="6D3-VE-uqq"/>
+                                    <segue destination="2dl-hw-sVn" kind="show" id="ECv-LV-H4c"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -938,5 +939,6 @@ text</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7fL-0P-ho5"/>
+        <segue reference="ECv-LV-H4c"/>
     </inferredMetricsTieBreakers>
 </document>

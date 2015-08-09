@@ -119,7 +119,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 case .Success(let box):
                     println(box.value)
                     self.notices = box.value
-                    self.tableView.reloadSections(Section.Notices.indexSet, withRowAnimation: .Automatic)
+                    self.tableView.reloadSections(Section.Notices.indexSet, withRowAnimation: .None)
                 case .Failure(let box):
                     // TODO, error
                     println(box.value)
@@ -132,7 +132,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 case .Success(let box):
                     println(box.value)
                     self.gameResults = box.value
-                    self.tableView.reloadSections(Section.GameResults.indexSet, withRowAnimation: .Automatic)
+                    self.tableView.reloadSections(Section.GameResults.indexSet, withRowAnimation: .None)
                 case .Failure(let box):
                     // TODO, error
                     println(box.value)
@@ -144,7 +144,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 switch res {
                 case .Success(let box):
                     self.photos = box.value
-                    self.tableView.reloadSections(Section.Photos.indexSet, withRowAnimation: .Automatic)
+                    self.tableView.reloadSections(Section.Photos.indexSet, withRowAnimation: .None)
                 case .Failure(let box):
                     // TODO, error
                     println(box.value)

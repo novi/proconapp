@@ -80,4 +80,11 @@ class NoticeListViewController: TableViewController {
         var height = cell.titleLabel.sizeThatFits(maxSize).height + cell.margin
         return height
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? NoticeCell {
+            let dst = segue.destinationViewController as! NoticeViewController
+            dst.notice = cell.notice
+        }
+    }
 }

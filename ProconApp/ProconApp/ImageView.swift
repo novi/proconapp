@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ProconBase
 
 class LoadingImageView: UIImageView {
     
@@ -24,9 +25,15 @@ class LoadingImageView: UIImageView {
             }
             
             currentTask?.cancel()
-            self.image = nil
             
             if let url = imageURL {
+                
+                if let cachedImage = OnMemoryCache.sharedInstance.objectForKey(url) as? UIImage {
+                    self.image = cachedImage
+                    return
+                }
+                
+                self.image = nil
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let req = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10)
@@ -37,14 +44,15 @@ class LoadingImageView: UIImageView {
                             println("image download error", error)
                             return
                         }
-                        let image = UIImage(data: data)
-                        if image == nil {
+                        if let image = UIImage(data: data) {
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.image = image
+                                OnMemoryCache.sharedInstance.setObject(image, forKey: url)
+                            })
+                        } else {
                             println("image data error")
                             return
                         }
-                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                            self.image = image
-                        })
                     })
                     task.resume()
                 })
