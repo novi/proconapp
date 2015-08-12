@@ -347,7 +347,7 @@ text</string>
                                             <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-6U-XId">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.85000000000000031" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-6U-XId">
                                             <rect key="frame" x="16" y="40" width="32" height="21"/>
                                             <color key="backgroundColor" red="0.73333333333333328" green="0.29411764705882354" blue="0.29411764705882354" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -366,7 +366,7 @@ text</string>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-xY-mcK">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.85000000000000031" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-xY-mcK">
                                             <rect key="frame" x="120" y="40" width="32" height="21"/>
                                             <color key="backgroundColor" red="0.73333333333333328" green="0.29411764705882354" blue="0.29411764705882354" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -385,7 +385,7 @@ text</string>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-u0-rRw">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="得点3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.85000000000000031" translatesAutoresizingMaskIntoConstraints="NO" id="Vfs-u0-rRw">
                                             <rect key="frame" x="224" y="40" width="32" height="21"/>
                                             <color key="backgroundColor" red="0.73333333333333328" green="0.29411764705882354" blue="0.29411764705882354" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -938,7 +938,7 @@ text</string>
         <image name="social_off" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dNq-m9-GCb"/>
         <segue reference="7fL-0P-ho5"/>
-        <segue reference="ECv-LV-H4c"/>
     </inferredMetricsTieBreakers>
 </document>
