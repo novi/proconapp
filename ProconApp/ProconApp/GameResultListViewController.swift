@@ -107,10 +107,14 @@ class GameResultListCell: UITableViewCell {
 class ResultHeaderView: UITableViewHeaderFooterView {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var gameResult: GameResult? {
         didSet {
             titleLabel.text = gameResult?.title
+            var startedDateString = "開始: \(NSDate.timeString(gameResult!.startedAt))"
+            var dinishedDateString = (NSDate.timeString(gameResult!.finishedAt) == "") ? "(試合中)" : "終了: \(NSDate.timeString(gameResult!.finishedAt))"
+            timeLabel.text = "\(startedDateString) - \(dinishedDateString)"
         }
     }
     

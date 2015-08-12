@@ -74,7 +74,20 @@ extension NSDate {
         // n日前
         let days = Int(timeDelta/(3600*24))
         return "\(days)日前"
-        
+    }
+    
+    class func timeString(date: NSDate?) -> String {
+        var dateString = ""
+        if let theDate = date {
+            var dateFormatter: NSDateFormatter = NSDateFormatter()
+            dateFormatter.locale = NSLocale(localeIdentifier: "ja")
+            let calender: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+            let comps: NSDateComponents = calender.components(NSCalendarUnit.CalendarUnitYear|NSCalendarUnit.CalendarUnitMonth|NSCalendarUnit.CalendarUnitDay|NSCalendarUnit.CalendarUnitHour|NSCalendarUnit.CalendarUnitMinute, fromDate: date!)
+            
+            dateFormatter.dateFormat = "H:m"
+            dateString = dateFormatter.stringFromDate(date!)
+        }
+        return dateString
     }
 }
 
