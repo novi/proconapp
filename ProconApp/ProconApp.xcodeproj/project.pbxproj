@@ -68,6 +68,10 @@
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
+		5D33E3681B7BA8EA00DF74F4 /* NoticeListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */; };
+		5D33E36A1B7BA91800DF74F4 /* NoticeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33E3691B7BA91800DF74F4 /* NoticeInterfaceController.swift */; };
+		5D33E36C1B7BA93000DF74F4 /* ResultListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33E36B1B7BA93000DF74F4 /* ResultListInterfaceController.swift */; };
+		5D33E36E1B7BA94000DF74F4 /* ResultInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33E36D1B7BA94000DF74F4 /* ResultInterfaceController.swift */; };
 		5D6A07C11B73CF9C00FC6307 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A07C01B73CF9C00FC6307 /* Constants.swift */; };
 		5D6F448B1B77757600DEDC0D /* ResultHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D6F448A1B77757600DEDC0D /* ResultHeaderView.xib */; };
 /* End PBXBuildFile section */
@@ -259,6 +263,10 @@
 		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeListInterfaceController.swift; sourceTree = "<group>"; };
+		5D33E3691B7BA91800DF74F4 /* NoticeInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeInterfaceController.swift; sourceTree = "<group>"; };
+		5D33E36B1B7BA93000DF74F4 /* ResultListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultListInterfaceController.swift; sourceTree = "<group>"; };
+		5D33E36D1B7BA94000DF74F4 /* ResultInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultInterfaceController.swift; sourceTree = "<group>"; };
 		5D6A07C01B73CF9C00FC6307 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5D6F448A1B77757600DEDC0D /* ResultHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -492,6 +500,10 @@
 			children = (
 				526469771B69186D00FEEBBA /* Entitlements */,
 				5260BA0F1B68F68600ED9EEF /* InterfaceController.swift */,
+				5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */,
+				5D33E36B1B7BA93000DF74F4 /* ResultListInterfaceController.swift */,
+				5D33E36D1B7BA94000DF74F4 /* ResultInterfaceController.swift */,
+				5D33E3691B7BA91800DF74F4 /* NoticeInterfaceController.swift */,
 				5260BA111B68F68600ED9EEF /* NotificationController.swift */,
 				5260BA131B68F68600ED9EEF /* GlanceController.swift */,
 				52A7EFFB1B6CC543002BFF7D /* Utils.swift */,
@@ -928,8 +940,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5260BA121B68F68600ED9EEF /* NotificationController.swift in Sources */,
+				5D33E36C1B7BA93000DF74F4 /* ResultListInterfaceController.swift in Sources */,
+				5D33E36A1B7BA91800DF74F4 /* NoticeInterfaceController.swift in Sources */,
 				5260BA101B68F68600ED9EEF /* InterfaceController.swift in Sources */,
+				5D33E3681B7BA8EA00DF74F4 /* NoticeListInterfaceController.swift in Sources */,
 				5260BA141B68F68600ED9EEF /* GlanceController.swift in Sources */,
+				5D33E36E1B7BA94000DF74F4 /* ResultInterfaceController.swift in Sources */,
 				52A7EFFC1B6CC543002BFF7D /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
