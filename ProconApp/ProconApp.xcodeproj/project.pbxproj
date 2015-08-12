@@ -501,9 +501,9 @@
 				526469771B69186D00FEEBBA /* Entitlements */,
 				5260BA0F1B68F68600ED9EEF /* InterfaceController.swift */,
 				5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */,
+				5D33E3691B7BA91800DF74F4 /* NoticeInterfaceController.swift */,
 				5D33E36B1B7BA93000DF74F4 /* ResultListInterfaceController.swift */,
 				5D33E36D1B7BA94000DF74F4 /* ResultInterfaceController.swift */,
-				5D33E3691B7BA91800DF74F4 /* NoticeInterfaceController.swift */,
 				5260BA111B68F68600ED9EEF /* NotificationController.swift */,
 				5260BA131B68F68600ED9EEF /* GlanceController.swift */,
 				52A7EFFB1B6CC543002BFF7D /* Utils.swift */,
@@ -724,7 +724,7 @@
 				TargetAttributes = {
 					524592FE1AD147D000196181 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = Y9RM2H3NM6;
+						DevelopmentTeam = TQ8SJ7HQ43;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;

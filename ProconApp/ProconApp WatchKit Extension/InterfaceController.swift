@@ -13,8 +13,6 @@ import ProconBase
 
 class MainInterfaceController: InterfaceController {
 
-    @IBOutlet weak var testLabel: WKInterfaceLabel!
-    
     var user: User?
     
     override func awakeWithContext(context: AnyObject?) {
@@ -41,9 +39,6 @@ class MainInterfaceController: InterfaceController {
     }
     
     override func reloadContents() {
-        if let user = self.user {
-            self.testLabel.setText("user id = \(user.id)")
-        }
     }
     
     override func fetchContents() {
