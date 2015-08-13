@@ -2,7 +2,7 @@
 //  NoticaListInterfaceController.swift
 //  ProconApp
 //
-//  Created by Goodpatch on 2015/08/13.
+//  Created by hanamiju on 2015/08/13.
 //  Copyright (c) 2015年 Procon. All rights reserved.
 //
 

@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
-        <!--Notice List Interface Controller-->
+        <!--お知らせ一覧-->
         <scene sceneID="2tg-6V-Q4M">
             <objects>
-                <controller id="4Pd-xI-LKH" customClass="NoticeListInterfaceController" customModule="ProconApp_WatchKit_Extension">
+                <controller title="お知らせ一覧" id="4Pd-xI-LKH" customClass="NoticeListInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="6lk-Ue-6JK">
                             <items>
@@ -57,6 +57,7 @@
                                             <label width="1" alignment="left" text="こんなことがあったよ" textAlignment="left" numberOfLines="2" minimumScaleFactor="0.90000000000000002" id="la2-dp-nnb">
                                                 <fontDescription key="font" type="system" pointSize="14"/>
                                             </label>
+                                            <group width="1" height="4" alignment="left" id="vHv-9L-64j"/>
                                         </items>
                                     </group>
                                     <connections>
@@ -74,14 +75,14 @@
             </objects>
             <point key="canvasLocation" x="472" y="189"/>
         </scene>
-        <!--Result List Interface Controller-->
+        <!--競技結果一覧-->
         <scene sceneID="DYm-Ag-len">
             <objects>
-                <controller id="RXM-0h-xNi" customClass="ResultListInterfaceController" customModule="ProconApp_WatchKit_Extension">
+                <controller title="競技結果一覧" id="RXM-0h-xNi" customClass="ResultListInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="OFt-sA-A47">
                             <items>
-                                <tableRow id="SKj-ba-yeF">
+                                <tableRow identifier="ResultTableCell" id="SKj-ba-yeF" customClass="ResultTableCell" customModule="ProconApp_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="44" alignment="left" id="mSz-39-cmZ">
                                         <items>
                                             <label width="85" alignment="left" verticalAlignment="center" text="第2回戦 3問目" minimumScaleFactor="0.70000000000000007" id="DRr-yv-3Aj">
@@ -94,20 +95,24 @@
                                         </items>
                                     </group>
                                     <connections>
-                                        <segue destination="FOI-TQ-7ai" kind="push" id="2gb-tX-ytI"/>
+                                        <outlet property="timeLabel" destination="6ym-G6-Aw0" id="zPh-9W-nq6"/>
+                                        <outlet property="titleLabel" destination="DRr-yv-3Aj" id="0mZ-ds-LDl"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="resultTable" destination="OFt-sA-A47" id="9zT-tV-NvF"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="472" y="424"/>
         </scene>
-        <!--NoticeInterfaceController-->
+        <!--お知らせ-->
         <scene sceneID="n4m-J5-NMl">
             <objects>
-                <controller identifier="NoticeInterfaceController" id="vKt-Bq-sX3" customClass="NoticeInterfaceController" customModule="ProconApp_WatchKit_Extension">
+                <controller identifier="NoticeInterfaceController" title="お知らせ" id="vKt-Bq-sX3" customClass="NoticeInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
                         <label width="1" alignment="left" text="Label" textAlignment="right" id="inF-FE-Bv9">
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,17 +134,17 @@
             </objects>
             <point key="canvasLocation" x="695" y="188.5"/>
         </scene>
-        <!--Result Interface Controller-->
+        <!--競技結果-->
         <scene sceneID="393-gD-qBX">
             <objects>
-                <controller id="FOI-TQ-7ai" customClass="ResultInterfaceController" customModule="ProconApp_WatchKit_Extension">
+                <controller identifier="ResultInterfaceController" title="競技結果" id="FOI-TQ-7ai" customClass="ResultInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="KyX-wC-tSc">
                             <items>
-                                <label alignment="left" text="第2回戦 3問目" minimumScaleFactor="0.70000000000000007" id="j3i-rO-mWT">
+                                <label alignment="left" text=" " minimumScaleFactor="0.70000000000000007" id="j3i-rO-mWT">
                                     <fontDescription key="font" type="system" pointSize="14"/>
                                 </label>
-                                <label alignment="right" text="15分前" textAlignment="right" minimumScaleFactor="0.70000000000000007" id="CPa-6X-fRL">
+                                <label alignment="right" text=" " textAlignment="right" minimumScaleFactor="0.70000000000000007" id="CPa-6X-fRL">
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="font" type="system" pointSize="14"/>
                                 </label>
@@ -147,7 +152,7 @@
                         </group>
                         <table alignment="left" id="yNx-V0-3Dq">
                             <items>
-                                <tableRow id="fro-BL-QyF">
+                                <tableRow identifier="SchoolTableCell" id="fro-BL-QyF" customClass="SchoolTableCell" customModule="ProconApp_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="44" alignment="left" layout="vertical" id="FQv-3U-bgZ">
                                         <items>
                                             <group width="1" alignment="left" id="yCm-UH-EFw">
@@ -164,10 +169,20 @@
                                             <label width="1" alignment="left" text="長野高専" minimumScaleFactor="0.80000000000000004" id="7mf-Wb-JN2"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="rankLabel" destination="DyA-fb-JWY" id="Pdj-SP-Q2R"/>
+                                        <outlet property="schoolLabel" destination="7mf-Wb-JN2" id="JdK-mb-Cfd"/>
+                                        <outlet property="scoreLabel" destination="Tp8-aY-2zp" id="2Hr-rg-rOD"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="schoolTable" destination="yNx-V0-3Dq" id="Cze-9Q-Bjv"/>
+                        <outlet property="timeLabel" destination="CPa-6X-fRL" id="Kpg-z7-YgD"/>
+                        <outlet property="titleLabel" destination="j3i-rO-mWT" id="7Hc-kZ-Fmq"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="700" y="424"/>
@@ -217,4 +232,5 @@
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -2,7 +2,7 @@
 //  NoticeInterfaceController.swift
 //  ProconApp
 //
-//  Created by Goodpatch on 2015/08/13.
+//  Created by hanamiju on 2015/08/13.
 //  Copyright (c) 2015年 Procon. All rights reserved.
 //
 
@@ -25,8 +25,8 @@ class NoticeInterfaceController: InterfaceController {
         if let index = context as? Int {
             noticeIndex = index
         }
+        
         fetchContents()
-        // Configure interface objects here.
     }
 
     override func willActivate() {
