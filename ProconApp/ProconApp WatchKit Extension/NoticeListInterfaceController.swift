@@ -41,7 +41,6 @@ class NoticeListInterfaceController: InterfaceController {
                     println(box.value)
                     self.notices = box.value
                     self.createTableData()
-                    self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
                     println(box.value)
