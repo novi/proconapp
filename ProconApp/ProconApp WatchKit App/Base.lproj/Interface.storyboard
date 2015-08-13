@@ -85,10 +85,10 @@
                                 <tableRow identifier="ResultTableCell" id="SKj-ba-yeF" customClass="ResultTableCell" customModule="ProconApp_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="44" alignment="left" id="mSz-39-cmZ">
                                         <items>
-                                            <label width="85" alignment="left" verticalAlignment="center" text="第2回戦 3問目" minimumScaleFactor="0.70000000000000007" id="DRr-yv-3Aj">
+                                            <label alignment="left" verticalAlignment="center" text="第2回戦 3問目" textAlignment="left" minimumScaleFactor="0.60000000000000009" id="DRr-yv-3Aj">
                                                 <fontDescription key="font" type="system" pointSize="14"/>
                                             </label>
-                                            <label alignment="right" verticalAlignment="center" text="3日前" textAlignment="right" minimumScaleFactor="0.70000000000000007" id="6ym-G6-Aw0">
+                                            <label alignment="right" verticalAlignment="center" text="3日前" textAlignment="right" minimumScaleFactor="0.60000000000000009" id="6ym-G6-Aw0">
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="font" type="system" pointSize="14"/>
                                             </label>
