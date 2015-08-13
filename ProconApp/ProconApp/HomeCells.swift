@@ -127,7 +127,7 @@ class PhotoCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: LoadingImageView!
-    let margin: CGFloat = 60
+    let margin: CGFloat = 80
     
     var photoInfo: PhotoInfo? {
         didSet {
