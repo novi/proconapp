@@ -62,7 +62,6 @@
                                     <connections>
                                         <outlet property="dateLabel" destination="nyo-gS-naU" id="wSf-vb-94T"/>
                                         <outlet property="titleLabel" destination="la2-dp-nnb" id="BDo-Pk-8um"/>
-                                        <segue destination="vKt-Bq-sX3" kind="push" id="BlE-PE-v6w"/>
                                     </connections>
                                 </tableRow>
                             </items>

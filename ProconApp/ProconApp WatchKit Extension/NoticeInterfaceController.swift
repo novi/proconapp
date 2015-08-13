@@ -17,13 +17,15 @@ class NoticeInterfaceController: InterfaceController {
     @IBOutlet weak var dateLabel: WKInterfaceLabel!
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
     var notice: Notice?
+    var noticeIndex: Int?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        if let theNotice = context as? Notice {
-            notice = theNotice
+        if let index = context as? Int {
+            noticeIndex = index
         }
+        fetchContents()
         // Configure interface objects here.
     }
 
@@ -31,13 +33,63 @@ class NoticeInterfaceController: InterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         titleLabel.setText(notice?.title)
-        dateLabel.setText(notice!.publishedAt.relativeDateString)
-        contentLabel.setText(notice?.body)
+        dateLabel.setText(notice?.publishedAt.relativeDateString)
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    override func fetchContents() {
+        if let me = UserContext.defaultContext.me {
+            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count: 3)
+            AppAPI.sendRequest(r) { res in
+                switch res {
+                case .Success(let box):
+                    self.notice = box.value[self.noticeIndex!]
+                    self.reloadContents()
+                case .Failure(let box):
+                    // TODO, error
+                    println(box.value)
+                }
+            }
+        }
+    }
+    
+    override func reloadContents() {
+        
+        if let body = self.buildBody() {
+            //contentLabel.text = nil
+            contentLabel.setText(body)
+        } else {
+            contentLabel.setText("loading...")
+        }
+        
+        if let notice = notice {
+            if notice.body == nil && notice.hasBody {
+                // fetch body
+                if let me = UserContext.defaultContext.me {
+                    let req = AppAPI.Endpoint.FetchNoticeText(user: me, notice: notice)
+                    AppAPI.sendRequest(req) { result in
+                        switch result {
+                        case .Success(let box):
+                            self.notice = box.value
+                            self.reloadContents()
+                        case .Failure(let box):
+                            println(box.value)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func buildBody() -> String? {
+        if let html = notice?.body {
+            return html
+        }
+        return nil
     }
 
 }

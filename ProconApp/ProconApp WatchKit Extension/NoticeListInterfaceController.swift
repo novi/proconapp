@@ -59,7 +59,7 @@ class NoticeListInterfaceController: InterfaceController {
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        self.pushControllerWithName("NoticeInterfaceController", context: notices[rowIndex] as? AnyObject)
+        self.pushControllerWithName("NoticeInterfaceController", context: rowIndex)
     }
     
 }

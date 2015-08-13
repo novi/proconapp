@@ -36,7 +36,7 @@ public class UserContext {
     init() {
         let uds = [NSUserDefaults.standardUserDefaults(), AppGroup.sharedInstance]
         for ud in uds {
-            me = MeIdentifier(id: ud.integerForKey(.UserID), tokenStr: ud.stringForKey(.UserToken))
+            me = MeIdentifier(id: 2, tokenStr: "104baccd-ba4f-4e75-bbba-51e08b0b79a2")
             if me != nil {
                 break
             }
