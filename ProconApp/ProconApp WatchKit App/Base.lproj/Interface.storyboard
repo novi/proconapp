@@ -192,14 +192,63 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" layout="vertical" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="left" text="競技結果" id="aiM-UF-AQ5">
+                                    <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <group width="1" alignment="left" id="sVo-ZD-zPU">
+                                    <items>
+                                        <label alignment="left" text="-" id="xcv-Iu-X7L">
+                                            <fontDescription key="font" type="system" pointSize="14"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                         <group alignment="left" id="uCw-4Q-Ouw">
                             <items>
-                                <label alignment="left" text="-" id="nUE-Qf-106"/>
+                                <table alignment="left" id="S0O-Ht-q4z">
+                                    <items>
+                                        <tableRow identifier="GlanceSchoolTableCell" id="4Wf-Ld-L6I" customClass="SchoolTableCell" customModule="ProconApp_WatchKit_Extension">
+                                            <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="cc4-Be-4YX">
+                                                <items>
+                                                    <group width="1" alignment="left" id="axA-ov-H1w">
+                                                        <items>
+                                                            <label alignment="left" text="1位" id="xOh-fO-mPq">
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                                            </label>
+                                                            <label alignment="right" text="100zk" id="4Ua-I8-4eT">
+                                                                <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <group width="1" alignment="left" layout="vertical" id="PeF-fi-0cA">
+                                                        <items>
+                                                            <label alignment="left" text="長野高専" id="AQH-f7-9tK">
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="rankLabel" destination="xOh-fO-mPq" id="qZb-TE-NL8"/>
+                                                <outlet property="schoolLabel" destination="AQH-f7-9tK" id="h4c-lj-P26"/>
+                                                <outlet property="scoreLabel" destination="4Ua-I8-4eT" id="7D5-6O-PJG"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
                             </items>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="schoolTable" destination="S0O-Ht-q4z" id="Zfe-si-pDp"/>
+                        <outlet property="titleLabel" destination="xcv-Iu-X7L" id="fZK-Eg-hAv"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>
