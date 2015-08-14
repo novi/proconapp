@@ -38,7 +38,7 @@ class GlanceController: InterfaceController {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchGameResults(user: me, count: 3)
+            let r = AppAPI.Endpoint.FetchGameResults(user: me, count: 1)
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
@@ -54,17 +54,19 @@ class GlanceController: InterfaceController {
         }
     }
     func createGameData() {
-        let gameResult = gameResults.first
-        titleLabel.setText(gameResult!.title)
+        if let gameResult = gameResults.first {
+            titleLabel.setText(gameResult.title)
+        }
+        
     }
     func createTableData() {
-        let results = gameResults.first!.resultsByRank
-        schoolTable.setNumberOfRows(results.count, withRowType: "GlanceSchoolTableCell")
-        
-        for i in 0..<results.count {
-            println(schoolTable.rowControllerAtIndex(i))
-            var schoolCell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
-            schoolCell.result = results[i]
+        if let results = gameResults.first?.resultsByRank {
+            schoolTable.setNumberOfRows(results.count, withRowType: "GlanceSchoolTableCell")
+            
+            for i in 0..<results.count {
+                let schoolCell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
+                schoolCell.result = results[i]
+            }
         }
     }
 
