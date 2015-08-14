@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UISwitch.appearance().tintColor = UIColor.appTintColor
+        UISwitch.appearance().onTintColor = UIColor.appTintColor
+        
         #if DEBUG
             println("debug flag is on")
         #endif

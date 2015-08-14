@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520A58681B7DFAC300869D4A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A58671B7DFAC300869D4A /* Utils.swift */; };
 		5225B7651B77A07C00773258 /* OnMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225B7641B77A07C00773258 /* OnMemoryCache.swift */; };
 		52311B911B512DC100F2F494 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52311B901B512DC100F2F494 /* Types.swift */; };
 		52311B931B51318200F2F494 /* NotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52311B921B51318200F2F494 /* NotificationSettingViewController.swift */; };
@@ -196,6 +197,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		520A58671B7DFAC300869D4A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5225B7641B77A07C00773258 /* OnMemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnMemoryCache.swift; sourceTree = "<group>"; };
 		52311B901B512DC100F2F494 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		52311B921B51318200F2F494 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				52538EBF1B4D7C4A00059FEC /* UserContext.swift */,
 				526469701B69107400FEEBBA /* LocalSettings.swift */,
 				5225B7641B77A07C00773258 /* OnMemoryCache.swift */,
+				520A58671B7DFAC300869D4A /* Utils.swift */,
 				52538E941B4D7B3F00059FEC /* ProconBase.h */,
 				52538E921B4D7B3F00059FEC /* Supporting Files */,
 			);
@@ -902,6 +905,7 @@
 				52538EC01B4D7C4A00059FEC /* AppAPI.swift in Sources */,
 				526469711B69107400FEEBBA /* LocalSettings.swift in Sources */,
 				52311B911B512DC100F2F494 /* Types.swift in Sources */,
+				520A58681B7DFAC300869D4A /* Utils.swift in Sources */,
 				5D6A07C11B73CF9C00FC6307 /* Constants.swift in Sources */,
 				52538EC21B4D7C4A00059FEC /* ManageAPI.swift in Sources */,
 				52538EC31B4D7C4A00059FEC /* Models.swift in Sources */,

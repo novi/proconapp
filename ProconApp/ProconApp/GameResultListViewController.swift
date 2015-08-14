@@ -112,9 +112,11 @@ class ResultHeaderView: UITableViewHeaderFooterView {
     var gameResult: GameResult? {
         didSet {
             titleLabel.text = gameResult?.title
-            var startedDateString = "開始: \(NSDate.timeString(gameResult!.startedAt))"
-            var dinishedDateString = (NSDate.timeString(gameResult!.finishedAt) == "") ? "(試合中)" : "終了: \(NSDate.timeString(gameResult!.finishedAt))"
-            timeLabel.text = "\(startedDateString) - \(dinishedDateString)"
+            if let result = self.gameResult {
+                var started = "開始: \(result.startedAt.timeString)"
+                var finished = result.finishedAt != nil ? "終了: \(result.finishedAt!.timeString)" : "(試合中)"
+                timeLabel.text = "\(started) - \(finished)"
+            }
         }
     }
     
