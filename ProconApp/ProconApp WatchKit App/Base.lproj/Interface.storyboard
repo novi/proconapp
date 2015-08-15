@@ -14,7 +14,9 @@
                             <group key="contentGroup" width="1" height="70" alignment="left" id="Kik-hL-Lch">
                                 <items>
                                     <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="notice" contentMode="scaleAspectFit" id="QnM-fW-aZP"/>
-                                    <label alignment="center" verticalAlignment="center" text="お知らせ" id="J7z-5J-rA4"/>
+                                    <label alignment="center" verticalAlignment="center" text="お知らせ" id="J7z-5J-rA4">
+                                        <fontDescription key="font" type="system" pointSize="20"/>
+                                    </label>
                                 </items>
                             </group>
                             <connections>
@@ -28,7 +30,9 @@
                             <group key="contentGroup" width="1" height="70" alignment="left" id="MDX-W9-Lxs">
                                 <items>
                                     <imageView width="30" height="30" alignment="left" verticalAlignment="center" image="result" contentMode="scaleAspectFit" id="5uF-gX-Ose"/>
-                                    <label alignment="center" verticalAlignment="center" text="競技結果" id="UYM-NP-LIg"/>
+                                    <label alignment="center" verticalAlignment="center" text="競技結果" id="UYM-NP-LIg">
+                                        <fontDescription key="font" type="system" pointSize="20"/>
+                                    </label>
                                 </items>
                             </group>
                             <connections>
