@@ -70,18 +70,24 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSP-pD-uNd">
-                                            <rect key="frame" x="80" y="8" width="38" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <rect key="frame" x="80" y="8" width="38.5" height="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdf-Fu-njp">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Screen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.90000000000000036" translatesAutoresizingMaskIntoConstraints="NO" id="sdf-Fu-njp">
                                             <rect key="frame" x="126" y="8" width="56.5" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" id="Yct-ue-02L"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSR-kG-qvk">
                                             <rect key="frame" x="561" y="8" width="30.5" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="rVV-do-ym3"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -97,6 +103,7 @@ text</string>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="xSP-pD-uNd" firstAttribute="leading" secondItem="GeP-ZL-vr4" secondAttribute="trailing" constant="8" id="4wM-h7-dCu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zSR-kG-qvk" secondAttribute="trailing" id="9F2-Il-45V"/>
                                         <constraint firstItem="xSP-pD-uNd" firstAttribute="top" secondItem="5Kw-4Q-I6D" secondAttribute="topMargin" id="Hez-Oa-Khw"/>
                                         <constraint firstItem="hlY-Mh-S50" firstAttribute="leading" secondItem="GeP-ZL-vr4" secondAttribute="trailing" constant="8" id="TQz-zd-tyr"/>
                                         <constraint firstItem="sdf-Fu-njp" firstAttribute="top" secondItem="5Kw-4Q-I6D" secondAttribute="topMargin" id="TtL-mI-9Iq"/>
@@ -107,13 +114,14 @@ text</string>
                                         <constraint firstItem="GeP-ZL-vr4" firstAttribute="top" secondItem="5Kw-4Q-I6D" secondAttribute="topMargin" id="kDx-T1-uuV"/>
                                         <constraint firstItem="GeP-ZL-vr4" firstAttribute="leading" secondItem="5Kw-4Q-I6D" secondAttribute="leadingMargin" id="kRr-yZ-lZA"/>
                                         <constraint firstItem="hlY-Mh-S50" firstAttribute="top" secondItem="zSR-kG-qvk" secondAttribute="bottom" constant="4" id="l8K-XD-emR"/>
-                                        <constraint firstItem="zSR-kG-qvk" firstAttribute="leading" relation="lessThanOrEqual" secondItem="sdf-Fu-njp" secondAttribute="trailing" constant="378.5" id="pmc-hG-3wh"/>
+                                        <constraint firstItem="zSR-kG-qvk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sdf-Fu-njp" secondAttribute="trailing" constant="8" id="pmc-hG-3wh"/>
                                         <constraint firstItem="zSR-kG-qvk" firstAttribute="top" secondItem="5Kw-4Q-I6D" secondAttribute="topMargin" id="wzf-k6-8YN"/>
                                         <constraint firstItem="hlY-Mh-S50" firstAttribute="trailing" secondItem="5Kw-4Q-I6D" secondAttribute="trailingMargin" id="xwZ-l1-Fau"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="eTM-x7-yhO"/>
+                                            <exclude reference="giM-xv-1Q9"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
