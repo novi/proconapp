@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Procon-->
+        <!--プロコン-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="Procon" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="ProconApp_WatchKit_Extension">
+                <controller title="プロコン" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
                         <button alignment="left" id="AA0-yC-aS4">
                             <group key="contentGroup" width="1" height="70" alignment="left" id="Kik-hL-Lch">
@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
-        <!--お知らせ一覧-->
+        <!--お知らせ-->
         <scene sceneID="2tg-6V-Q4M">
             <objects>
-                <controller title="お知らせ一覧" id="4Pd-xI-LKH" customClass="NoticeListInterfaceController" customModule="ProconApp_WatchKit_Extension">
+                <controller title="お知らせ" id="4Pd-xI-LKH" customClass="NoticeListInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="6lk-Ue-6JK">
                             <items>
@@ -79,15 +79,15 @@
             </objects>
             <point key="canvasLocation" x="472" y="189"/>
         </scene>
-        <!--競技結果一覧-->
+        <!--競技結果-->
         <scene sceneID="DYm-Ag-len">
             <objects>
-                <controller title="競技結果一覧" id="RXM-0h-xNi" customClass="ResultListInterfaceController" customModule="ProconApp_WatchKit_Extension">
+                <controller title="競技結果" id="RXM-0h-xNi" customClass="ResultListInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="OFt-sA-A47">
                             <items>
                                 <tableRow identifier="ResultTableCell" id="SKj-ba-yeF" customClass="ResultTableCell" customModule="ProconApp_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="44" alignment="left" id="mSz-39-cmZ">
+                                    <group key="rootItem" width="1" height="44" alignment="left" layout="vertical" id="mSz-39-cmZ">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="第2回戦 3問目" textAlignment="left" minimumScaleFactor="0.60000000000000009" id="DRr-yv-3Aj">
                                                 <fontDescription key="font" type="system" pointSize="14"/>
@@ -143,7 +143,7 @@
             <objects>
                 <controller identifier="ResultInterfaceController" title="競技結果" id="FOI-TQ-7ai" customClass="ResultInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="left" id="KyX-wC-tSc">
+                        <group width="1" alignment="left" layout="vertical" id="KyX-wC-tSc">
                             <items>
                                 <label alignment="left" text=" " minimumScaleFactor="0.70000000000000007" id="j3i-rO-mWT">
                                     <fontDescription key="font" type="system" pointSize="14"/>

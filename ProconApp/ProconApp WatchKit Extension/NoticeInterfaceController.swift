@@ -59,9 +59,9 @@ class NoticeInterfaceController: InterfaceController {
     
     override func reloadContents() {
         
-        if let body = self.buildBody() {
+        if let body = self.notice?.buildBody() {
             //contentLabel.text = nil
-            contentLabel.setText(body)
+            contentLabel.setAttributedText(body)
         } else {
             contentLabel.setText("loading...")
         }
@@ -84,12 +84,4 @@ class NoticeInterfaceController: InterfaceController {
             }
         }
     }
-    
-    func buildBody() -> String? {
-        if let html = notice?.body {
-            return html
-        }
-        return nil
-    }
-
 }

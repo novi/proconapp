@@ -33,7 +33,7 @@ class ResultListInterfaceController: InterfaceController {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let rr = AppAPI.Endpoint.FetchGameResults(user: me, count: 3)
+            let rr = AppAPI.Endpoint.FetchGameResults(user: me, filter: .OnlyForNotification, count: 10)
             AppAPI.sendRequest(rr) { res in
                 switch res {
                 case .Success(let box):

@@ -81,7 +81,7 @@ class SchoolTableCell: NSObject {
     var result: GameResult.Result? {
         didSet {
             if let result = self.result {
-                schoolLabel.setText(result.player.fullName)
+                schoolLabel.setText(result.player.shortName)
                 rankLabel.setText("\(result.rank)位")
                 scoreLabel.setText("\(Int(result.score))\(result.scoreUnit)")
             }

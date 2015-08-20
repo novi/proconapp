@@ -198,19 +198,26 @@ public class AppAPI: API {
         
         public class FetchGameResults: BaseRequest, APIKit.Request {
             
-            var count:Int
+            public enum Filter: String {
+                case All = "all"
+                case OnlyForNotification = "only_for_notification"
+            }
+            
+            let count:Int
+            let filter: Filter
             public var URLRequest: NSURLRequest? {
                 let req = AppAPI.URLRequest(
                     method: .GET,
                     path: "/game/game_results",
-                    parameters: ["count": count]
+                    parameters: ["count": count, "filter": filter.rawValue]
                 )
                 buildRequestHeader(req) // TODO
                 return req
             }
             
-            public init(user: UserIdentifier, count:Int = 5) {
+            public init(user: UserIdentifier, filter: Filter = .All, count:Int = 5) {
                 self.count = count
+                self.filter = filter
                 super.init(user: user)
             }
             

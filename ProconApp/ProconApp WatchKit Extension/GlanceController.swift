@@ -38,7 +38,7 @@ class GlanceController: InterfaceController {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchGameResults(user: me, count: 1)
+            let r = AppAPI.Endpoint.FetchGameResults(user: me, filter: .OnlyForNotification, count: 1)
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):

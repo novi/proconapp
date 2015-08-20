@@ -21,7 +21,7 @@ class NoticeViewController: ViewController {
             return
         }
         
-        if let attrBody = self.buildBody() {
+        if let attrBody = self.notice?.buildBody() {
             textView.text = nil
             textView.attributedText = attrBody
         } else {
@@ -55,13 +55,6 @@ class NoticeViewController: ViewController {
         reloadContents()
     }
     
-    func buildBody() -> NSAttributedString? {
-        if let html = notice?.body {
-            if let data = html.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true) {
-                return NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil, error: nil)
-            }
-        }
-        return nil
-    }
+    
 
 }
