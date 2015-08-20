@@ -47,7 +47,7 @@ class NoticeInterfaceController: InterfaceController {
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
-                    self.notice = box.value[self.noticeIndex!]
+                    self.notice = box.value[self.noticeIndex!] // TODO:
                     self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
@@ -63,7 +63,7 @@ class NoticeInterfaceController: InterfaceController {
             //contentLabel.text = nil
             contentLabel.setAttributedText(body)
         } else {
-            contentLabel.setText("loading...")
+            contentLabel.setText("読み込み中...")
         }
         
         if let notice = notice {

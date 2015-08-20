@@ -86,8 +86,11 @@ class NotificationSettingViewController: TableViewController {
         tableView.reloadData()
     }
     
-    // MARK:
+    // MARK: Table View
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "選択した学校の競技結果を通知します。\nまた、Apple Watch使用時に優先的に表示します。"
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return players.count

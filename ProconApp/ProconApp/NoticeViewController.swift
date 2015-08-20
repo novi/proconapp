@@ -25,7 +25,7 @@ class NoticeViewController: ViewController {
             textView.text = nil
             textView.attributedText = attrBody
         } else {
-            textView.text = "loading..."
+            textView.text = "読み込み中..."
         }
         
         if let notice = notice {
