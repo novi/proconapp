@@ -21,7 +21,7 @@ extension UIStoryboard {
 extension UITableView {
     enum CellIdentifier: String {
         case NotificationSettingCell = "Cell"
-        
+        case HomeGeneralCell = "GeneralCell"
         case HomeNoticeCell = "NoticeCell"
         case HomePhotoCell = "HomePhoto"
         case HomeGameResultCellRank = "GameResultCellRank"
@@ -68,6 +68,7 @@ extension UIViewController {
         case HomeShowNoticeList = "ShowNoticeList"
         case HomeShowGameResultList = "GameResultList"
         case HomeShowPhotoList = "PhotoList"
+        case HomeShowNothing = ""
     }
     
     enum UnwindSegueIdentifier: String {

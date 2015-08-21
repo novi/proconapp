@@ -104,6 +104,12 @@ class HomeHeaderView: UITableViewHeaderFooterView {
     
 }
 
+class GeneralCell: UITableViewCell {
+    
+    @IBOutlet weak var accessButton: UIButton!
+    @IBOutlet weak var programButton: UIButton!
+}
+
 class NoticeCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!

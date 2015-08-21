@@ -13,12 +13,15 @@ import APIKit
 class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     
     enum Section: Int {
-        case Notices = 0
-        case GameResults = 1
-        case Photos = 2
+        case General = 0
+        case Notices = 1
+        case GameResults = 2
+        case Photos = 3
         
         var cellIdentifier: UITableView.CellIdentifier? {
             switch self {
+            case .General:
+                return .HomeGeneralCell
             case .Notices:
                 return .HomeNoticeCell
             case .Photos:
@@ -35,6 +38,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return UIImage(image: .HeaderGameResult)!
             case .Photos:
                 return UIImage(image: .HeaderPhoto)!
+            default:
+                return UIImage()
             }
         }
         func cellIdentifierForGameResult(result: GameResult) -> UITableView.CellIdentifier {
@@ -55,6 +60,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return "競技部門速報"
             case .Photos:
                 return "会場フォト"
+            default:
+                return ""
             }
         }
         var showAllSegueIdentifier: UIViewController.SegueIdentifier {
@@ -65,9 +72,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return .HomeShowGameResultList
             case .Photos:
                 return .HomeShowPhotoList
+            default:
+                return .HomeShowNothing
             }
         }
-        static let count = 3
+        static let count = 4
     }
     
     var notices: [Notice] = []
@@ -172,18 +181,24 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch Section(rawValue: section)! {
+        case .General:
+            return 1
         case .Notices:
-            return notices.count
+            return (notices.count > 3) ? 3 : notices.count
         case .GameResults:
-            return gameResults.count
+            return (gameResults.count > 3) ? 3 : gameResults.count
         case .Photos:
-            return photos.count
+            return (photos.count > 3) ? 3 : photos.count
         }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let section = Section(rawValue: indexPath.section)!
         switch section {
+        case .General:
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! GeneralCell
+            
+            return cell
         case .Notices:
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! NoticeCell
             
@@ -211,6 +226,10 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if (Section(rawValue: section)! == .General) {
+            return nil
+        }
+        
         let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(.HomeHeaderView) as! HomeHeaderView
         cell.section = Section(rawValue: section)!
         cell.delegate = self
@@ -218,6 +237,9 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (Section(rawValue: section)! == .General) {
+            return 0
+        }
         return 36
     }
     
@@ -226,6 +248,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         var height: CGFloat = 0
         
         switch section {
+        case .General:
+            height = 70
         case .Notices:
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! NoticeCell
             cell.titleLabel.text = self.notices[indexPath.row].title
