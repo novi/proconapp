@@ -114,7 +114,7 @@ class ResultHeaderView: UITableViewHeaderFooterView {
             titleLabel.text = gameResult?.title
             if let result = self.gameResult {
                 var started = "開始: \(result.startedAt.timeString)"
-                var finished = result.finishedAt != nil ? "終了: \(result.finishedAt!.timeString)" : "(試合中)"
+                var finished = (result.finishedAt == nil || result.isInGame ) ? "(試合中)" : "終了: \(result.finishedAt!.timeString)"
                 timeLabel.text = "\(started) - \(finished)"
             }
         }
