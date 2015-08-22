@@ -184,11 +184,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         case .General:
             return 1
         case .Notices:
-            return (notices.count > 3) ? 3 : notices.count
+            return notices.count
         case .GameResults:
-            return (gameResults.count > 3) ? 3 : gameResults.count
+            return gameResults.count
         case .Photos:
-            return (photos.count > 3) ? 3 : photos.count
+            return photos.count
         }
     }
 
@@ -197,7 +197,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         switch section {
         case .General:
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! GeneralCell
-            
+            cell.accessButton.addTarget(self, action: "generalCellButtonTapped:", forControlEvents: .TouchUpInside)
+            cell.programButton.addTarget(self, action: "generalCellButtonTapped:", forControlEvents: .TouchUpInside)
             return cell
         case .Notices:
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! NoticeCell
@@ -281,6 +282,18 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             let dst = segue.destinationViewController as! PhotoViewController
             dst.photo = cell.photoInfo
         }
+    }
+    
+    func generalCellButtonTapped(sender: UIButton) {
+        let web = storyboard!.instantiateViewControllerWithIdentifier(.WebView) as! WebViewController
+        switch GeneralCell.Tag(rawValue: sender.tag)! {
+        case .Access:
+            web.URL = Constants.appLPURL("/docs/access")
+        case .Program:
+            web.URL = Constants.appLPURL("/docs/procon_program")
+        }
+        web.hidesBottomBarWhenPushed = true
+        self.navigationController!.pushViewController(web, animated: true)
     }
 
 }

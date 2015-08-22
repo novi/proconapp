@@ -36,3 +36,9 @@ extension NSDate {
         return self.dynamicType.timeDateFormatter.stringFromDate(self) ?? ""
     }
 }
+
+extension Constants {
+    public static func appLPURL(path: String) -> NSURL {
+        return NSURL(string: Constants.AppLPURL)!.URLByAppendingPathComponent(path)
+    }
+}

@@ -11,6 +11,7 @@ import UIKit
 extension UIStoryboard {
     enum StoryboardIdentifier: String {
         case Login = "Login"
+        case WebView = "WebView"
     }
     
     func instantiateViewControllerWithIdentifier(identifier: StoryboardIdentifier) -> UIViewController {

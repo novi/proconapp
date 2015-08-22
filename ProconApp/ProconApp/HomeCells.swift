@@ -108,6 +108,16 @@ class GeneralCell: UITableViewCell {
     
     @IBOutlet weak var accessButton: UIButton!
     @IBOutlet weak var programButton: UIButton!
+    
+    enum Tag: Int {
+        case Program = 1
+        case Access = 2
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        accessButton.removeTarget(nil, action: nil, forControlEvents: .TouchUpInside)
+        accessButton.removeTarget(nil, action: nil, forControlEvents: .TouchUpInside)
+    }
 }
 
 class NoticeCell: UITableViewCell {
