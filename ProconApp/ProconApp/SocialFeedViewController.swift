@@ -27,7 +27,7 @@ class TweetCell: UITableViewCell {
             if let tw = tweet {
                 userIconImageView.imageURL = tw.user.profileImageURL
                 nameLabel.text = tw.user.userName
-                screenNameLabel.text = tw.user.screenName
+                screenNameLabel.text = "@" + tw.user.screenName
                 bodyLabel.text = tw.text
                 dateLabel.text = tw.createdAt.relativeDateString
             }
