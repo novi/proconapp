@@ -267,22 +267,10 @@
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
-                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
                     </connections>
                 </notificationController>
             </objects>
             <point key="canvasLocation" x="235" y="1001"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="KIl-fV-djm">
-            <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="ProconApp_WatchKit_Extension">
-                    <items>
-                        <label alignment="left" text="-" id="UZz-dE-mzD"/>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="553" y="1001"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
