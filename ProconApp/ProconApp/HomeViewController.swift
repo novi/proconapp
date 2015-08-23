@@ -92,8 +92,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view, typically from a nib.
-        
+        if LocalSetting.sharedInstance.shouldActivateNotification {
+            UIApplication.sharedApplication().activatePushNotification()
+        } else {
+            println("notification setting not completed")
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -116,9 +119,6 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 case .Failure(let box):
                     println(box.value)
                 }
-            }
-            if LocalSetting.sharedInstance.shouldActivateNotification {
-                UIApplication.sharedApplication().activatePushNotification()
             }
         } else {
             // NOT logged in, show login view

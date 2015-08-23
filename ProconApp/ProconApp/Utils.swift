@@ -13,9 +13,11 @@ import APIKit
 extension UIApplication {
     
     func activatePushNotification() {
-        let settings = UIUserNotificationSettings(forTypes: .Alert | .Sound | .Badge, categories: nil)
-        self.registerUserNotificationSettings(settings)
-        println("activatePushNotification")
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            println("activatePushNotification")
+            let settings = UIUserNotificationSettings(forTypes: .Alert | .Sound | .Badge, categories: nil)
+            self.registerUserNotificationSettings(settings)
+        })
     }
 }
 

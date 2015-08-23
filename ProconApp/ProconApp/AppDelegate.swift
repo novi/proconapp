@@ -73,7 +73,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         if let token = String(deviceTokenData: deviceToken) {
             println("device token: \(token)")
-            LocalSetting.sharedInstance.registerAndUploadPushDeviceTokenIfNeeded(token)
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                LocalSetting.sharedInstance.registerAndUploadPushDeviceTokenIfNeeded(token)
+            })
         }
     }
     

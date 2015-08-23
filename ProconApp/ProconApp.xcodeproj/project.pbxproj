@@ -1093,7 +1093,7 @@
 		524593221AD147D000196181 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APP_NAME = Procon26;
+				APP_NAME = "プロコン";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ProconApp/Entitlements/ProconApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -143,9 +143,7 @@ class NotificationSettingViewController: TableViewController {
                     // Done
                     LocalSetting.sharedInstance.shouldShowNotificationSettings = false
                     
-                    if LocalSetting.sharedInstance.shouldActivateNotification {
-                        UIApplication.sharedApplication().activatePushNotification()
-                    }
+                    UIApplication.sharedApplication().activatePushNotification()
                     
                     self.performSegueWithIdentifier(.UnwindNotificationSetting, sender: self)
                 case .Failure(let box):
