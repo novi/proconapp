@@ -48,7 +48,6 @@
 		5260BA241B68F68600ED9EEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5260BA231B68F68600ED9EEF /* Images.xcassets */; };
 		5260BA271B68F68600ED9EEF /* ProconApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5260BA0A1B68F68600ED9EEF /* ProconApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5260BA3C1B68FA3400ED9EEF /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; };
-		5260BA3D1B68FA3400ED9EEF /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		526469711B69107400FEEBBA /* LocalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526469701B69107400FEEBBA /* LocalSettings.swift */; };
 		5273DD071B4D780E00F8621A /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD111B4D78F600F8621A /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0E1B4D78F600F8621A /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -60,6 +59,9 @@
 		528151351B636E45002152DA /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528151341B636E45002152DA /* NoticeViewController.swift */; };
 		528151371B6375E8002152DA /* NoticeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528151361B6375E8002152DA /* NoticeListViewController.swift */; };
 		528151391B637DA6002152DA /* GameResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528151381B637DA6002152DA /* GameResultListViewController.swift */; };
+		5296ADE81B8A23E9002941FE /* APIKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5296ADE51B8A23E9002941FE /* APIKit.framework.dSYM */; };
+		5296ADE91B8A23E9002941FE /* Himotoki.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5296ADE61B8A23E9002941FE /* Himotoki.framework.dSYM */; };
+		5296ADEA1B8A23E9002941FE /* Result.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5296ADE71B8A23E9002941FE /* Result.framework.dSYM */; };
 		52A7EFFC1B6CC543002BFF7D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7EFFB1B6CC543002BFF7D /* Utils.swift */; };
 		52A7EFFE1B6CCB4D002BFF7D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7EFFD1B6CCB4D002BFF7D /* ImageView.swift */; };
 		52A7F0001B6CCE0F002BFF7D /* PhotoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7EFFF1B6CCE0F002BFF7D /* PhotoListController.swift */; };
@@ -170,17 +172,6 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5260BA3E1B68FA3400ED9EEF /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5260BA3D1B68FA3400ED9EEF /* APIKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5273DD041B4D77D200F8621A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,6 +183,18 @@
 				52538EA81B4D7B3F00059FEC /* ProconBase.framework in CopyFiles */,
 				5273DD131B4D78F600F8621A /* Result.framework in CopyFiles */,
 				5273DD071B4D780E00F8621A /* APIKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5296ADE41B8A23C6002941FE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				5296ADE81B8A23E9002941FE /* APIKit.framework.dSYM in CopyFiles */,
+				5296ADE91B8A23E9002941FE /* Himotoki.framework.dSYM in CopyFiles */,
+				5296ADEA1B8A23E9002941FE /* Result.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +260,9 @@
 		528151341B636E45002152DA /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		528151361B6375E8002152DA /* NoticeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeListViewController.swift; sourceTree = "<group>"; };
 		528151381B637DA6002152DA /* GameResultListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultListViewController.swift; sourceTree = "<group>"; };
+		5296ADE51B8A23E9002941FE /* APIKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = APIKit.framework.dSYM; path = ../Carthage/Build/iOS/APIKit.framework.dSYM; sourceTree = "<group>"; };
+		5296ADE61B8A23E9002941FE /* Himotoki.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Himotoki.framework.dSYM; path = ../Carthage/Build/iOS/Himotoki.framework.dSYM; sourceTree = "<group>"; };
+		5296ADE71B8A23E9002941FE /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = ../Carthage/Build/iOS/Result.framework.dSYM; sourceTree = "<group>"; };
 		52A7EFFB1B6CC543002BFF7D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		52A7EFFD1B6CCB4D002BFF7D /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		52A7EFFF1B6CCE0F002BFF7D /* PhotoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListController.swift; sourceTree = "<group>"; };
@@ -335,6 +341,7 @@
 		524592F61AD147D000196181 = {
 			isa = PBXGroup;
 			children = (
+				5296ADEB1B8A23F6002941FE /* dsym */,
 				526469761B6917BD00FEEBBA /* Entitlements */,
 				524593011AD147D000196181 /* ProconApp */,
 				524593191AD147D000196181 /* ProconAppTests */,
@@ -557,6 +564,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5296ADEB1B8A23F6002941FE /* dsym */ = {
+			isa = PBXGroup;
+			children = (
+				5296ADE51B8A23E9002941FE /* APIKit.framework.dSYM */,
+				5296ADE61B8A23E9002941FE /* Himotoki.framework.dSYM */,
+				5296ADE71B8A23E9002941FE /* Result.framework.dSYM */,
+			);
+			name = dsym;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -580,6 +597,8 @@
 				524592FD1AD147D000196181 /* Resources */,
 				5273DD041B4D77D200F8621A /* CopyFiles */,
 				5260BA301B68F68600ED9EEF /* Embed App Extensions */,
+				5296ADE31B8A22E8002941FE /* ShellScript */,
+				5296ADE41B8A23C6002941FE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -691,7 +710,6 @@
 				5260BA061B68F68600ED9EEF /* Sources */,
 				5260BA071B68F68600ED9EEF /* Frameworks */,
 				5260BA081B68F68600ED9EEF /* Resources */,
-				5260BA3E1B68FA3400ED9EEF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -867,6 +885,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5296ADE31B8A22E8002941FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Box.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Himotoki.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		524592FB1AD147D000196181 /* Sources */ = {
