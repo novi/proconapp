@@ -39,7 +39,7 @@ public class LocalSetting {
             println("push token is same")
             if let lastSent = userDefaults.objectForKey(.PushTokenUploadedDate) as? NSDate {
                 println("push token last sent date", lastSent)
-                if NSDate().timeIntervalSince1970 - lastSent.timeIntervalSince1970 < 3600*24*1s {
+                if NSDate().timeIntervalSince1970 - lastSent.timeIntervalSince1970 < 3600*24*1 {
                     return false
                 }
             }
