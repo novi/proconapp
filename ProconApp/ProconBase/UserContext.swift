@@ -32,6 +32,10 @@ public class UserContext {
     
     public var me: UserIdentifier? // if nil, not logged in
     
+    public var isLoggedIn: Bool {
+        return me != nil
+    }
+    
     
     init() {
         let uds = [NSUserDefaults.standardUserDefaults(), AppGroup.sharedInstance]

@@ -137,6 +137,9 @@ class NotificationSettingViewController: TableViewController {
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
+                    // Done
+                    LocalSetting.sharedInstance.shouldShowNotificationSettings = false
+                    
                     self.performSegueWithIdentifier(.UnwindNotificationSetting, sender: self)
                 case .Failure(let box):
                     let alert = UIAlertController(title: "設定できませんでした", message: nil

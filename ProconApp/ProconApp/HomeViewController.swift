@@ -99,6 +99,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        if UserContext.defaultContext.isLoggedIn &&
+            LocalSetting.sharedInstance.shouldShowNotificationSettings {
+                self.performSegueWithIdentifier(.HomeShowNotificationSetting, sender: nil)
+        }
+        
         if let me = UserContext.defaultContext.me {
             // logged in
             let r = AppAPI.Endpoint.FetchUserInfo(user: me)
@@ -115,10 +120,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             UIApplication.sharedApplication().activatePushNotification()
         } else {
             // NOT logged in, show login view
-            let vc = storyboard!.instantiateViewControllerWithIdentifier(.Login)
-            self.tabBarController?.presentViewController(vc, animated: true) { () -> Void in
-                
-            }
+            self.performSegueWithIdentifier(.HomeShowLogin, sender: nil)
         }
         
         if let me = UserContext.defaultContext.me {
@@ -170,6 +172,12 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     // MARK: Notification Settings
     
     @IBAction func notificationSettingDone(segue: UIStoryboardSegue) {
+        
+    }
+    
+    // MARK: Login
+    
+    @IBAction func loginDone(segue: UIStoryboardSegue) {
         
     }
     

@@ -10,7 +10,6 @@ import UIKit
 
 extension UIStoryboard {
     enum StoryboardIdentifier: String {
-        case Login = "Login"
         case WebView = "WebView"
     }
     
@@ -70,10 +69,13 @@ extension UIViewController {
         case HomeShowGameResultList = "GameResultList"
         case HomeShowPhotoList = "PhotoList"
         case HomeShowNothing = ""
+        case HomeShowNotificationSetting = "NotificationSetting"
+        case HomeShowLogin = "ShowLogin"
     }
     
     enum UnwindSegueIdentifier: String {
         case UnwindNotificationSetting = "NotificationSettingDone"
+        case UnwindLogin = "LoginDone"
     }
     
     func performSegueWithIdentifier(identifier: UnwindSegueIdentifier, sender: AnyObject?) {
