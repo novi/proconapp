@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebViewController: UIViewController {
+class WebViewController: ViewController, UIWebViewDelegate {
     
     
     @IBOutlet weak var webView: UIWebView!
@@ -35,6 +35,11 @@ class WebViewController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        webView.delegate = self
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadWebViewIfNeeded()
@@ -53,5 +58,36 @@ class WebViewController: UIViewController {
             let activity = UIActivityViewController(activityItems: [currentTitle, url], applicationActivities: nil)
             self.presentViewController(activity, animated: true, completion: nil)
         }
+    }
+    
+    // MARK: Web View
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if let url = request.URL {
+            if let comp = NSURLComponents(URL: url, resolvingAgainstBaseURL: true) {
+                if let query = comp.queryItems as? [NSURLQueryItem] {
+                    for e in query {
+                        if e.name == "open_in_browser" {
+                            // TODO: Test
+                            UIApplication.sharedApplication().openURL(url)
+                            return false
+                        }
+                    }
+                }
+            }
+        }
+        return true
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        endContentsLoading()
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        startContentsLoading()
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+        endContentsLoading()
     }
 }
