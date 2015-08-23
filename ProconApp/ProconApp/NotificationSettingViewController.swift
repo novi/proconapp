@@ -150,6 +150,7 @@ class NotificationSettingViewController: TableViewController {
                     alert.addAction(UIAlertAction(title: "再実行", style: .Default, handler: { (_) -> Void in
                         self.doneTapped(nil)
                     }))
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
             }
         } else {
