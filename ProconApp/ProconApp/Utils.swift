@@ -15,6 +15,7 @@ extension UIApplication {
     func activatePushNotification() {
         let settings = UIUserNotificationSettings(forTypes: .Alert | .Sound | .Badge, categories: nil)
         self.registerUserNotificationSettings(settings)
+        println("activatePushNotification")
     }
 }
 
@@ -35,28 +36,6 @@ extension String {
     }
 }
 
-
-class LocalSettings {
-    static let instance = LocalSettings()
-    
-    func registerAndUploadPushDeviceToken(token: String) {
-
-        // TODO: save current push token to user defaults
-        
-        if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.UpdatePushToken(user: me, pushToken: token)
-            AppAPI.sendRequest(r) { res in
-                switch res {
-                case .Success(let box):
-                    println(box.value)
-                case .Failure(let box):
-                    println(box.value)
-                }
-            }
-        }
-    }
-    
-}
 
 extension UIColor {
     static var appTintColor: UIColor {

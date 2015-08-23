@@ -117,9 +117,9 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                     println(box.value)
                 }
             }
-            
-            // activate push notification
-            UIApplication.sharedApplication().activatePushNotification()
+            if LocalSetting.sharedInstance.shouldActivateNotification {
+                UIApplication.sharedApplication().activatePushNotification()
+            }
         } else {
             // NOT logged in, show login view
             self.performSegueWithIdentifier(.HomeShowLogin, sender: nil)

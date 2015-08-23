@@ -29,7 +29,7 @@ extension NSDate {
     static var timeDateFormatter: NSDateFormatter {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "ja")
-        dateFormatter.dateFormat = "H:m"
+        dateFormatter.dateFormat = "H:mm"
         return dateFormatter // TODO: use static let
     }
     public var timeString: String {
@@ -38,7 +38,7 @@ extension NSDate {
 }
 
 extension Constants {
-    internal static func appLPURL(path: String) -> NSURL {
+    public static func appLPURL(path: String) -> NSURL {
         return NSURL(string: Constants.AppLPURL)!.URLByAppendingPathComponent(path)
     }
 }

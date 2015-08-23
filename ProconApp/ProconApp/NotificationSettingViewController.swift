@@ -143,6 +143,10 @@ class NotificationSettingViewController: TableViewController {
                     // Done
                     LocalSetting.sharedInstance.shouldShowNotificationSettings = false
                     
+                    if LocalSetting.sharedInstance.shouldActivateNotification {
+                        UIApplication.sharedApplication().activatePushNotification()
+                    }
+                    
                     self.performSegueWithIdentifier(.UnwindNotificationSetting, sender: self)
                 case .Failure(let box):
                     let alert = UIAlertController(title: "設定できませんでした", message: nil

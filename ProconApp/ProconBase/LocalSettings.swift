@@ -26,6 +26,67 @@ public class LocalSetting {
             userDefaults.synchronize()
         }
     }
+    
+    public var shouldActivateNotification: Bool {
+        return userDefaults.boolForKey(.NotificationSettingDone)
+    }
+    
+    func isNeedSendPushToken(newToken: String) -> Bool {
+        if let oldToken = userDefaults.stringForKey(.PushTokenLatestToken) {
+            if oldToken != newToken {
+                return true
+            }
+            println("push token is same")
+            if let lastSent = userDefaults.objectForKey(.PushTokenUploadedDate) as? NSDate {
+                println("push token last sent date", lastSent)
+                if NSDate().timeIntervalSince1970 - lastSent.timeIntervalSince1970 < 3600*24*1s {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
+    func saveAsUploadedPushToken(token: String) {
+        userDefaults.setObject(token, forKey: .PushTokenLatestToken)
+        userDefaults.setObject(NSDate(), forKey: .PushTokenUploadedDate)
+        userDefaults.synchronize()
+    }
+    
+    public func registerAndUploadPushDeviceTokenIfNeeded(token: String) {
+        if let me = UserContext.defaultContext.me {
+            if self.isNeedSendPushToken(token) {
+                let r = AppAPI.Endpoint.UpdatePushToken(user: me, pushToken: token)
+                AppAPI.sendRequest(r) { res in
+                    switch res {
+                    case .Success(let box):
+                        println("push token uploaded")
+                        self.saveAsUploadedPushToken(token)
+                    case .Failure(let box):
+                        println("push token upload error: ", box.value)
+                    }
+                }
+                
+            } else {
+                println("no need push token send")
+            }
+        }
+    }
+    
+    public func registerAndUploadPushDeviceTokenIfNeeded_Dummy(token: String) {
+        if let me = UserContext.defaultContext.me {
+            if self.isNeedSendPushToken(token) {
+                
+                //println("dummy sent failed")
+                
+                //println("dummy sent success")
+                //self.saveAsUploadedPushToken(token)
+                
+            } else {
+                println("no need push token send")
+            }
+        }
+    }
 }
 
 
@@ -34,10 +95,17 @@ extension NSUserDefaults {
         case UserID = "user_id"
         case UserToken = "user_token"
         case NotificationSettingDone = "notification_setting_done"
+        
+        case PushTokenUploadedDate = "push_token_last_uploaded"
+        case PushTokenLatestToken = "push_token_latest_token"
     }
     
     func stringForKey(key: Keys) -> String? {
         return stringForKey(key.rawValue)
+    }
+    
+    func objectForKey(key: Keys) -> AnyObject? {
+        return objectForKey(key.rawValue)
     }
     
     func integerForKey(key: Keys) -> Int {

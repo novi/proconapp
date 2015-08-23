@@ -54,6 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        // Dummy token send test
+        //LocalSetting.sharedInstance.registerAndUploadPushDeviceTokenIfNeeded("dummy token 1")
+        //LocalSetting.sharedInstance.registerAndUploadPushDeviceTokenIfNeeded("dummy token 2")
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -69,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         if let token = String(deviceTokenData: deviceToken) {
             println("device token: \(token)")
-            LocalSettings.instance.registerAndUploadPushDeviceToken(token)
+            LocalSetting.sharedInstance.registerAndUploadPushDeviceTokenIfNeeded(token)
         }
     }
     
