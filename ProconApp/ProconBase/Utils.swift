@@ -38,7 +38,7 @@ extension NSDate {
 }
 
 extension Constants {
-    public static func appLPURL(path: String) -> NSURL {
+    internal static func appLPURL(path: String) -> NSURL {
         return NSURL(string: Constants.AppLPURL)!.URLByAppendingPathComponent(path)
     }
 }
