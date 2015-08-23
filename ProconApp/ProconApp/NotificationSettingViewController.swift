@@ -126,6 +126,7 @@ class NotificationSettingViewController: TableViewController {
         
         sender?.enabled = false
         
+        
         if let me = UserContext.defaultContext.me {
             var enableIds:[PlayerID] = []
             for (id, enabled) in settings {
@@ -133,8 +134,10 @@ class NotificationSettingViewController: TableViewController {
                     enableIds.append(id)
                 }
             }
+            self.startContentsLoading()
             let r = AppAPI.Endpoint.UpdateGameNotificationSettings(user: me, ids: enableIds)
             AppAPI.sendRequest(r) { res in
+                self.endContentsLoading()
                 switch res {
                 case .Success(let box):
                     // Done
