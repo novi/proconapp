@@ -104,6 +104,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 self.performSegueWithIdentifier(.HomeShowNotificationSetting, sender: nil)
         }
         
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0 // バッジを消す
+        
         if let me = UserContext.defaultContext.me {
             // logged in
             let r = AppAPI.Endpoint.FetchUserInfo(user: me)
