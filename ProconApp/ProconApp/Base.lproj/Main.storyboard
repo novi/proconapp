@@ -1000,7 +1000,7 @@ text</string>
         <!--Notice View Controller-->
         <scene sceneID="s4T-dk-63B">
             <objects>
-                <viewController id="2dl-hw-sVn" customClass="NoticeViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="2dl-hw-sVn" customClass="NoticeViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1WI-YR-omt"/>
                         <viewControllerLayoutGuide type="bottom" id="dyD-RI-rGk"/>
@@ -1035,7 +1035,7 @@ text</string>
         <!--Notice List View Controller-->
         <scene sceneID="ErU-1S-fK0">
             <objects>
-                <tableViewController id="Uzo-sw-7hc" customClass="NoticeListViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="Uzo-sw-7hc" customClass="NoticeListViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ft7-h6-eNY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1097,7 +1097,7 @@ text</string>
         <!--Photo List View Controller-->
         <scene sceneID="ecD-pe-Zmp">
             <objects>
-                <tableViewController id="264-zA-Yiy" customClass="PhotoListViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="264-zA-Yiy" customClass="PhotoListViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="220" sectionHeaderHeight="22" sectionFooterHeight="22" id="K33-C6-VYq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1204,7 +1204,7 @@ text</string>
         <!--Photo View Controller-->
         <scene sceneID="aoG-tJ-3LC">
             <objects>
-                <viewController id="bwq-VR-dPo" customClass="PhotoViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="bwq-VR-dPo" customClass="PhotoViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ONX-DW-vZa"/>
                         <viewControllerLayoutGuide type="bottom" id="tfB-YW-EzD"/>
@@ -1238,7 +1238,7 @@ text</string>
         <!--Game Result List View Controller-->
         <scene sceneID="PWD-3w-LKG">
             <objects>
-                <tableViewController id="cw5-As-gRF" customClass="GameResultListViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="cw5-As-gRF" customClass="GameResultListViewController" customModule="ProconApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="38" sectionHeaderHeight="22" sectionFooterHeight="22" id="cZL-Pe-Shq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1355,8 +1355,8 @@ text</string>
         <image name="social_off" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dNq-m9-GCb"/>
-        <segue reference="7fL-0P-ho5"/>
+        <segue reference="IuW-X4-kfF"/>
+        <segue reference="ECv-LV-H4c"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.18039215689999999" green="0.2470588235" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
 </document>
