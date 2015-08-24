@@ -127,7 +127,9 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         
         if let me = UserContext.defaultContext.me {
             let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count: 3)
+            self.startContentsLoading()
             AppAPI.sendRequest(r) { res in
+                self.endContentsLoading()
                 switch res {
                 case .Success(let box):
                     println(box.value)
@@ -140,7 +142,9 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             }
             
             let rr = AppAPI.Endpoint.FetchGameResults(user: me, count: 3)
+            self.startContentsLoading()
             AppAPI.sendRequest(rr) { res in
+                self.endContentsLoading()
                 switch res {
                 case .Success(let box):
                     println(box.value)
@@ -153,7 +157,9 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             }
             
             let photoReq = AppAPI.Endpoint.FetchPhotos(user: me, count: 1)
+            self.startContentsLoading()
             AppAPI.sendRequest(photoReq) { res in
+                self.endContentsLoading()
                 switch res {
                 case .Success(let box):
                     self.photos = box.value
