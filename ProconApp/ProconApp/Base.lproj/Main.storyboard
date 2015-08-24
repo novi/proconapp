@@ -1291,10 +1291,13 @@ text</string>
                                         <constraint firstItem="JLZ-GI-6PF" firstAttribute="top" secondItem="N22-3W-KLS" secondAttribute="topMargin" constant="-1" id="emV-Mt-M2W"/>
                                         <constraint firstItem="hnE-If-fLS" firstAttribute="leading" secondItem="SR2-SY-7uI" secondAttribute="trailing" constant="8" id="fVY-U0-57R"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="JLZ-GI-6PF" secondAttribute="bottom" constant="-0.5" id="gCO-u6-Mhf"/>
+                                        <constraint firstAttribute="centerY" secondItem="SR2-SY-7uI" secondAttribute="centerY" id="gzx-Lv-B6I"/>
                                         <constraint firstItem="SR2-SY-7uI" firstAttribute="top" secondItem="N22-3W-KLS" secondAttribute="topMargin" constant="-2" id="l9z-br-7jm"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="4Eo-EG-Msy"/>
+                                            <exclude reference="l9z-br-7jm"/>
                                             <exclude reference="cqq-f7-0gV"/>
                                         </mask>
                                     </variation>
