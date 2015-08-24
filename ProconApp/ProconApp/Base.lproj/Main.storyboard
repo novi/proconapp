@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -757,9 +757,9 @@ text</string>
                                             <rect key="frame" x="110" y="13" width="140" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="5Ut-2Y-qge"/>
+                                                <constraint firstAttribute="width" constant="140" id="EPJ-1n-mdX"/>
+                                                <constraint firstAttribute="height" constant="44" id="I2x-9Y-a8x"/>
                                                 <constraint firstAttribute="width" constant="150" id="Uei-du-gBq"/>
-                                                <constraint firstAttribute="height" constant="44" id="io2-j8-yf8"/>
-                                                <constraint firstAttribute="width" constant="140" id="rPQ-SM-vQD"/>
                                             </constraints>
                                             <state key="normal" image="program_button">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -776,9 +776,9 @@ text</string>
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSu-RJ-hLL">
                                             <rect key="frame" x="354" y="13" width="140" height="44"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="44" id="RxL-QO-Kne"/>
+                                                <constraint firstAttribute="width" constant="140" id="YUz-qt-79M"/>
                                                 <constraint firstAttribute="width" constant="150" id="nB9-09-1ma"/>
-                                                <constraint firstAttribute="width" constant="140" id="rhp-Go-nmg"/>
+                                                <constraint firstAttribute="height" constant="44" id="tAF-4N-A6U"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ulE-5P-3eG"/>
                                             </constraints>
                                             <state key="normal" image="access_button"/>
@@ -835,24 +835,25 @@ text</string>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="GSu-RJ-hLL" secondAttribute="bottom" constant="5" id="5q0-KM-hmc"/>
-                                        <constraint firstItem="230-xj-bf5" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="9" id="8wz-Yq-1i4"/>
-                                        <constraint firstItem="uUo-fc-Nil" firstAttribute="width" secondItem="230-xj-bf5" secondAttribute="width" id="9vL-n9-Rk5"/>
-                                        <constraint firstItem="uUo-fc-Nil" firstAttribute="leading" secondItem="vYs-jc-I8R" secondAttribute="leadingMargin" id="HLF-t8-EdF"/>
-                                        <constraint firstItem="uUo-fc-Nil" firstAttribute="width" secondItem="uSX-BS-4N4" secondAttribute="width" id="LtH-3g-KAB"/>
-                                        <constraint firstItem="uUo-fc-Nil" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="9" id="Tsv-aS-xK4"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="uSX-BS-4N4" secondAttribute="trailing" constant="-4" id="XAc-nE-iTt"/>
-                                        <constraint firstItem="uSX-BS-4N4" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="9" id="YGP-uO-aez"/>
-                                        <constraint firstItem="GSu-RJ-hLL" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="5" id="b9H-sw-qGZ"/>
-                                        <constraint firstItem="uSX-BS-4N4" firstAttribute="leading" secondItem="GSu-RJ-hLL" secondAttribute="trailing" constant="2" id="cvL-Vj-6te"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="uSX-BS-4N4" secondAttribute="bottom" constant="10" id="ezT-AE-jin"/>
-                                        <constraint firstItem="GSu-RJ-hLL" firstAttribute="leading" secondItem="230-xj-bf5" secondAttribute="trailing" constant="2" id="kdC-0n-Pem"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="uUo-fc-Nil" secondAttribute="bottom" constant="10" id="nqg-eh-Ee8"/>
-                                        <constraint firstItem="yRH-3p-m7c" firstAttribute="leading" secondItem="uUo-fc-Nil" secondAttribute="trailing" constant="2" id="qga-j5-o6x"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="230-xj-bf5" secondAttribute="bottom" constant="10" id="t0E-1E-89v"/>
-                                        <constraint firstItem="yRH-3p-m7c" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="5" id="vOQ-ng-hFg"/>
-                                        <constraint firstItem="230-xj-bf5" firstAttribute="leading" secondItem="yRH-3p-m7c" secondAttribute="trailing" constant="2" id="ym5-KE-mU5"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="yRH-3p-m7c" secondAttribute="bottom" constant="5" id="zCT-2a-dq9"/>
+                                        <constraint firstItem="uSX-BS-4N4" firstAttribute="leading" secondItem="GSu-RJ-hLL" secondAttribute="trailing" constant="2" id="5sx-FM-jDD"/>
+                                        <constraint firstItem="uUo-fc-Nil" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="9" id="Aie-9n-ELy"/>
+                                        <constraint firstItem="GSu-RJ-hLL" firstAttribute="leading" secondItem="230-xj-bf5" secondAttribute="trailing" constant="2" id="B1S-OU-dHh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uUo-fc-Nil" secondAttribute="bottom" constant="9.5" id="B6U-Dp-XET"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uSX-BS-4N4" secondAttribute="bottom" constant="9.5" id="BRR-sT-vzX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="GSu-RJ-hLL" secondAttribute="bottom" constant="4.5" id="C4i-o5-OoP"/>
+                                        <constraint firstItem="yRH-3p-m7c" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="5" id="DXm-fj-Kep"/>
+                                        <constraint firstItem="230-xj-bf5" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="9" id="ELM-1b-FSp"/>
+                                        <constraint firstItem="yRH-3p-m7c" firstAttribute="leading" secondItem="uUo-fc-Nil" secondAttribute="trailing" constant="2" id="GkW-hg-aST"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uSX-BS-4N4" secondAttribute="trailing" constant="-4" id="Hkj-4P-ZO0"/>
+                                        <constraint firstItem="GSu-RJ-hLL" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="5" id="JFj-Rb-wwM"/>
+                                        <constraint firstItem="uUo-fc-Nil" firstAttribute="leading" secondItem="vYs-jc-I8R" secondAttribute="leadingMargin" id="M3N-9R-gxW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yRH-3p-m7c" secondAttribute="bottom" constant="4.5" id="cxF-nG-EFz"/>
+                                        <constraint firstItem="230-xj-bf5" firstAttribute="leading" secondItem="yRH-3p-m7c" secondAttribute="trailing" constant="2" id="kSb-sS-FNM"/>
+                                        <constraint firstItem="uSX-BS-4N4" firstAttribute="top" secondItem="vYs-jc-I8R" secondAttribute="topMargin" constant="9" id="ozL-jU-q1e"/>
+                                        <constraint firstItem="uSX-BS-4N4" firstAttribute="leading" secondItem="GSu-RJ-hLL" secondAttribute="trailing" constant="2" id="rTy-PO-dVA"/>
+                                        <constraint firstItem="230-xj-bf5" firstAttribute="width" secondItem="uSX-BS-4N4" secondAttribute="width" id="tuN-Qb-2b9"/>
+                                        <constraint firstItem="230-xj-bf5" firstAttribute="width" secondItem="uUo-fc-Nil" secondAttribute="width" id="vqf-6v-0Mv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="230-xj-bf5" secondAttribute="bottom" constant="9.5" id="xd0-mz-o9r"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -960,7 +961,7 @@ text</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ugo-Lo-fpo">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="kT2-xd-CgE">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="action" id="kT2-xd-CgE">
                             <connections>
                                 <action selector="actionTapped:" destination="Iw2-2S-Xxf" id="fRw-Zj-AAO"/>
                             </connections>
@@ -1355,8 +1356,8 @@ text</string>
         <image name="social_off" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IuW-X4-kfF"/>
-        <segue reference="ECv-LV-H4c"/>
+        <segue reference="dNq-m9-GCb"/>
+        <segue reference="7fL-0P-ho5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.18039215689999999" green="0.2470588235" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
 </document>
