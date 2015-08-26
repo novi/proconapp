@@ -24,15 +24,16 @@ class NoticeInterfaceController: InterfaceController {
         
         self.notice = (context as? NoticeObject)?.notice
         
+        contentLabel.setAttributedText(NSAttributedString(string: "読み込み中..."))
+        titleLabel.setText(notice?.title)
+        dateLabel.setText(notice?.publishedAt.relativeDateString)
+        
         fetchContents()
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
-        titleLabel.setText(notice?.title)
-        dateLabel.setText(notice?.publishedAt.relativeDateString)
     }
 
     override func didDeactivate() {
