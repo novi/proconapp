@@ -23,7 +23,7 @@ class TweetViewController: WebViewController {
         
         self.title = "ツイート"
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: SocialFeedViewController.isTwitterInstalled ? "Twitterで開くく" : "Safariで開く", style: .Plain, target: self, action: "openInSafari")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: SocialFeedViewController.isTwitterInstalled ? "Twitterで開く" : "Safariで開く", style: .Plain, target: self, action: "openInSafari")
     }
     
     func openInSafari() {
