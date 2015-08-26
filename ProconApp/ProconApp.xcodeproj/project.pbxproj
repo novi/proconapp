@@ -71,6 +71,7 @@
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
+		52E819F11B8DC9E500733178 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E819F01B8DC9E500733178 /* TweetViewController.swift */; };
 		52F820A41B8888D500EF736D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F820A31B8888D500EF736D /* WebViewController.swift */; };
 		5D33E3681B7BA8EA00DF74F4 /* NoticeListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */; };
 		5D33E36A1B7BA91800DF74F4 /* NoticeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33E3691B7BA91800DF74F4 /* NoticeInterfaceController.swift */; };
@@ -205,7 +206,7 @@
 		5225B7641B77A07C00773258 /* OnMemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnMemoryCache.swift; sourceTree = "<group>"; };
 		52311B901B512DC100F2F494 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		52311B921B51318200F2F494 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
-		524592FF1AD147D000196181 /* ProconApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProconApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		524592FF1AD147D000196181 /* ProconApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ProconApp.app; path = Procon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524593031AD147D000196181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524593041AD147D000196181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524593061AD147D000196181 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +273,7 @@
 		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		52E819F01B8DC9E500733178 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 		52F820A31B8888D500EF736D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeListInterfaceController.swift; sourceTree = "<group>"; };
 		5D33E3691B7BA91800DF74F4 /* NoticeInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeInterfaceController.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				52A7EFFF1B6CCE0F002BFF7D /* PhotoListController.swift */,
 				52A7F0011B6CD243002BFF7D /* PhotoViewController.swift */,
 				52A7F0031B738192002BFF7D /* SocialFeedViewController.swift */,
+				52E819F01B8DC9E500733178 /* TweetViewController.swift */,
 				52F820A31B8888D500EF736D /* WebViewController.swift */,
 				52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */,
 				52CC1F3F1B4C0E85002AD754 /* Utils.swift */,
@@ -922,6 +925,7 @@
 				52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */,
 				524593051AD147D000196181 /* AppDelegate.swift in Sources */,
 				524593071AD147D000196181 /* HomeViewController.swift in Sources */,
+				52E819F11B8DC9E500733178 /* TweetViewController.swift in Sources */,
 				528151351B636E45002152DA /* NoticeViewController.swift in Sources */,
 				52A7F0001B6CCE0F002BFF7D /* PhotoListController.swift in Sources */,
 				52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */,

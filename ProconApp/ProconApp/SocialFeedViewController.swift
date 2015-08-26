@@ -145,15 +145,10 @@ class SocialFeedViewController: TableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch Section(rawValue: indexPath.section)! {
         case .Tweets:
-            let tweet = tweets[indexPath.row]
-            if isTwitterInstalled {
-                UIApplication.sharedApplication().openURL(tweet.URLSchemeForThisTweet)
-            } else {
-                UIApplication.sharedApplication().openURL(tweet.URLForThisTweet)
-            }
+            break
         case .More:
             let hashTag = SocialFeedViewController.HASH_TAG
-            if isTwitterInstalled {
+            if self.dynamicType.isTwitterInstalled {
                 UIApplication.sharedApplication().openURL(NSURL(string: "twitter://search?query=%23\(hashTag)")!)
             } else {
                 UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/search?q=%23\(hashTag)")!)
@@ -163,13 +158,21 @@ class SocialFeedViewController: TableViewController {
             tableView.deselectRowAtIndexPath(selected, animated: true)
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let dst = segue.destinationViewController as? TweetViewController,
+            let selected = tableView.indexPathForSelectedRow() {
+            dst.tweet = tweets[selected.row]
+        }
+    }
+    
     // MARK: Twitter App
     
     @IBAction func tweetTapped(sender: AnyObject) {
         
         let hashTag = SocialFeedViewController.HASH_TAG
         
-        if isTwitterInstalled {
+        if self.dynamicType.isTwitterInstalled {
             let message = "%23\(hashTag)"
             let url = "twitter://post?message=\(message)"
             UIApplication.sharedApplication().openURL(NSURL(string: url)!)
@@ -180,7 +183,7 @@ class SocialFeedViewController: TableViewController {
         }
     }
     
-    var isTwitterInstalled: Bool {
+    static var isTwitterInstalled: Bool {
         return UIApplication.sharedApplication().canOpenURL(NSURL(string: "twitter://post")!)
     }
 }

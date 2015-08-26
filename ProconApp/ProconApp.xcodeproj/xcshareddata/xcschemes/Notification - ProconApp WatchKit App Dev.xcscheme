@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "524592FE1AD147D000196181"
-               BuildableName = "ProconApp.app"
+               BuildableName = "Procon.app"
                BlueprintName = "ProconApp"
                ReferencedContainer = "container:ProconApp.xcodeproj">
             </BuildableReference>
