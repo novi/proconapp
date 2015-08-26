@@ -67,10 +67,11 @@
 		52A7F0001B6CCE0F002BFF7D /* PhotoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7EFFF1B6CCE0F002BFF7D /* PhotoListController.swift */; };
 		52A7F0021B6CD243002BFF7D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7F0011B6CD243002BFF7D /* PhotoViewController.swift */; };
 		52A7F0041B738192002BFF7D /* SocialFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7F0031B738192002BFF7D /* SocialFeedViewController.swift */; };
-		52A7F0061B74E622002BFF7D /* Model-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7F0051B74E622002BFF7D /* Model-Extensions.swift */; };
+		52A7F0061B74E622002BFF7D /* Model-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A7F0051B74E622002BFF7D /* Model-Extension.swift */; };
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
+		52D1DE291B8DD278004B8FAA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D1DE281B8DD278004B8FAA /* Info.plist */; };
 		52E819F11B8DC9E500733178 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E819F01B8DC9E500733178 /* TweetViewController.swift */; };
 		52F820A41B8888D500EF736D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F820A31B8888D500EF736D /* WebViewController.swift */; };
 		5D33E3681B7BA8EA00DF74F4 /* NoticeListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */; };
@@ -206,8 +207,7 @@
 		5225B7641B77A07C00773258 /* OnMemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnMemoryCache.swift; sourceTree = "<group>"; };
 		52311B901B512DC100F2F494 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		52311B921B51318200F2F494 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSettingViewController.swift; sourceTree = "<group>"; };
-		524592FF1AD147D000196181 /* ProconApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ProconApp.app; path = Procon.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		524593031AD147D000196181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524592FF1AD147D000196181 /* Procon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Procon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		524593041AD147D000196181 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		524593061AD147D000196181 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5245930B1AD147D000196181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -269,10 +269,11 @@
 		52A7EFFF1B6CCE0F002BFF7D /* PhotoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoListController.swift; sourceTree = "<group>"; };
 		52A7F0011B6CD243002BFF7D /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		52A7F0031B738192002BFF7D /* SocialFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialFeedViewController.swift; sourceTree = "<group>"; };
-		52A7F0051B74E622002BFF7D /* Model-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Model-Extensions.swift"; sourceTree = "<group>"; };
+		52A7F0051B74E622002BFF7D /* Model-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Model-Extension.swift"; sourceTree = "<group>"; };
 		52CC1F391B4C03FE002AD754 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantUtils.swift; sourceTree = "<group>"; };
 		52CC1F3F1B4C0E85002AD754 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		52D1DE281B8DD278004B8FAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52E819F01B8DC9E500733178 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 		52F820A31B8888D500EF736D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeListInterfaceController.swift; sourceTree = "<group>"; };
@@ -361,7 +362,7 @@
 		524593001AD147D000196181 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				524592FF1AD147D000196181 /* ProconApp.app */,
+				524592FF1AD147D000196181 /* Procon.app */,
 				524593161AD147D000196181 /* ProconAppTests.xctest */,
 				52538E901B4D7B3F00059FEC /* ProconBase.framework */,
 				52538E9A1B4D7B3F00059FEC /* ProconBaseTests.xctest */,
@@ -406,7 +407,7 @@
 		524593021AD147D000196181 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				524593031AD147D000196181 /* Info.plist */,
+				52D1DE281B8DD278004B8FAA /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -435,7 +436,7 @@
 				52538EBB1B4D7C4A00059FEC /* AppAPI.swift */,
 				52538EBD1B4D7C4A00059FEC /* ManageAPI.swift */,
 				52538EBE1B4D7C4A00059FEC /* Models.swift */,
-				52A7F0051B74E622002BFF7D /* Model-Extensions.swift */,
+				52A7F0051B74E622002BFF7D /* Model-Extension.swift */,
 				52311B901B512DC100F2F494 /* Types.swift */,
 				52538EBF1B4D7C4A00059FEC /* UserContext.swift */,
 				526469701B69107400FEEBBA /* LocalSettings.swift */,
@@ -611,7 +612,7 @@
 			);
 			name = ProconApp;
 			productName = ProconApp;
-			productReference = 524592FF1AD147D000196181 /* ProconApp.app */;
+			productReference = 524592FF1AD147D000196181 /* Procon.app */;
 			productType = "com.apple.product-type.application";
 		};
 		524593151AD147D000196181 /* ProconAppTests */ = {
@@ -825,6 +826,7 @@
 			files = (
 				528151331B6365BA002152DA /* HomeHeaderView.xib in Resources */,
 				5245930C1AD147D000196181 /* Main.storyboard in Resources */,
+				52D1DE291B8DD278004B8FAA /* Info.plist in Resources */,
 				524593111AD147D000196181 /* LaunchScreen.xib in Resources */,
 				5245930E1AD147D000196181 /* Images.xcassets in Resources */,
 				5D6F448B1B77757600DEDC0D /* ResultHeaderView.xib in Resources */,
@@ -955,7 +957,7 @@
 				5D6A07C11B73CF9C00FC6307 /* Constants.swift in Sources */,
 				52538EC21B4D7C4A00059FEC /* ManageAPI.swift in Sources */,
 				52538EC31B4D7C4A00059FEC /* Models.swift in Sources */,
-				52A7F0061B74E622002BFF7D /* Model-Extensions.swift in Sources */,
+				52A7F0061B74E622002BFF7D /* Model-Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -955,7 +955,7 @@ text</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="通知設定" id="Sk8-Ac-i09">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="D5p-y3-Wqj">
+                        <barButtonItem key="rightBarButtonItem" title="完了" style="done" id="D5p-y3-Wqj">
                             <connections>
                                 <action selector="doneTapped:" destination="uvX-OM-egi" id="7hs-rD-SU2"/>
                             </connections>

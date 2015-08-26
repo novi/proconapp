@@ -25,11 +25,14 @@ class TweetCell: UITableViewCell {
     var tweet: Twitter.Tweet? {
         didSet {
             if let tw = tweet {
-                userIconImageView.imageURL = tw.user.profileImageURL
+                userIconImageView.imageURL = tw.user.profileImageURLBigger
                 nameLabel.text = tw.user.userName
                 screenNameLabel.text = "@" + tw.user.screenName
                 bodyLabel.text = tw.text
                 dateLabel.text = tw.createdAt.relativeDateString
+
+                userIconImageView.layer.cornerRadius = 3
+                userIconImageView.layer.masksToBounds = true
             }
         }
     }

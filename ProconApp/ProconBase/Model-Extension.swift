@@ -20,6 +20,17 @@ extension Twitter.Tweet {
     }
 }
 
+extension Twitter.User {
+    public var profileImageURLBigger: NSURL {
+        let filename = profileImageURL.lastPathComponent ?? ""
+        if let base = profileImageURL.URLByDeletingLastPathComponent {
+            let biggerName = filename.stringByReplacingOccurrencesOfString("normal", withString: "bigger", options: .LiteralSearch, range: nil)
+            return base.URLByAppendingPathComponent(biggerName)
+        }
+        return profileImageURL
+    }
+}
+
 extension Twitter {
     
     static let dateFormatter: NSDateFormatter = {
