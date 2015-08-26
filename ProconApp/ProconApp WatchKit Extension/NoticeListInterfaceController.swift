@@ -12,19 +12,19 @@ import ProconBase
 
 class NoticeListInterfaceController: InterfaceController {
     
-    @IBOutlet weak var NoticeTable: WKInterfaceTable!
+    @IBOutlet weak var noticeTable: WKInterfaceTable!
     var notices: [Notice] = []
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        fetchContents()
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        fetchContents()
     }
 
     override func didDeactivate() {
@@ -34,13 +34,13 @@ class NoticeListInterfaceController: InterfaceController {
 
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count: 3)
+            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count: 10)
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
                     println(box.value)
                     self.notices = box.value
-                    self.createTableData()
+                    self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
                     println(box.value)
@@ -49,17 +49,18 @@ class NoticeListInterfaceController: InterfaceController {
         }
     }
     
-    func createTableData() {
-        NoticeTable.setNumberOfRows(notices.count, withRowType: "NoticeTableCell")
+    override func reloadContents() {
+        
+        noticeTable.setNumberOfRows(notices.count, withRowType: .Notice)
         
         for i in 0..<notices.count {
-            var noticeCell = NoticeTable.rowControllerAtIndex(i) as! NoticeTableCell
-            noticeCell.notice = notices[i]
+            let cell = noticeTable.rowControllerAtIndex(i) as! NoticeTableCell
+            cell.notice = notices[i]
         }
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        self.pushControllerWithName("NoticeInterfaceController", context: rowIndex)
+        self.pushControllerWithName(.Notice, context: NoticeObject(notices[rowIndex]))
     }
     
 }

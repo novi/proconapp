@@ -13,7 +13,7 @@ import ProconBase
 
 class MainInterfaceController: InterfaceController {
 
-    var user: User?
+    //var user: User?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -43,7 +43,7 @@ class MainInterfaceController: InterfaceController {
     
     override func fetchContents() {
         
-        if let me = UserContext.defaultContext.me {
+        /*if let me = UserContext.defaultContext.me {
             // logged in
             let r = AppAPI.Endpoint.FetchUserInfo(user: me)
             AppAPI.sendRequest(r) { res in
@@ -58,7 +58,7 @@ class MainInterfaceController: InterfaceController {
             }
         } else {
             println("not logged in")
-        }
+        }*/
         
     }
 

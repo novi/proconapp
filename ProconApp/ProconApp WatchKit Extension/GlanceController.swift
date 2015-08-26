@@ -22,7 +22,6 @@ class GlanceController: InterfaceController {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
-        fetchContents()
     }
 
     override func willActivate() {
@@ -61,11 +60,11 @@ class GlanceController: InterfaceController {
     }
     func createTableData() {
         if let results = gameResults.first?.resultsByRank {
-            schoolTable.setNumberOfRows(results.count, withRowType: "GlanceSchoolTableCell")
+            schoolTable.setNumberOfRows(results.count, withRowType: .GlanceSchool)
             
             for i in 0..<results.count {
-                let schoolCell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
-                schoolCell.result = results[i]
+                let cell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
+                cell.result = results[i]
             }
         }
     }

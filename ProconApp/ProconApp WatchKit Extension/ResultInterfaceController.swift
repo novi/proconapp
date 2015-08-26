@@ -16,16 +16,12 @@ class ResultInterfaceController: InterfaceController {
     @IBOutlet weak var timeLabel: WKInterfaceLabel!
     @IBOutlet weak var schoolTable: WKInterfaceTable!
     
-    var gameResults: [GameResult] = []
-    var gameResultIndex: Int?
+    var gameResult: GameResult?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        if let index = context as? Int {
-            gameResultIndex = index
-        }
-        // Configure interface objects here.
+        gameResult = (context as! GameResultObject).result
     }
 
     override func willActivate() {
@@ -40,34 +36,20 @@ class ResultInterfaceController: InterfaceController {
     }
 
     override func fetchContents() {
-        if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchGameResults(user: me, count: 3)
-            AppAPI.sendRequest(r) { res in
-                switch res {
-                case .Success(let box):
-                    println(box.value)
-                    self.gameResults = box.value
-                    self.createGameData()
-                    self.createTableData()
-                case .Failure(let box):
-                    // TODO, error
-                    println(box.value)
-                }
-            }
-        }
+        self.reloadContents()
     }
-    func createGameData() {
-        let gameResult = gameResults[gameResultIndex!]
-        titleLabel.setText(gameResult.title)
-        timeLabel.setText(gameResult.startedAt.relativeDateString)
-    }
-    func createTableData() {
-        let results = gameResults[gameResultIndex!].resultsByRank
-        schoolTable.setNumberOfRows(results.count, withRowType: "SchoolTableCell")
+    
+    override func reloadContents() {
         
-        for i in 0..<results.count {
-            var schoolCell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
-            schoolCell.result = results[i]
+        if let gr = self.gameResult {
+            titleLabel.setText(gr.title)
+            timeLabel.setText(gr.startedAt.relativeDateString)
+            let ranks = gr.resultsByRank
+            schoolTable.setNumberOfRows(ranks.count, withRowType: .ResultSchool)
+            for i in 0..<ranks.count {
+                var cell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
+                cell.result = ranks[i]
+            }
         }
     }
 }

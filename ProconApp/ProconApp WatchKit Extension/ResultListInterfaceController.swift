@@ -13,12 +13,12 @@ import ProconBase
 class ResultListInterfaceController: InterfaceController {
 
     @IBOutlet weak var resultTable: WKInterfaceTable!
+    
     var gameResults: [GameResult] = []
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         fetchContents()
-        // Configure interface objects here.
     }
 
     override func willActivate() {
@@ -39,7 +39,7 @@ class ResultListInterfaceController: InterfaceController {
                 case .Success(let box):
                     println(box.value)
                     self.gameResults = box.value
-                    self.createTableData()
+                    self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
                     println(box.value)
@@ -48,18 +48,19 @@ class ResultListInterfaceController: InterfaceController {
         }
     }
     
-    func createTableData() {
-        resultTable.setNumberOfRows(gameResults.count, withRowType: "ResultTableCell")
+    override func reloadContents() {
+        resultTable.setNumberOfRows(gameResults.count, withRowType: .Result)
         
         for i in 0..<gameResults.count {
-            var resultCell = resultTable.rowControllerAtIndex(i) as! ResultTableCell
-            println(gameResults[i])
-            resultCell.gameResult = gameResults[i]
+            var cell = resultTable.rowControllerAtIndex(i) as! ResultTableCell
+            //println(gameResults[i])
+            cell.gameResult = gameResults[i]
         }
     }
     
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
-        self.pushControllerWithName("ResultInterfaceController", context: rowIndex)
+        let result = gameResults[rowIndex]
+        self.pushControllerWithName(.Result, context: GameResultObject(result))
     }
     
 }

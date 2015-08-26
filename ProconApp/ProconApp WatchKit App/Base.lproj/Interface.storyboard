@@ -58,7 +58,7 @@
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="font" type="system" pointSize="14"/>
                                             </label>
-                                            <label width="1" alignment="left" text="こんなことがあったよ" textAlignment="left" numberOfLines="2" minimumScaleFactor="0.90000000000000002" id="la2-dp-nnb">
+                                            <label width="1" alignment="left" text="text" textAlignment="left" numberOfLines="2" minimumScaleFactor="0.90000000000000002" id="la2-dp-nnb">
                                                 <fontDescription key="font" type="system" pointSize="14"/>
                                             </label>
                                             <group width="1" height="4" alignment="left" id="vHv-9L-64j"/>
@@ -73,7 +73,7 @@
                         </table>
                     </items>
                     <connections>
-                        <outlet property="NoticeTable" destination="6lk-Ue-6JK" id="ZVO-Py-Jtg"/>
+                        <outlet property="noticeTable" destination="6lk-Ue-6JK" id="aoY-Sk-IDB"/>
                     </connections>
                 </controller>
             </objects>
@@ -198,7 +198,7 @@
                     <items>
                         <group alignment="left" layout="vertical" id="t8f-Gd-c4y">
                             <items>
-                                <label alignment="left" text="競技結果" id="aiM-UF-AQ5">
+                                <label alignment="left" text="競技速報" id="aiM-UF-AQ5">
                                     <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                                 <group width="1" alignment="left" id="sVo-ZD-zPU">
