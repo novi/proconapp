@@ -15,6 +15,12 @@ class MainInterfaceController: InterfaceController {
 
     //var user: User?
     
+    @IBOutlet weak var messageLabel: WKInterfaceLabel!
+    
+    @IBOutlet weak var noticeButton: WKInterfaceButton!
+    @IBOutlet weak var separator: WKInterfaceSeparator!
+    @IBOutlet weak var resultButton: WKInterfaceButton!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
@@ -39,6 +45,20 @@ class MainInterfaceController: InterfaceController {
     }
     
     override func reloadContents() {
+        if let me = UserContext.defaultContext.me {
+            messageLabel.setHidden(true)
+            
+            noticeButton.setHidden(false)
+            resultButton.setHidden(false)
+            separator.setHidden(false)
+        } else {
+            noticeButton.setHidden(true)
+            resultButton.setHidden(true)
+            separator.setHidden(true)
+            
+            messageLabel.setHidden(false)
+            messageLabel.setText("iPhoneで\n「はじめる」ボタンをタップして、アプリを設定してください。")
+        }
     }
     
     override func fetchContents() {

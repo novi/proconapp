@@ -10,6 +10,7 @@
             <objects>
                 <controller title="プロコン" id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
+                        <label width="1" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" numberOfLines="0" id="HO4-ce-Wrt"/>
                         <button alignment="left" id="AA0-yC-aS4">
                             <group key="contentGroup" width="1" height="70" alignment="left" id="Kik-hL-Lch">
                                 <items>
@@ -40,6 +41,12 @@
                             </connections>
                         </button>
                     </items>
+                    <connections>
+                        <outlet property="messageLabel" destination="HO4-ce-Wrt" id="6mi-il-zCc"/>
+                        <outlet property="noticeButton" destination="AA0-yC-aS4" id="S48-Zb-bFP"/>
+                        <outlet property="resultButton" destination="jfP-aI-7XK" id="x1V-ee-vBa"/>
+                        <outlet property="separator" destination="4nK-My-gwt" id="tWq-PA-5Lj"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
