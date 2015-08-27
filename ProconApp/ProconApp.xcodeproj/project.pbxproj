@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520769061B8F2820005276DF /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 520769051B8F2820005276DF /* libGoogleAnalyticsServices.a */; };
+		520769091B8F2C9F005276DF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 520769081B8F2C9F005276DF /* libsqlite3.dylib */; };
+		5207690B1B8F2CA8005276DF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5207690A1B8F2CA8005276DF /* libz.dylib */; };
+		5207690D1B8F2CB8005276DF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5207690C1B8F2CB8005276DF /* CoreData.framework */; };
+		5207690F1B8F2CC2005276DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5207690E1B8F2CC2005276DF /* SystemConfiguration.framework */; };
+		520769111B8F2E04005276DF /* GAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520769101B8F2E04005276DF /* GAI.swift */; };
 		520A58681B7DFAC300869D4A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A58671B7DFAC300869D4A /* Utils.swift */; };
 		5225B7651B77A07C00773258 /* OnMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225B7641B77A07C00773258 /* OnMemoryCache.swift */; };
 		52311B911B512DC100F2F494 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52311B901B512DC100F2F494 /* Types.swift */; };
@@ -203,6 +209,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		520768FB1B8F2820005276DF /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		520768FC1B8F2820005276DF /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		520768FD1B8F2820005276DF /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		520768FE1B8F2820005276DF /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		520768FF1B8F2820005276DF /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		520769001B8F2820005276DF /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		520769011B8F2820005276DF /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		520769021B8F2820005276DF /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		520769031B8F2820005276DF /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		520769041B8F2820005276DF /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		520769051B8F2820005276DF /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		520769071B8F28B8005276DF /* Proconapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Proconapp-Bridging-Header.h"; sourceTree = "<group>"; };
+		520769081B8F2C9F005276DF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		5207690A1B8F2CA8005276DF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5207690C1B8F2CB8005276DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5207690E1B8F2CC2005276DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		520769101B8F2E04005276DF /* GAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAI.swift; sourceTree = "<group>"; };
 		520A58671B7DFAC300869D4A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		5225B7641B77A07C00773258 /* OnMemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnMemoryCache.swift; sourceTree = "<group>"; };
 		52311B901B512DC100F2F494 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
@@ -290,7 +313,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5207690F1B8F2CC2005276DF /* SystemConfiguration.framework in Frameworks */,
+				5207690D1B8F2CB8005276DF /* CoreData.framework in Frameworks */,
+				5207690B1B8F2CA8005276DF /* libz.dylib in Frameworks */,
+				520769091B8F2C9F005276DF /* libsqlite3.dylib in Frameworks */,
 				52538EA71B4D7B3F00059FEC /* ProconBase.framework in Frameworks */,
+				520769061B8F2820005276DF /* libGoogleAnalyticsServices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +370,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520768F71B8F2820005276DF /* External */ = {
+			isa = PBXGroup;
+			children = (
+				520768F81B8F2820005276DF /* GA */,
+			);
+			name = External;
+			path = ../External;
+			sourceTree = "<group>";
+		};
+		520768F81B8F2820005276DF /* GA */ = {
+			isa = PBXGroup;
+			children = (
+				520768F91B8F2820005276DF /* GoogleAnalytics */,
+				520769051B8F2820005276DF /* libGoogleAnalyticsServices.a */,
+			);
+			path = GA;
+			sourceTree = "<group>";
+		};
+		520768F91B8F2820005276DF /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				520768FA1B8F2820005276DF /* Library */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		520768FA1B8F2820005276DF /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				520768FB1B8F2820005276DF /* GAI.h */,
+				520768FC1B8F2820005276DF /* GAIDictionaryBuilder.h */,
+				520768FD1B8F2820005276DF /* GAIEcommerceFields.h */,
+				520768FE1B8F2820005276DF /* GAIEcommerceProduct.h */,
+				520768FF1B8F2820005276DF /* GAIEcommerceProductAction.h */,
+				520769001B8F2820005276DF /* GAIEcommercePromotion.h */,
+				520769011B8F2820005276DF /* GAIFields.h */,
+				520769021B8F2820005276DF /* GAILogger.h */,
+				520769031B8F2820005276DF /* GAITrackedViewController.h */,
+				520769041B8F2820005276DF /* GAITracker.h */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		524592F61AD147D000196181 = {
 			isa = PBXGroup;
 			children = (
+				520768F71B8F2820005276DF /* External */,
 				5296ADEB1B8A23F6002941FE /* dsym */,
 				526469761B6917BD00FEEBBA /* Entitlements */,
 				524593011AD147D000196181 /* ProconApp */,
@@ -395,6 +467,7 @@
 				52CC1F3F1B4C0E85002AD754 /* Utils.swift */,
 				52A7EFFD1B6CCB4D002BFF7D /* ImageView.swift */,
 				527A37FD1B74EE640089EDDB /* BaseViewController.swift */,
+				520769101B8F2E04005276DF /* GAI.swift */,
 				5245930A1AD147D000196181 /* Main.storyboard */,
 				528151321B6365BA002152DA /* HomeHeaderView.xib */,
 				5D6F448A1B77757600DEDC0D /* ResultHeaderView.xib */,
@@ -409,6 +482,7 @@
 			isa = PBXGroup;
 			children = (
 				52D1DE281B8DD278004B8FAA /* Info.plist */,
+				520769071B8F28B8005276DF /* Proconapp-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -561,6 +635,10 @@
 		5273DD081B4D781D00F8621A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5207690E1B8F2CC2005276DF /* SystemConfiguration.framework */,
+				5207690C1B8F2CB8005276DF /* CoreData.framework */,
+				5207690A1B8F2CA8005276DF /* libz.dylib */,
+				520769081B8F2C9F005276DF /* libsqlite3.dylib */,
 				5273DD061B4D780E00F8621A /* APIKit.framework */,
 				5273DD0E1B4D78F600F8621A /* Box.framework */,
 				5273DD0F1B4D78F600F8621A /* Himotoki.framework */,
@@ -932,6 +1010,7 @@
 				528151351B636E45002152DA /* NoticeViewController.swift in Sources */,
 				52A7F0001B6CCE0F002BFF7D /* PhotoListController.swift in Sources */,
 				52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */,
+				520769111B8F2E04005276DF /* GAI.swift in Sources */,
 				52A7F0021B6CD243002BFF7D /* PhotoViewController.swift in Sources */,
 				52F820A41B8888D500EF736D /* WebViewController.swift in Sources */,
 			);
@@ -1147,7 +1226,12 @@
 				INFOPLIST_FILE = ProconApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ito/Projects/proconapp/External/GA,
+				);
 				PRODUCT_NAME = Procon;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconApp/Proconapp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -1774,7 +1858,12 @@
 				INFOPLIST_FILE = ProconApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ito/Projects/proconapp/External/GA,
+				);
 				PRODUCT_NAME = Procon;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconApp/Proconapp-Bridging-Header.h";
 			};
 			name = Dev;
 		};
@@ -1853,7 +1942,12 @@
 				INFOPLIST_FILE = ProconApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/ito/Projects/proconapp/External/GA,
+				);
 				PRODUCT_NAME = Procon;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconApp/Proconapp-Bridging-Header.h";
 			};
 			name = Staging;
 		};

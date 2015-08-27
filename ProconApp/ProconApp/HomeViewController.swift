@@ -99,6 +99,12 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        GAI.sharedInstance().sendShowScreen(.Home)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         

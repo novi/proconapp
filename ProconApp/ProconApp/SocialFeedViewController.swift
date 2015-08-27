@@ -109,6 +109,8 @@ class SocialFeedViewController: TableViewController {
         super.viewWillAppear(animated)
         
         fetchContentsIfNeeded()
+        
+        GAI.sharedInstance().sendShowScreen(.Social)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
