@@ -268,26 +268,22 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let section = Section(rawValue: indexPath.section)!
-        var height: CGFloat = 0
+        let height: CGFloat
         
         switch section {
         case .General:
             height = 70
         case .Notices:
-            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! NoticeCell
-            cell.titleLabel.text = self.notices[indexPath.row].title
-            var maxSize = self.view.frame.size
-            
-            height = cell.titleLabel.sizeThatFits(maxSize).height + cell.margin
+            height = 44
         case .GameResults:
             //let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! GameResultCell
             height = 78
             
         case .Photos:
-            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! PhotoCell
-            cell.thumbnailImageView.imageURL = self.photos[indexPath.row].thumbnailURL
+            //let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! PhotoCell
+            //cell.thumbnailImageView.imageURL = self.photos[indexPath.row].thumbnailURL
             
-            height = cell.thumbnailImageView.frame.height + cell.margin
+            height = 220
         }
         return height
     }

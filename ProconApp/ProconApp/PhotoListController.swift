@@ -72,12 +72,7 @@ class PhotoListViewController: TableViewController {
         }
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        var height: CGFloat = 0
-        let cell = tableView.dequeueReusableCellWithIdentifier(.PhotoListCell) as! PhotoCell
-        cell.thumbnailImageView.imageURL = self.photos[indexPath.row].thumbnailURL
-        
-        height = cell.thumbnailImageView.frame.height + cell.margin
-        return height
+        return 220
     }
 
     

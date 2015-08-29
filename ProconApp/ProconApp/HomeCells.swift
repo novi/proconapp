@@ -146,6 +146,9 @@ class PhotoCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: LoadingImageView!
     let margin: CGFloat = 80
     
+    override func awakeFromNib() {
+        thumbnailImageView.clipsToBounds = true
+    }
     
     var photoInfo: PhotoInfo? {
         didSet {
