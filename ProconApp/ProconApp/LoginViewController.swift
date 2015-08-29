@@ -39,4 +39,9 @@ class LoginViewController: UIViewController {
         }
         
     }
+    @IBAction func privacypolicyTapped(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(Constants.appLPURL("/docs/privacypolicy"))
+    }
+    
+    
 }
