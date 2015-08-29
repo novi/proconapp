@@ -55,7 +55,7 @@ class WebViewController: ViewController, UIWebViewDelegate {
     
     @IBAction func actionTapped(sender: AnyObject) {
         if let url = self.currentURL ?? self.URL {
-            let activity = UIActivityViewController(activityItems: [currentTitle, url], applicationActivities: nil)
+            let activity = UIActivityViewController(activityItems: [currentTitle, url], applicationActivities: [SafariActivity()])
             self.presentViewController(activity, animated: true, completion: nil)
         }
     }

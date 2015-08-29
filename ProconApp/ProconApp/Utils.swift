@@ -44,3 +44,51 @@ extension UIColor {
         return UIColor(red:46/255.0,green:63/255.0,blue:126/255.0,alpha:1.0)
     }
 }
+
+
+class SafariActivity: UIActivity {
+    
+    var url: NSURL?
+    
+    override class func activityCategory() -> UIActivityCategory {
+        return .Action
+    }
+    
+    override func activityType() -> String? {
+        return "SafariActivity"
+    }
+    
+    override func activityTitle() -> String? {
+        return "Safariで開く"
+    }
+    
+    override func canPerformWithActivityItems(activityItems: [AnyObject]) -> Bool {
+        for obj in activityItems {
+            if let url = obj as? NSURL {
+                self.url = url
+                return true
+            }
+        }
+        return false
+    }
+    
+    override func prepareWithActivityItems(activityItems: [AnyObject]) {
+        for obj in activityItems {
+            if let url = obj as? NSURL {
+                self.url = url
+                return
+            }
+        }
+    }
+    
+    override func performActivity() {
+        
+        let completed: Bool
+        if let url = self.url {
+            completed = UIApplication.sharedApplication().openURL(url)
+        } else {
+            completed = false
+        }
+        self.activityDidFinish(completed)
+    }
+}
