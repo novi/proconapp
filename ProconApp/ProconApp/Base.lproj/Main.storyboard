@@ -277,36 +277,6 @@ text</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-I0-EpF">
-                                <rect key="frame" x="197" y="532" width="206" height="48"/>
-                                <color key="backgroundColor" red="0.18039215689999999" green="0.2470588235" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="5no-Nk-MOu"/>
-                                    <constraint firstAttribute="height" constant="30" id="7vD-dP-feb"/>
-                                    <constraint firstAttribute="width" constant="206" id="ABN-Ei-Lb9"/>
-                                    <constraint firstAttribute="width" constant="89" id="cQn-4x-oTQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="はじめる">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="7vD-dP-feb"/>
-                                        <exclude reference="cQn-4x-oTQ"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="loginTapped:" destination="H6R-de-bEF" eventType="touchUpInside" id="hcq-gG-YWS"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Oei-TO-7ln">
                                 <rect key="frame" x="250" y="133" width="100" height="100"/>
                                 <constraints>
@@ -412,6 +382,36 @@ text</string>
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-I0-EpF">
+                                <rect key="frame" x="197" y="416" width="206" height="48"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.2470588235" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5no-Nk-MOu"/>
+                                    <constraint firstAttribute="height" constant="30" id="7vD-dP-feb"/>
+                                    <constraint firstAttribute="width" constant="206" id="ABN-Ei-Lb9"/>
+                                    <constraint firstAttribute="width" constant="89" id="cQn-4x-oTQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="はじめる">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7vD-dP-feb"/>
+                                        <exclude reference="cQn-4x-oTQ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="loginTapped:" destination="H6R-de-bEF" eventType="touchUpInside" id="hcq-gG-YWS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -423,16 +423,21 @@ text</string>
                             <constraint firstAttribute="centerY" secondItem="Agd-I0-EpF" secondAttribute="centerY" id="FcX-U3-CkT"/>
                             <constraint firstAttribute="centerX" secondItem="PAe-eN-aeP" secondAttribute="centerX" id="IAp-aP-ww1"/>
                             <constraint firstAttribute="centerX" secondItem="Agd-I0-EpF" secondAttribute="centerX" id="Jj0-wY-Cx6"/>
-                            <constraint firstItem="J4M-rf-tHg" firstAttribute="top" secondItem="Agd-I0-EpF" secondAttribute="bottom" constant="20" id="PuW-wh-GUk"/>
+                            <constraint firstItem="J4M-rf-tHg" firstAttribute="top" secondItem="Agd-I0-EpF" secondAttribute="bottom" constant="40" id="PuW-wh-GUk">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="Oei-TO-7ln" firstAttribute="top" secondItem="fnN-mX-RMi" secondAttribute="bottom" constant="22.5" id="WVS-ld-Mgg"/>
                             <constraint firstAttribute="centerX" secondItem="fnN-mX-RMi" secondAttribute="centerX" id="kEc-h2-Bqy"/>
                             <constraint firstItem="fnN-mX-RMi" firstAttribute="top" secondItem="Fek-Ti-3Pw" secondAttribute="bottom" constant="26" id="pUS-ns-xrC"/>
+                            <constraint firstItem="Agd-I0-EpF" firstAttribute="top" secondItem="PAe-eN-aeP" secondAttribute="bottom" constant="15" id="pZP-JD-uo7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="E5u-18-tCK"/>
                                 <exclude reference="53K-qV-ny5"/>
                                 <exclude reference="CKh-Ap-nfO"/>
                                 <exclude reference="FcX-U3-CkT"/>
+                                <exclude reference="PuW-wh-GUk"/>
                             </mask>
                         </variation>
                     </view>
