@@ -37,7 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let gai = GAI.sharedInstance()
         gai.dispatchInterval = 30
+        #if DEBUG
         gai.logger.logLevel = GAILogLevel.Verbose
+        #endif
         
         
         return true
