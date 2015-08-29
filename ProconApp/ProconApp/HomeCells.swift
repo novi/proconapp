@@ -140,10 +140,12 @@ class NoticeCell: UITableViewCell {
 class PhotoCell: UITableViewCell {
     
     
+    @IBOutlet weak var overlayView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: LoadingImageView!
     let margin: CGFloat = 80
+    
     
     var photoInfo: PhotoInfo? {
         didSet {
@@ -151,6 +153,29 @@ class PhotoCell: UITableViewCell {
                 dateLabel.text = info.createdAt.relativeDateString
                 titleLabel.text = info.title
                 thumbnailImageView.imageURL = info.thumbnailURL
+            }
+        }
+    }
+    
+    let OVERLAY_VIEW_ALPHA: CGFloat = 0.6
+    
+    
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        if overlayView != nil {
+            overlayView.hidden = false
+            func anim() {
+                self.overlayView.alpha = highlighted ? self.OVERLAY_VIEW_ALPHA : 0
+            }
+            func comp(c: Bool) {
+                overlayView.hidden = !highlighted
+            }
+            if !highlighted {
+                //overlayView.alpha = highlighted ? 0 : self.OVERLAY_VIEW_ALPHA
+                UIView.animateWithDuration(0.25, animations: anim, completion: comp)
+            } else {
+                anim()
+                comp(true)
             }
         }
     }
