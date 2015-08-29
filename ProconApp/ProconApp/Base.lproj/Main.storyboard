@@ -1276,22 +1276,29 @@ text</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p45-DM-ReP">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" indicatorStyle="white" minimumZoomScale="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="i6B-pj-XgK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <dataDetectorType key="dataDetectorTypes"/>
-                            </webView>
+                                <connections>
+                                    <outlet property="delegate" destination="bwq-VR-dPo" id="S4b-fs-lmt"/>
+                                </connections>
+                            </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="21m-W9-Bef">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="p45-DM-ReP" secondAttribute="trailing" constant="-16" id="7ff-bK-5Sp"/>
-                            <constraint firstItem="p45-DM-ReP" firstAttribute="top" secondItem="eFS-qm-Abh" secondAttribute="topMargin" id="Zz6-i3-ooz"/>
-                            <constraint firstItem="tfB-YW-EzD" firstAttribute="top" secondItem="p45-DM-ReP" secondAttribute="bottom" constant="-44" id="mSv-t0-TOA"/>
-                            <constraint firstItem="p45-DM-ReP" firstAttribute="leading" secondItem="eFS-qm-Abh" secondAttribute="leadingMargin" constant="-16" id="xzc-Ss-gZr"/>
+                            <constraint firstItem="i6B-pj-XgK" firstAttribute="top" secondItem="eFS-qm-Abh" secondAttribute="top" id="015-Lb-yej"/>
+                            <constraint firstItem="i6B-pj-XgK" firstAttribute="leading" secondItem="eFS-qm-Abh" secondAttribute="leading" id="4ug-ZD-hfR"/>
+                            <constraint firstAttribute="centerX" secondItem="21m-W9-Bef" secondAttribute="centerX" id="LCo-yj-3No"/>
+                            <constraint firstAttribute="trailing" secondItem="i6B-pj-XgK" secondAttribute="trailing" id="snI-Tz-ceB"/>
+                            <constraint firstAttribute="bottom" secondItem="i6B-pj-XgK" secondAttribute="bottom" id="ubf-Hk-bFl"/>
+                            <constraint firstAttribute="centerY" secondItem="21m-W9-Bef" secondAttribute="centerY" id="umh-c0-4AM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="p45-DM-ReP" id="Y2P-yM-vga"/>
+                        <outlet property="activityIndicator" destination="21m-W9-Bef" id="M2c-fk-r9I"/>
+                        <outlet property="scrollView" destination="i6B-pj-XgK" id="KrU-gQ-G3S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBX-EB-d9A" userLabel="First Responder" sceneMemberID="firstResponder"/>

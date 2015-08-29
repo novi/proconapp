@@ -18,6 +18,8 @@ class LoadingImageView: UIImageView {
         return NSURLSession(configuration: config)
     })()
     
+    var cacheImage: Bool = true
+    
     var imageURL: NSURL? {
         didSet {
             if oldValue == imageURL {
@@ -37,6 +39,7 @@ class LoadingImageView: UIImageView {
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let req = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10)
+                    Logger.debug("loading image \(url.absoluteString)")
                     let task = LoadingImageView.imageURLSession.dataTaskWithRequest(req, completionHandler: { (data: NSData!, res: NSURLResponse!, error: NSError!) -> Void in
                         
                         if data == nil || error != nil {
@@ -47,7 +50,10 @@ class LoadingImageView: UIImageView {
                         if let image = UIImage(data: data) {
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                 self.image = image
-                                OnMemoryCache.sharedInstance.setObject(image, forKey: url)
+                                if self.cacheImage {
+                                    OnMemoryCache.sharedInstance.setObject(image, forKey: url)
+                                }
+                                self.didLoadImage(url, image: image)
                             })
                         } else {
                             Logger.error("image data error")
@@ -58,5 +64,9 @@ class LoadingImageView: UIImageView {
                 })
             }
         }
+    }
+    
+    func didLoadImage(url: NSURL, image: UIImage) {
+        
     }
 }
