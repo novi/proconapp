@@ -14,7 +14,7 @@ extension UIApplication {
     
     func activatePushNotification() {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            println("activatePushNotification")
+            Logger.debug("activatePushNotification")
             let settings = UIUserNotificationSettings(forTypes: .Alert | .Sound | .Badge, categories: nil)
             self.registerUserNotificationSettings(settings)
         })

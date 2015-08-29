@@ -21,12 +21,12 @@ class GameResultListViewController: TableViewController {
                 self.endContentsLoading()
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)" as String)
                     self.allGameResult = box.value
                     self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
-                    println(box.value)
+                    Logger.error("\(box.value)")
                 }
             }
         }

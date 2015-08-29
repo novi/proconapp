@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UISwitch.appearance().onTintColor = UIColor.appTintColor
         
         #if DEBUG
-            println("debug flag is on")
-            println(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String)
+            Logger.debug("debug flag is on")
+            Logger.debug(NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String)
         #endif
         
         // app group test
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         group.setObject(NSDate(), forKey: "test")
         
         let appGroup = AppGroup.sharedInstance
-        println(appGroup.objectForKey("test"))
+        Logger.debug(appGroup.objectForKey("test"))
         */
         
         let gai = GAI.sharedInstance()
@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         if let token = String(deviceTokenData: deviceToken) {
-            println("device token: \(token)")
+            Logger.debug("device token: \(token)")
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 LocalSetting.sharedInstance.registerAndUploadPushDeviceTokenIfNeeded(token)
             })
@@ -85,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        println(error)
+        Logger.error("\(error)")
     }
     
 

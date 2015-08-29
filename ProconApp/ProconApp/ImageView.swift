@@ -41,7 +41,7 @@ class LoadingImageView: UIImageView {
                         
                         if data == nil || error != nil {
                             // error
-                            println("image download error", error)
+                            Logger.error("image download error \(error)")
                             return
                         }
                         if let image = UIImage(data: data) {
@@ -50,7 +50,7 @@ class LoadingImageView: UIImageView {
                                 OnMemoryCache.sharedInstance.setObject(image, forKey: url)
                             })
                         } else {
-                            println("image data error")
+                            Logger.error("image data error")
                             return
                         }
                     })

@@ -36,9 +36,9 @@ public class LocalSetting {
             if oldToken != newToken {
                 return true
             }
-            println("push token is same")
+            Logger.debug("push token is same")
             if let lastSent = userDefaults.objectForKey(.PushTokenUploadedDate) as? NSDate {
-                println("push token last sent date", lastSent)
+                Logger.debug("push token last sent date lastSent:\(lastSent)")
                 if NSDate().timeIntervalSince1970 - lastSent.timeIntervalSince1970 < 3600*24*1 {
                     return false
                 }
@@ -60,15 +60,15 @@ public class LocalSetting {
                 AppAPI.sendRequest(r) { res in
                     switch res {
                     case .Success(let box):
-                        println("push token uploaded")
+                        Logger.debug("push token uploaded")
                         self.saveAsUploadedPushToken(token)
                     case .Failure(let box):
-                        println("push token upload error: ", box.value)
+                        Logger.debug("push token upload error: \(box.value)")
                     }
                 }
                 
             } else {
-                println("no need push token send")
+                Logger.debug("no need push token send")
             }
         }
     }
@@ -77,13 +77,13 @@ public class LocalSetting {
         if let me = UserContext.defaultContext.me {
             if self.isNeedSendPushToken(token) {
                 
-                //println("dummy sent failed")
+                //Logger.debug("dummy sent failed")
                 
-                //println("dummy sent success")
+                //Logger.debug("dummy sent success")
                 //self.saveAsUploadedPushToken(token)
                 
             } else {
-                println("no need push token send")
+                Logger.debug("no need push token send")
             }
         }
     }
@@ -129,7 +129,7 @@ extension NSUserDefaults {
     }
     
     /*public static var appGroup: NSUserDefaults {
-        println(Constants.AppGroupID)
+        Logger.debug(Constants.AppGroupID)
         return AppGroup.sharedInstance
     }*/
 }

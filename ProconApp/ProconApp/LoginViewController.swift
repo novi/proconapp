@@ -27,9 +27,9 @@ class LoginViewController: UIViewController {
             case .Success(let box):
                 UserContext.defaultContext.saveAsMe(box.value)
                 self.performSegueWithIdentifier(.UnwindLogin, sender: nil)
-                println(box.value)
+                Logger.debug("\(box.value)")
             case .Failure(let box):
-                println(box.value)
+                Logger.error("\(box.value)")
                 let alert = UIAlertController(title: "サーバーに接続できませんでした", message: nil, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) -> Void in
                     self.loginButton.enabled = true

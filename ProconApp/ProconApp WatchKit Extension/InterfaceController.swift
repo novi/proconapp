@@ -25,7 +25,7 @@ class MainInterfaceController: InterfaceController {
         super.awakeWithContext(context)
         
         /*let appGroup = AppGroup.sharedInstance
-        println(appGroup.objectForKey("test"))
+        Logger.debug(appGroup.objectForKey("test"))
         testLabel.setText((appGroup.objectForKey("test") as AnyObject? ?? "").description)
         */
         
@@ -69,15 +69,15 @@ class MainInterfaceController: InterfaceController {
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)")
                     self.user = box.value
                     self.reloadContents()
                 case .Failure(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)")
                 }
             }
         } else {
-            println("not logged in")
+            Logger.debug("not logged in")
         }*/
         
     }

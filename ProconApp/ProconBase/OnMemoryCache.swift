@@ -48,7 +48,7 @@ public class OnMemoryCache {
                     }
                 }
             }
-            println("deleted \(keysToRemove)")
+            Logger.debug("deleted \(keysToRemove)")
             bucket.removeObjectsForKeys(keysToRemove)
         }
     }

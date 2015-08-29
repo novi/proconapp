@@ -41,13 +41,13 @@ class GlanceController: InterfaceController {
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)")
                     self.gameResults = box.value
                     self.createGameData()
                     self.createTableData()
                 case .Failure(let box):
                     // TODO, error
-                    println(box.value)
+                    Logger.error(box.value)
                 }
             }
         }

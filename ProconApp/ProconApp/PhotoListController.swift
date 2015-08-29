@@ -22,12 +22,12 @@ class PhotoListViewController: TableViewController {
                 self.endContentsLoading()
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)")
                     self.photos = box.value
                     self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
-                    println(box.value)
+                    Logger.error("\(box.value)")
                 }
             }
         }

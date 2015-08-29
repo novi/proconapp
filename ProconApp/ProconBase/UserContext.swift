@@ -45,7 +45,7 @@ public class UserContext {
                 break
             }
         }
-        println("host:\(Constants.APIBaseURL)")
+        Logger.debug("host:\(Constants.APIBaseURL)")
     }
     
     public func saveAsMe(user: UserIdentifier) {

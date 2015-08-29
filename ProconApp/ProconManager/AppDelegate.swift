@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         splitViewController.delegate = self
         
         #if DEBUG
-            println("debug flag is on")
+            Logger.debug("debug flag is on")
         #endif
         
         let _ = UserContext.defaultContext.me

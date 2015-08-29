@@ -41,7 +41,7 @@ class NoticeViewController: ViewController {
                             self.notice = box.value
                             self.reloadContents()
                         case .Failure(let box):
-                            println(box.value)
+                            Logger.error("\(box.value)")
                         }
                     }
                 }

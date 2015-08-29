@@ -95,7 +95,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         if LocalSetting.sharedInstance.shouldActivateNotification {
             UIApplication.sharedApplication().activatePushNotification()
         } else {
-            println("notification setting not completed")
+            Logger.debug("notification setting not completed")
         }
     }
     
@@ -121,9 +121,9 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)")
                 case .Failure(let box):
-                    println(box.value)
+                    Logger.error("\(box.value)")
                 }
             }
         } else {
@@ -138,12 +138,12 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 self.endContentsLoading()
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)")
                     self.notices = box.value
                     self.tableView.reloadSections(Section.Notices.indexSet, withRowAnimation: .None)
                 case .Failure(let box):
                     // TODO, error
-                    println(box.value)
+                    Logger.error("\(box.value)")
                 }
             }
             
@@ -153,12 +153,12 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 self.endContentsLoading()
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)")
                     self.gameResults = box.value
                     self.tableView.reloadSections(Section.GameResults.indexSet, withRowAnimation: .None)
                 case .Failure(let box):
                     // TODO, error
-                    println(box.value)
+                    Logger.error("\(box.value)")
                 }
             }
             
@@ -172,7 +172,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                     self.tableView.reloadSections(Section.Photos.indexSet, withRowAnimation: .None)
                 case .Failure(let box):
                     // TODO, error
-                    println(box.value)
+                    Logger.error("\(box.value)")
                 }
             }
         }
@@ -234,7 +234,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifierForGameResult(result), forIndexPath: indexPath) as! GameResultCell
             cell.selectionStyle = .None
-            println("result \(result.id): \(result.results)")
+            Logger.debug("result \(result.id): \(result.results)")
             
             cell.result = result
             

@@ -38,7 +38,7 @@ class NotificationSettingViewController: TableViewController {
             AppAPI.sendRequest(r) { res in
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)" as String)
                     self.players = box.value
                     
                     self.settings.removeAll(keepCapacity: true)
@@ -47,7 +47,7 @@ class NotificationSettingViewController: TableViewController {
                     AppAPI.sendRequest(r) { res in
                         switch res {
                         case .Success(let box):
-                            println("current game settings", box.value)
+                            Logger.debug("current game settings: \(box.value)")
                             for p in self.players {
                                 if box.value.count == 0 {
                                     self.settings[p.id] = true // 一つも設定されていない時はオールオン
@@ -61,7 +61,7 @@ class NotificationSettingViewController: TableViewController {
                             self.reloadContents()
                         case .Failure(let box):
                             // TODO, error
-                            println(box.value)
+                            Logger.error(box.value)
                         }
                         
                         self.endContentsLoading()
@@ -71,7 +71,7 @@ class NotificationSettingViewController: TableViewController {
                 case .Failure(let box):
                     // TODO, error
                     self.endContentsLoading()
-                    println(box.value)
+                    Logger.error(box.value)
                 }
             }
         }

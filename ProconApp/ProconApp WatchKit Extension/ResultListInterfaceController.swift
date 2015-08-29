@@ -37,12 +37,12 @@ class ResultListInterfaceController: InterfaceController {
             AppAPI.sendRequest(rr) { res in
                 switch res {
                 case .Success(let box):
-                    println(box.value)
+                    Logger.debug("\(box.value)")
                     self.gameResults = box.value
                     self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
-                    println(box.value)
+                    Logger.error("\(box.value)")
                 }
             }
         }
@@ -53,7 +53,7 @@ class ResultListInterfaceController: InterfaceController {
         
         for i in 0..<gameResults.count {
             var cell = resultTable.rowControllerAtIndex(i) as! ResultTableCell
-            //println(gameResults[i])
+            //Logger.debug(gameResults[i])
             cell.gameResult = gameResults[i]
         }
     }

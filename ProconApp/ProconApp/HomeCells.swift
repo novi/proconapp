@@ -87,7 +87,7 @@ class HomeHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func showAllTapped(sender: UIButton) {
-        println("show all tapped")
+        Logger.debug("show all tapped")
         if let section = section {
             delegate?.homeHeaderView(self, didTapShowAllforSection: section)
         }
