@@ -300,9 +300,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         if let cell = sender as? NoticeCell {
             let dst = segue.destinationViewController as! NoticeViewController
             dst.notice = cell.notice
+            dst.title = cell.notice?.title ?? ""
         } else if let cell = sender as? PhotoCell {
             let dst = segue.destinationViewController as! PhotoViewController
             dst.photo = cell.photoInfo
+            dst.title = cell.photoInfo?.title ?? ""
         }
     }
     
@@ -311,8 +313,10 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         switch GeneralCell.Tag(rawValue: sender.tag)! {
         case .Access:
             web.URL = Constants.appLPURL("/docs/access")
+            web.title = "アクセス"
         case .Program:
             web.URL = Constants.appLPURL("/docs/procon_program")
+            web.title = "プログラム"
         }
         web.hidesBottomBarWhenPushed = true
         self.navigationController!.pushViewController(web, animated: true)

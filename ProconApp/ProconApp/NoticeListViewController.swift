@@ -85,6 +85,7 @@ class NoticeListViewController: TableViewController {
         if let cell = sender as? NoticeCell {
             let dst = segue.destinationViewController as! NoticeViewController
             dst.notice = cell.notice
+            dst.title = cell.notice?.title ?? ""
         }
     }
 }

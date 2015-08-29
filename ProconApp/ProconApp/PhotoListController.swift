@@ -68,6 +68,7 @@ class PhotoListViewController: TableViewController {
         if let cell = sender as? PhotoCell {
             let dst = segue.destinationViewController as! PhotoViewController
             dst.photo = cell.photoInfo
+            dst.title = cell.photoInfo?.title ?? ""
         }
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
