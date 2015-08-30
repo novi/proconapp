@@ -13,8 +13,11 @@ import ProconBase
 
 class GlanceController: InterfaceController {
 
+    @IBOutlet weak var sectionTitleLabel: WKInterfaceLabel!
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
     @IBOutlet weak var schoolTable: WKInterfaceTable!
+    
+    @IBOutlet weak var noResultLabel: WKInterfaceLabel!
     
     var gameResults: [GameResult] = []
     
@@ -43,6 +46,8 @@ class GlanceController: InterfaceController {
                 case .Success(let box):
                     Logger.debug("\(box.value)")
                     self.gameResults = box.value
+                    self.noResultLabel.setHidden(self.gameResults.count != 0)
+                    self.sectionTitleLabel.setHidden(self.gameResults.count == 0)
                     self.createGameData()
                     self.createTableData()
                 case .Failure(let box):

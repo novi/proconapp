@@ -91,6 +91,9 @@
             <objects>
                 <controller title="競技結果" id="RXM-0h-xNi" customClass="ResultListInterfaceController" customModule="ProconApp_WatchKit_Extension">
                     <items>
+                        <label alignment="left" hidden="YES" text="設定した学校の競技結果はまだありません" textAlignment="left" numberOfLines="0" id="8Bd-U2-P0G">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
                         <table alignment="left" id="OFt-sA-A47">
                             <items>
                                 <tableRow identifier="ResultTableCell" id="SKj-ba-yeF" customClass="ResultTableCell" customModule="ProconApp_WatchKit_Extension">
@@ -114,6 +117,7 @@
                         </table>
                     </items>
                     <connections>
+                        <outlet property="noResultLabel" destination="8Bd-U2-P0G" id="Hha-Sj-Kqy"/>
                         <outlet property="resultTable" destination="OFt-sA-A47" id="9zT-tV-NvF"/>
                     </connections>
                 </controller>
@@ -208,9 +212,12 @@
                                 <label alignment="left" text="競技速報" id="aiM-UF-AQ5">
                                     <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
+                                <label alignment="left" text="設定した学校の競技結果はまだありません" textAlignment="left" numberOfLines="0" id="tdJ-C1-zs9">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
                                 <group width="1" alignment="left" id="sVo-ZD-zPU">
                                     <items>
-                                        <label alignment="left" text="-" id="xcv-Iu-X7L">
+                                        <label alignment="left" id="xcv-Iu-X7L">
                                             <fontDescription key="font" type="system" pointSize="14"/>
                                         </label>
                                     </items>
@@ -257,7 +264,9 @@
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
+                        <outlet property="noResultLabel" destination="tdJ-C1-zs9" id="8fk-FP-IRk"/>
                         <outlet property="schoolTable" destination="S0O-Ht-q4z" id="Zfe-si-pDp"/>
+                        <outlet property="sectionTitleLabel" destination="aiM-UF-AQ5" id="Qcx-KU-qyO"/>
                         <outlet property="titleLabel" destination="xcv-Iu-X7L" id="fZK-Eg-hAv"/>
                     </connections>
                 </glanceController>

@@ -14,6 +14,8 @@ class ResultListInterfaceController: InterfaceController {
 
     @IBOutlet weak var resultTable: WKInterfaceTable!
     
+    @IBOutlet weak var noResultLabel: WKInterfaceLabel!
+    
     var gameResults: [GameResult] = []
     
     override func awakeWithContext(context: AnyObject?) {
@@ -39,6 +41,7 @@ class ResultListInterfaceController: InterfaceController {
                 case .Success(let box):
                     Logger.debug("\(box.value)")
                     self.gameResults = box.value
+                    self.noResultLabel.setHidden(self.gameResults.count != 0)
                     self.reloadContents()
                 case .Failure(let box):
                     // TODO, error
