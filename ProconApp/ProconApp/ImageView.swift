@@ -31,7 +31,9 @@ class LoadingImageView: UIImageView {
             if let url = imageURL {
                 
                 if let cachedImage = OnMemoryCache.sharedInstance.objectForKey(url) as? UIImage {
-                    self.image = cachedImage
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.image = cachedImage
+                    })
                     return
                 }
                 
