@@ -1230,7 +1230,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ito/Projects/proconapp/External/GA,
+					"\"$(SRCROOT)/../External/GA\"",
 				);
 				PRODUCT_NAME = Procon;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconApp/Proconapp-Bridging-Header.h";
@@ -1862,7 +1862,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ito/Projects/proconapp/External/GA,
+					"\"$(SRCROOT)/../External/GA\"",
 				);
 				PRODUCT_NAME = Procon;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconApp/Proconapp-Bridging-Header.h";
@@ -1946,7 +1946,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ito/Projects/proconapp/External/GA,
+					"\"$(SRCROOT)/../External/GA\"",
 				);
 				PRODUCT_NAME = Procon;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconApp/Proconapp-Bridging-Header.h";
