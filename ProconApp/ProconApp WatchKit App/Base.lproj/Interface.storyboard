@@ -214,7 +214,7 @@
                                 </label>
                                 <group width="1" alignment="left" id="sVo-ZD-zPU">
                                     <items>
-                                        <label alignment="left" id="xcv-Iu-X7L">
+                                        <label alignment="left" text=" " id="xcv-Iu-X7L">
                                             <fontDescription key="font" type="system" pointSize="14"/>
                                         </label>
                                     </items>
