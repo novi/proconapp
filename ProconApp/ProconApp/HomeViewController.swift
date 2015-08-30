@@ -218,9 +218,10 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         let section = Section(rawValue: indexPath.section)!
         switch section {
         case .General:
+            let action: Selector = "generalCellButtonTapped:"
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! GeneralCell
-            cell.accessButton.addTarget(self, action: "generalCellButtonTapped:", forControlEvents: .TouchUpInside)
-            cell.programButton.addTarget(self, action: "generalCellButtonTapped:", forControlEvents: .TouchUpInside)
+            cell.accessButton.addTarget(self, action: action, forControlEvents: .TouchUpInside)
+            cell.programButton.addTarget(self, action: action, forControlEvents: .TouchUpInside)
             return cell
         case .Notices:
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! NoticeCell
@@ -276,13 +277,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         case .Notices:
             height = 44
         case .GameResults:
-            //let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! GameResultCell
             height = 78
-            
         case .Photos:
-            //let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!) as! PhotoCell
-            //cell.thumbnailImageView.imageURL = self.photos[indexPath.row].thumbnailURL
-            
             height = 220
         }
         return height

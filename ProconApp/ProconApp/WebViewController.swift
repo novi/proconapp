@@ -67,8 +67,7 @@ class WebViewController: ViewController, UIWebViewDelegate {
             if let comp = NSURLComponents(URL: url, resolvingAgainstBaseURL: true) {
                 if let query = comp.queryItems as? [NSURLQueryItem] {
                     for e in query {
-                        if e.name == "open_in_browser" {
-                            // TODO: Test
+                        if e.name == "open_in_browser" && e.value == "1" {
                             UIApplication.sharedApplication().openURL(url)
                             return false
                         }

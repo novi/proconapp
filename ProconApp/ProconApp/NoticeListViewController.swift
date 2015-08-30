@@ -9,15 +9,6 @@
 import UIKit
 import ProconBase
 
-/*
-class NoticeListCell: UITableViewCell {
-    var notice: Notice? {
-        didSet {
-            
-        }
-    }
-}*/
-
 
 class NoticeListViewController: TableViewController {
     
