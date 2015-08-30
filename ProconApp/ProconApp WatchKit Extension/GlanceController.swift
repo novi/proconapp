@@ -64,9 +64,10 @@ class GlanceController: InterfaceController {
     }
     func createTableData() {
         if let results = gameResults.first?.resultsByRank {
-            schoolTable.setNumberOfRows(results.count, withRowType: .GlanceSchool)
+            let count = min(results.count, 3)
+            schoolTable.setNumberOfRows(count, withRowType: .GlanceSchool)
             
-            for i in 0..<results.count {
+            for i in 0..<count {
                 let cell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
                 cell.result = results[i]
             }
