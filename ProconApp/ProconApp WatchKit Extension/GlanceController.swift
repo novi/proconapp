@@ -47,6 +47,7 @@ class GlanceController: InterfaceController {
                     Logger.debug("\(box.value)")
                     self.gameResults = box.value
                     self.noResultLabel.setHidden(self.gameResults.count != 0)
+                    self.noResultLabel.setText("設定した学校の競技結果はまだありません")
                     self.createGameData()
                     self.createTableData()
                 case .Failure(let box):
@@ -54,6 +55,14 @@ class GlanceController: InterfaceController {
                     Logger.error(box.value)
                 }
             }
+        } else {
+            self.noResultLabel.setHidden(false)
+            self.noResultLabel.setText(MainInterfaceController.noLoginMessage)
+            let delay = 2 * Double(NSEC_PER_SEC)
+            let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue(), {
+                self.fetchContents()
+            })
         }
     }
     func createGameData() {

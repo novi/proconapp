@@ -212,13 +212,9 @@
                                 <label alignment="left" text="競技速報" id="aiM-UF-AQ5">
                                     <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
-                                <group width="1" alignment="left" id="sVo-ZD-zPU">
-                                    <items>
-                                        <label alignment="left" text=" " id="xcv-Iu-X7L">
-                                            <fontDescription key="font" type="system" pointSize="14"/>
-                                        </label>
-                                    </items>
-                                </group>
+                                <label alignment="left" text=" " id="xcv-Iu-X7L">
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </label>
                             </items>
                         </group>
                         <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">

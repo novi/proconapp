@@ -12,6 +12,8 @@ import ProconBase
 
 
 class MainInterfaceController: InterfaceController {
+    
+    static let noLoginMessage = "iPhoneで\n「はじめる」ボタンをタップして、アプリを設定してください。"
 
     //var user: User?
     
@@ -57,7 +59,7 @@ class MainInterfaceController: InterfaceController {
             separator.setHidden(true)
             
             messageLabel.setHidden(false)
-            messageLabel.setText("iPhoneで\n「はじめる」ボタンをタップして、アプリを設定してください。")
+            messageLabel.setText(MainInterfaceController.noLoginMessage)
             
             let delay = 2 * Double(NSEC_PER_SEC)
             let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
