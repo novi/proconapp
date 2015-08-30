@@ -30,7 +30,14 @@ public class UserContext {
     
     public static let defaultContext = UserContext()
     
-    public var me: UserIdentifier? // if nil, not logged in
+    public var me: UserIdentifier? { // if nil, not logged in
+        if let me = self.me_ {
+            return me
+        }
+        self.reloadMeInfo()
+        return me_
+    }
+    var me_: UserIdentifier?
     
     public var isLoggedIn: Bool {
         return me != nil
@@ -38,18 +45,22 @@ public class UserContext {
     
     
     init() {
-        let uds = [NSUserDefaults.standardUserDefaults(), AppGroup.sharedInstance]
-        for ud in uds {
-            me = MeIdentifier(id: ud.integerForKey(.UserID), tokenStr: ud.stringForKey(.UserToken))
-            if me != nil {
-                break
-            }
-        }
+        self.reloadMeInfo()
         Logger.debug("host:\(Constants.APIBaseURL)")
     }
     
+    func reloadMeInfo() {
+        let uds = [NSUserDefaults.standardUserDefaults(), AppGroup.sharedInstance]
+        for ud in uds {
+            me_ = MeIdentifier(id: ud.integerForKey(.UserID), tokenStr: ud.stringForKey(.UserToken))
+            if me_ != nil {
+                break
+            }
+        }
+    }
+    
     public func saveAsMe(user: UserIdentifier) {
-        me = MeIdentifier(id: user.id, tokenStr: user.token)
+        me_ = MeIdentifier(id: user.id, tokenStr: user.token)
         // save user token to both the app and its extension
         let uds = [NSUserDefaults.standardUserDefaults(), AppGroup.sharedInstance]
         for ud in uds {
