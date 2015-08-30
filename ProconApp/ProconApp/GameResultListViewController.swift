@@ -109,6 +109,11 @@ class ResultHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.contentView.backgroundColor = UIColor.whiteColor()
+    }
+    
     var gameResult: GameResult? {
         didSet {
             titleLabel.text = gameResult?.title

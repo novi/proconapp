@@ -13,50 +13,30 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1m-hP-Grn">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="36"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBC-47-h5w">
-                            <rect key="frame" x="8" y="10" width="33" height="16"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlo-Gr-uRc">
                             <rect key="frame" x="559" y="10" width="33" height="16"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBC-47-h5w">
+                            <rect key="frame" x="8" y="10" width="33" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="Xlo-Gr-uRc" firstAttribute="top" secondItem="hBC-47-h5w" secondAttribute="bottom" constant="8" id="BaD-KK-AWB"/>
                         <constraint firstAttribute="trailing" secondItem="Xlo-Gr-uRc" secondAttribute="trailing" constant="8" id="DrV-v9-Gy4"/>
                         <constraint firstItem="hBC-47-h5w" firstAttribute="leading" secondItem="Q1m-hP-Grn" secondAttribute="leading" constant="8" id="I2Z-Ly-QoX"/>
-                        <constraint firstItem="Xlo-Gr-uRc" firstAttribute="top" secondItem="Q1m-hP-Grn" secondAttribute="top" constant="10" id="ISQ-Gw-dBj"/>
+                        <constraint firstAttribute="centerY" secondItem="Xlo-Gr-uRc" secondAttribute="centerY" id="Jid-43-lFW"/>
                         <constraint firstItem="Xlo-Gr-uRc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hBC-47-h5w" secondAttribute="trailing" constant="16" id="LuD-hR-mjg"/>
-                        <constraint firstItem="Xlo-Gr-uRc" firstAttribute="leading" secondItem="Q1m-hP-Grn" secondAttribute="leading" constant="8" id="M7l-Fd-vPp"/>
-                        <constraint firstAttribute="centerY" secondItem="hBC-47-h5w" secondAttribute="centerY" id="MDd-0M-1Ug"/>
-                        <constraint firstItem="Xlo-Gr-uRc" firstAttribute="top" secondItem="hBC-47-h5w" secondAttribute="bottom" constant="8" id="PJE-G7-tjb"/>
-                        <constraint firstAttribute="bottom" secondItem="Xlo-Gr-uRc" secondAttribute="bottom" constant="10" id="RCl-FM-Ft7"/>
+                        <constraint firstAttribute="centerY" secondItem="hBC-47-h5w" secondAttribute="centerY" id="NFc-mv-UYx"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hBC-47-h5w" secondAttribute="trailing" id="VZo-5b-ENg"/>
-                        <constraint firstAttribute="bottom" secondItem="Xlo-Gr-uRc" secondAttribute="bottom" constant="10" id="kif-L5-hGO"/>
-                        <constraint firstItem="hBC-47-h5w" firstAttribute="top" secondItem="Q1m-hP-Grn" secondAttribute="top" constant="10" id="mto-y9-wQi"/>
-                        <constraint firstAttribute="bottom" secondItem="hBC-47-h5w" secondAttribute="bottom" constant="10" id="rI3-Hq-ZIL"/>
-                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xlo-Gr-uRc" secondAttribute="trailing" id="zjs-FX-s9A"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="MDd-0M-1Ug"/>
-                            <exclude reference="rI3-Hq-ZIL"/>
-                            <exclude reference="BaD-KK-AWB"/>
-                            <exclude reference="M7l-Fd-vPp"/>
-                            <exclude reference="PJE-G7-tjb"/>
-                            <exclude reference="kif-L5-hGO"/>
-                            <exclude reference="zjs-FX-s9A"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Q1m-hP-Grn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CwY-ux-8ee"/>
                 <constraint firstItem="Q1m-hP-Grn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UQO-nu-Sy0"/>
