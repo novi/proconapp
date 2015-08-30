@@ -36,16 +36,10 @@
 import Foundation
 
 class Constants {
-    #if HOST_DEV
-    static var APIBaseURL = "https://someservice.azure-mobile.net/api/"
-    static var AppGroupID = "group.jp.gr.procon.proconapp.dev"
-    #elseif HOST_STAGING
-    static var APIBaseURL = "..."
-    static var AppGroupID = "group.jp.gr.procon.proconapp.staging"
-    #elseif HOST_RELEASE
-    static var APIBaseURL = "..."
-    static var AppGroupID = "group.jp.gr.procon.proconapp"
-    #endif
+	static let APIBaseURL = "API endpoint"
+	static let AppGroupID = "..."
+	static let AppLPURL = "ランディングページURL"
+	public static let GATrackingID = "Google Analytics Tracking ID"
 }
 ```
 
