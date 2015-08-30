@@ -109,6 +109,17 @@ class HomeHeaderView: UIView {
     
 }
 
+class GeneralHeaderView: UIView {
+    
+    @IBOutlet weak var accessButton: UIButton!
+    @IBOutlet weak var programButton: UIButton!
+    
+    enum Tag: Int {
+        case Program = 1
+        case Access = 2
+    }
+}
+
 class GeneralCell: UITableViewCell {
     
     @IBOutlet weak var accessButton: UIButton!

@@ -40,10 +40,12 @@ extension UITableView {
     enum HeaderViewIdentifier: String {
         case HomeHeaderView = "HomeHeaderView"
         case ResultHeaderView = "ResultHeaderView"
+        case GeneralHeaderView = "GeneralHeaderView"
     }
     enum HeaderViewNib: String {
         case HomeHeaderNib = "HomeHeaderView"
         case ResultHeaderNib = "ResultHeaderView"
+        case GeneralHeaderNib = "GeneralHeaderView"
     }
     
     func dequeueReusableCellWithIdentifier(identifier: CellIdentifier, forIndexPath indexPath: NSIndexPath) -> AnyObject {

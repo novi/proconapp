@@ -30,6 +30,14 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return nil
             }
         }
+        var headerCellIdentifier: UITableView.HeaderViewIdentifier? {
+            switch self {
+            case .General:
+                return .GeneralHeaderView
+            default:
+                return .HomeHeaderView
+            }
+        }
         var sectionImage: UIImage {
             switch self {
             case .Notices:
@@ -214,7 +222,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch Section(rawValue: section)! {
         case .General:
-            return 1
+            return 0
         case .Notices:
             return notices.count
         case .GameResults:
@@ -260,20 +268,30 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if (Section(rawValue: section)! == .General) {
-            return nil
+        
+        let section = Section(rawValue: section)!
+        let nib = UINib(nibName: section.headerCellIdentifier!.rawValue, bundle: nil)
+        var cell: UIView?
+        switch section {
+        case .General:
+            let aCell = nib.instantiateWithOwner(nil, options: nil)[0] as? GeneralHeaderView
+            let action: Selector = "generalCellButtonTapped:"
+            aCell!.accessButton.addTarget(self, action: action, forControlEvents: .TouchUpInside)
+            aCell!.programButton.addTarget(self, action: action, forControlEvents: .TouchUpInside)
+            cell = aCell
+        default:
+            let aCell = nib.instantiateWithOwner(nil, options: nil)[0] as? HomeHeaderView
+            aCell!.section = section
+            aCell!.delegate = self
+            cell = aCell
         }
         
-        let nib = UINib(nibName: "HomeHeaderView", bundle: nil)
-        let cell = nib.instantiateWithOwner(nil, options: nil)[0] as! HomeHeaderView
-        cell.section = Section(rawValue: section)!
-        cell.delegate = self
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (Section(rawValue: section)! == .General) {
-            return 0
+            return 70
         }
         return 36
     }
