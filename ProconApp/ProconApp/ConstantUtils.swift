@@ -93,6 +93,7 @@ extension UIImage {
         case HeaderNotice = "header-notice"
         case HeaderGameResult = "header-result"
         case HeaderPhoto = "header-photo"
+        case ActivitySafari = "ac_safari"
     }
     
     convenience init?(image: Image) {

@@ -61,6 +61,9 @@ class SafariActivity: UIActivity {
     override func activityTitle() -> String? {
         return "Safariで開く"
     }
+    override func activityImage() -> UIImage? {
+        return UIImage(image: .ActivitySafari)
+    }
     
     override func canPerformWithActivityItems(activityItems: [AnyObject]) -> Bool {
         for obj in activityItems {
