@@ -88,8 +88,20 @@ class NotificationSettingViewController: TableViewController {
     
     // MARK: Table View
 
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "選択した学校の競技結果を通知します。\nまた、Apple Watch使用時に優先的に表示します。"
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "選択した学校の競技結果を通知します。\nまた、Apple Watch使用時に優先的に表示します。"
+        label.backgroundColor = UIColor.clearColor()
+        label.textColor = UIColor.grayColor()
+        label.font = UIFont.systemFontOfSize(12)
+        label.numberOfLines = 2
+        label.textAlignment = .Center
+        label.sizeToFit()
+        return label
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 56
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
