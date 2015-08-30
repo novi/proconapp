@@ -1648,7 +1648,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ito/Projects/proconapp/Carthage/Build/iOS,
+					"\"$(SRCROOT)/../Carthage/Build/iOS\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1687,7 +1687,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ito/Projects/proconapp/Carthage/Build/iOS,
+					"\"$(SRCROOT)/../Carthage/Build/iOS\"",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "ProconApp WatchKit Extension/Info.plist";
@@ -1708,7 +1708,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ito/Projects/proconapp/Carthage/Build/iOS,
+					"\"$(SRCROOT)/../Carthage/Build/iOS\"",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "ProconApp WatchKit Extension/Info.plist";
