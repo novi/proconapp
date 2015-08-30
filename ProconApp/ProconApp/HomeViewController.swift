@@ -104,6 +104,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             Logger.debug("notification setting not completed")
         }
         
+        tableView.delaysContentTouches = false
+        
         //tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
     }
     
