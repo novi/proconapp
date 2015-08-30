@@ -10,6 +10,7 @@
 * ソーシャルフィードサーバー [https://github.com/novi/procon-social-server](https://github.com/novi/procon-social-server)
 * iOS版 [https://github.com/novi/proconapp](https://github.com/novi/proconapp)
 * Windows Phone版 [https://github.com/TK-R/wpproconapp](https://github.com/TK-R/wpproconapp)
+* Android版 [https://github.com/sckm/ProconAppAndroid] (https://github.com/sckm/ProconAppAndroid)
 * ランディングページ メール送信フォーム [https://github.com/saga-dash/proconapp-form](https://github.com/saga-dash/proconapp-form)
 
 
