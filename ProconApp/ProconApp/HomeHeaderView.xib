@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,28 +15,22 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Zl-dh-3je">
-                            <rect key="frame" x="8" y="13" width="30" height="30"/>
+                            <rect key="frame" x="8" y="10" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Bps-XM-Ck8"/>
                                 <constraint firstAttribute="height" constant="30" id="pXF-hJ-b4L"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="qk6-ge-6mx"/>
                                 <constraint firstAttribute="width" constant="30" id="stm-gy-twp"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71a-OY-2cr">
-                            <rect key="frame" x="46" y="13" width="40" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="bn1-ej-kjB"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <rect key="frame" x="46" y="16" width="37.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XU-2f-gfg">
-                            <rect key="frame" x="500" y="5" width="100" height="40"/>
+                            <rect key="frame" x="500" y="0.0" width="100" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="47b-eT-bMh"/>
-                                <constraint firstAttribute="height" constant="40" id="WzH-ys-vUf"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="すべて表示">
@@ -49,12 +44,13 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="4Zl-dh-3je" firstAttribute="leading" secondItem="mbL-My-SuV" secondAttribute="leading" constant="8" id="7RS-6e-5ne"/>
-                        <constraint firstAttribute="trailing" secondItem="5XU-2f-gfg" secondAttribute="trailing" id="IHb-H8-vi4"/>
-                        <constraint firstAttribute="centerY" secondItem="4Zl-dh-3je" secondAttribute="centerY" constant="-3" id="Mnu-t5-hDD"/>
-                        <constraint firstAttribute="centerY" secondItem="5XU-2f-gfg" secondAttribute="centerY" id="RCt-aB-1Qz"/>
-                        <constraint firstAttribute="centerY" secondItem="71a-OY-2cr" secondAttribute="centerY" constant="-3" id="avl-67-aJu"/>
-                        <constraint firstItem="71a-OY-2cr" firstAttribute="leading" secondItem="4Zl-dh-3je" secondAttribute="trailing" constant="8" id="fIU-U7-PxU"/>
+                        <constraint firstItem="71a-OY-2cr" firstAttribute="leading" secondItem="4Zl-dh-3je" secondAttribute="trailing" constant="8" id="43v-Oa-9KC"/>
+                        <constraint firstAttribute="bottom" secondItem="5XU-2f-gfg" secondAttribute="bottom" id="Aqg-NR-aIf"/>
+                        <constraint firstAttribute="centerY" secondItem="71a-OY-2cr" secondAttribute="centerY" id="PF6-67-fv6"/>
+                        <constraint firstAttribute="centerY" secondItem="4Zl-dh-3je" secondAttribute="centerY" id="ROj-Ff-p6k"/>
+                        <constraint firstItem="5XU-2f-gfg" firstAttribute="top" secondItem="mbL-My-SuV" secondAttribute="top" id="WJe-hZ-c9w"/>
+                        <constraint firstAttribute="trailing" secondItem="5XU-2f-gfg" secondAttribute="trailing" id="Xud-4g-idB"/>
+                        <constraint firstItem="4Zl-dh-3je" firstAttribute="leading" secondItem="mbL-My-SuV" secondAttribute="leadingMargin" id="s58-Em-XhM"/>
                     </constraints>
                 </view>
             </subviews>

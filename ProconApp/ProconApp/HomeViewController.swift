@@ -86,8 +86,6 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let nib = UINib(nibName: "HomeHeaderView", bundle: nil)
-        tableView.registerNib(.HomeHeaderNib, forHeaderFooterViewReuseIdentifier: .HomeHeaderView)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +95,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         } else {
             Logger.debug("notification setting not completed")
         }
+        
+        //tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -254,7 +254,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             return nil
         }
         
-        let cell = tableView.dequeueReusableHeaderFooterViewWithIdentifier(.HomeHeaderView) as! HomeHeaderView
+        let nib = UINib(nibName: "HomeHeaderView", bundle: nil)
+        let cell = nib.instantiateWithOwner(nil, options: nil)[0] as! HomeHeaderView
         cell.section = Section(rawValue: section)!
         cell.delegate = self
         return cell

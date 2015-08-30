@@ -81,10 +81,15 @@ protocol HomeHeaderViewDelegate : NSObjectProtocol {
     func homeHeaderView(view: HomeHeaderView, didTapShowAllforSection section: HomeViewController.Section)
 }
 
-class HomeHeaderView: UITableViewHeaderFooterView {
+class HomeHeaderView: UIView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
+    override func awakeFromNib() {
+        //self.contentView.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.whiteColor()
+    }
     
     @IBAction func showAllTapped(sender: UIButton) {
         Logger.debug("show all tapped")
