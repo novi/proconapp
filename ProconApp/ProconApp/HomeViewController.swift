@@ -96,7 +96,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             Logger.debug("notification setting not completed")
         }
         
-        tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
+        //tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -140,7 +140,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 case .Success(let box):
                     Logger.debug("\(box.value)")
                     self.notices = box.value
+                    //self.tableView.reloadData()
                     self.tableView.reloadSections(Section.Notices.indexSet, withRowAnimation: .None)
+                    // セパレータが消失するworkaround
+                    self.tableView.separatorStyle = .None;
+                    self.tableView.separatorStyle = .SingleLine;
                 case .Failure(let box):
                     // TODO, error
                     Logger.error("\(box.value)")
@@ -155,7 +159,10 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 case .Success(let box):
                     Logger.debug("\(box.value)")
                     self.gameResults = box.value
+                    //self.tableView.reloadData()
                     self.tableView.reloadSections(Section.GameResults.indexSet, withRowAnimation: .None)
+                    self.tableView.separatorStyle = .None;
+                    self.tableView.separatorStyle = .SingleLine;
                 case .Failure(let box):
                     // TODO, error
                     Logger.error("\(box.value)")
@@ -169,7 +176,10 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 switch res {
                 case .Success(let box):
                     self.photos = box.value
+                    //self.tableView.reloadData()
                     self.tableView.reloadSections(Section.Photos.indexSet, withRowAnimation: .None)
+                    self.tableView.separatorStyle = .None;
+                    self.tableView.separatorStyle = .SingleLine;
                 case .Failure(let box):
                     // TODO, error
                     Logger.error("\(box.value)")
