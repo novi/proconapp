@@ -47,7 +47,6 @@ class GlanceController: InterfaceController {
                     Logger.debug("\(box.value)")
                     self.gameResults = box.value
                     self.noResultLabel.setHidden(self.gameResults.count != 0)
-                    self.sectionTitleLabel.setHidden(self.gameResults.count == 0)
                     self.createGameData()
                     self.createTableData()
                 case .Failure(let box):

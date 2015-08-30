@@ -212,9 +212,6 @@
                                 <label alignment="left" text="競技速報" id="aiM-UF-AQ5">
                                     <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
-                                <label alignment="left" text="設定した学校の競技結果はまだありません" textAlignment="left" numberOfLines="0" id="tdJ-C1-zs9">
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
                                 <group width="1" alignment="left" id="sVo-ZD-zPU">
                                     <items>
                                         <label alignment="left" id="xcv-Iu-X7L">
@@ -224,8 +221,11 @@
                                 </group>
                             </items>
                         </group>
-                        <group alignment="left" id="uCw-4Q-Ouw">
+                        <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
                             <items>
+                                <label alignment="left" hidden="YES" text="設定した学校の競技結果はまだありません" textAlignment="left" numberOfLines="0" id="tdJ-C1-zs9">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
                                 <table alignment="left" id="S0O-Ht-q4z">
                                     <items>
                                         <tableRow identifier="GlanceSchoolTableCell" id="4Wf-Ld-L6I" customClass="SchoolTableCell" customModule="ProconApp_WatchKit_Extension">
