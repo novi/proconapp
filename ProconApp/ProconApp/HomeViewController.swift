@@ -88,10 +88,6 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         
         let nib = UINib(nibName: "HomeHeaderView", bundle: nil)
         tableView.registerNib(.HomeHeaderNib, forHeaderFooterViewReuseIdentifier: .HomeHeaderView)
-        
-        var insets: UIEdgeInsets = self.tableView.contentInset
-        insets.top -= 36
-        self.tableView.contentInset = insets
     }
     override func viewDidLoad() {
         super.viewDidLoad()
