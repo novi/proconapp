@@ -78,7 +78,6 @@
 		52CC1F3A1B4C03FE002AD754 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F391B4C03FE002AD754 /* LoginViewController.swift */; };
 		52CC1F3C1B4C0435002AD754 /* ConstantUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3B1B4C0435002AD754 /* ConstantUtils.swift */; };
 		52CC1F401B4C0E85002AD754 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CC1F3F1B4C0E85002AD754 /* Utils.swift */; };
-		52D1DE291B8DD278004B8FAA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52D1DE281B8DD278004B8FAA /* Info.plist */; };
 		52E819F11B8DC9E500733178 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E819F01B8DC9E500733178 /* TweetViewController.swift */; };
 		52F820A41B8888D500EF736D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F820A31B8888D500EF736D /* WebViewController.swift */; };
 		5D33E3681B7BA8EA00DF74F4 /* NoticeListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D33E3671B7BA8E900DF74F4 /* NoticeListInterfaceController.swift */; };
@@ -908,7 +907,6 @@
 			files = (
 				528151331B6365BA002152DA /* HomeHeaderView.xib in Resources */,
 				5245930C1AD147D000196181 /* Main.storyboard in Resources */,
-				52D1DE291B8DD278004B8FAA /* Info.plist in Resources */,
 				524593111AD147D000196181 /* LaunchScreen.xib in Resources */,
 				5245930E1AD147D000196181 /* Images.xcassets in Resources */,
 				5D6F448B1B77757600DEDC0D /* ResultHeaderView.xib in Resources */,
