@@ -96,7 +96,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             Logger.debug("notification setting not completed")
         }
         
-        //tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
     }
     
     override func viewWillAppear(animated: Bool) {
