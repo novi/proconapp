@@ -495,10 +495,10 @@ text</string>
         <scene sceneID="xCA-9p-jy6">
             <objects>
                 <tableViewController title="ホーム" id="Xge-ds-JWg" customClass="HomeViewController" customModule="Procon" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NLx-Rm-Xwe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NLx-Rm-Xwe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticeCell" id="paA-23-aCk" customClass="NoticeCell" customModule="Procon" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -818,11 +818,9 @@ text</string>
                                                 <constraint firstAttribute="height" constant="44" id="I2x-9Y-a8x"/>
                                                 <constraint firstAttribute="width" constant="150" id="Uei-du-gBq"/>
                                             </constraints>
-                                            <state key="normal" image="program_button">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <state key="selected" image="program_button_pushed"/>
-                                            <state key="highlighted" image="program_button_pushed"/>
+                                            <state key="normal" image="program_button" backgroundImage="program_button"/>
+                                            <state key="selected" image="program_button_pushed" backgroundImage="program_button_pushed"/>
+                                            <state key="highlighted" image="program_button_pushed" backgroundImage="program_button_pushed"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="5Ut-2Y-qge"/>
@@ -838,9 +836,9 @@ text</string>
                                                 <constraint firstAttribute="height" constant="44" id="tAF-4N-A6U"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ulE-5P-3eG"/>
                                             </constraints>
-                                            <state key="normal" image="access_button"/>
-                                            <state key="selected" image="access_button_pushed"/>
-                                            <state key="highlighted" image="access_button_pushed"/>
+                                            <state key="normal" image="access_button" backgroundImage="access_button"/>
+                                            <state key="selected" image="access_button_pushed" backgroundImage="access_button_pushed"/>
+                                            <state key="highlighted" image="access_button_pushed" backgroundImage="access_button_pushed"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="nB9-09-1ma"/>
@@ -913,6 +911,9 @@ text</string>
                                         <constraint firstAttribute="bottomMargin" secondItem="230-xj-bf5" secondAttribute="bottom" constant="9.5" id="xd0-mz-o9r"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <connections>
                                     <outlet property="accessButton" destination="GSu-RJ-hLL" id="mgl-vW-gni"/>
                                     <outlet property="programButton" destination="yRH-3p-m7c" id="xm4-kF-c0R"/>
