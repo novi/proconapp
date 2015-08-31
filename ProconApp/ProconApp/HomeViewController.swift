@@ -353,6 +353,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
 
     func appWillEnterForeground() {
         // TODO: super class?
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0 // バッジを消す
         if self.appearingViewController == self {
             fetchContents()
         }
