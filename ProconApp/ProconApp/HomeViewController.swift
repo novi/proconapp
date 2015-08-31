@@ -98,6 +98,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWillEnterForeground", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
         if LocalSetting.sharedInstance.shouldActivateNotification {
             UIApplication.sharedApplication().activatePushNotification()
         } else {
@@ -141,6 +143,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             self.performSegueWithIdentifier(.HomeShowLogin, sender: nil)
         }
         
+        fetchContents()
+        
+    }
+    
+    override func fetchContents() {
         if let me = UserContext.defaultContext.me {
             let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count: 3)
             self.startContentsLoading()
@@ -196,7 +203,6 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 }
             }
         }
-        
     }
     
     override func reloadContents() {
@@ -345,5 +351,11 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         self.navigationController!.pushViewController(web, animated: true)
     }
 
+    func appWillEnterForeground() {
+        // TODO: super class?
+        if self.appearingViewController == self {
+            fetchContents()
+        }
+    }
 }
 

@@ -103,4 +103,11 @@ class TableViewController: UITableViewController, ContentsReloading {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
+    
+    var appearingViewController: UIViewController? {
+        if let navc = self.tabBarController?.selectedViewController as? UINavigationController {
+            return navc.viewControllers.last as? UIViewController
+        }
+        return nil
+    }
 }

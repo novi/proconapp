@@ -70,6 +70,8 @@ class SocialFeedViewController: TableViewController {
         super.viewDidLoad()
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: "pullToRefresh:", forControlEvents: .ValueChanged)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWillEnterForeground", name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     func pullToRefresh(sender: UIRefreshControl) {
@@ -190,5 +192,11 @@ class SocialFeedViewController: TableViewController {
     
     static var isTwitterInstalled: Bool {
         return UIApplication.sharedApplication().canOpenURL(NSURL(string: "twitter://post")!)
+    }
+    
+    func appWillEnterForeground() {
+        if self.appearingViewController == self {
+            fetchContents()
+        }
     }
 }
