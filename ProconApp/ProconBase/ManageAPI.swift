@@ -8,7 +8,24 @@
 
 import Foundation
 import APIKit
+import Result
+import Himotoki
 
-class ManageAPI : API {
+public class ManageAPI: API {
+    override public class var baseURL: NSURL {
+        return NSURL(string: Constants.APIBaseURL)!
+    }
+    
+    public class Endpoint {
+        
+        public class BaseRequest {
+            
+            func buildRequestHeader(req: NSMutableURLRequest?) {
+                
+                // TODO: set timeout globally
+                req?.timeoutInterval = 15
+            }
+        }
+    }
     
 }

@@ -15,6 +15,7 @@
 		520769111B8F2E04005276DF /* GAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520769101B8F2E04005276DF /* GAI.swift */; };
 		520769131B919121005276DF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520769121B919121005276DF /* Logger.swift */; };
 		520A58681B7DFAC300869D4A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A58671B7DFAC300869D4A /* Utils.swift */; };
+		521C58AE1BA57237008E0C5F /* GameResultManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C58AD1BA57237008E0C5F /* GameResultManageViewController.swift */; };
 		5225B7651B77A07C00773258 /* OnMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225B7641B77A07C00773258 /* OnMemoryCache.swift */; };
 		52311B911B512DC100F2F494 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52311B901B512DC100F2F494 /* Types.swift */; };
 		52311B931B51318200F2F494 /* NotificationSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52311B921B51318200F2F494 /* NotificationSettingViewController.swift */; };
@@ -34,8 +35,6 @@
 		52538EC31B4D7C4A00059FEC /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBE1B4D7C4A00059FEC /* Models.swift */; };
 		52538EC41B4D7C4A00059FEC /* UserContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EBF1B4D7C4A00059FEC /* UserContext.swift */; };
 		52538ECE1B4D7F5E00059FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538ECD1B4D7F5E00059FEC /* AppDelegate.swift */; };
-		52538ED01B4D7F5E00059FEC /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538ECF1B4D7F5E00059FEC /* MasterViewController.swift */; };
-		52538ED21B4D7F5E00059FEC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538ED11B4D7F5E00059FEC /* DetailViewController.swift */; };
 		52538ED51B4D7F5E00059FEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52538ED31B4D7F5E00059FEC /* Main.storyboard */; };
 		52538ED71B4D7F5E00059FEC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52538ED61B4D7F5E00059FEC /* Images.xcassets */; };
 		52538EDA1B4D7F5E00059FEC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52538ED81B4D7F5E00059FEC /* LaunchScreen.xib */; };
@@ -229,6 +228,7 @@
 		520769101B8F2E04005276DF /* GAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAI.swift; sourceTree = "<group>"; };
 		520769121B919121005276DF /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		520A58671B7DFAC300869D4A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		521C58AD1BA57237008E0C5F /* GameResultManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultManageViewController.swift; sourceTree = "<group>"; };
 		5225B7641B77A07C00773258 /* OnMemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OnMemoryCache.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		52311B901B512DC100F2F494 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		52311B921B51318200F2F494 /* NotificationSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NotificationSettingViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -254,8 +254,6 @@
 		52538EC91B4D7F5E00059FEC /* ProconManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProconManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52538ECC1B4D7F5E00059FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52538ECD1B4D7F5E00059FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		52538ECF1B4D7F5E00059FEC /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		52538ED11B4D7F5E00059FEC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		52538ED41B4D7F5E00059FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52538ED61B4D7F5E00059FEC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		52538ED91B4D7F5E00059FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -557,8 +555,7 @@
 			isa = PBXGroup;
 			children = (
 				52538ECD1B4D7F5E00059FEC /* AppDelegate.swift */,
-				52538ECF1B4D7F5E00059FEC /* MasterViewController.swift */,
-				52538ED11B4D7F5E00059FEC /* DetailViewController.swift */,
+				521C58AD1BA57237008E0C5F /* GameResultManageViewController.swift */,
 				52538ED31B4D7F5E00059FEC /* Main.storyboard */,
 				52538ED61B4D7F5E00059FEC /* Images.xcassets */,
 				52538ED81B4D7F5E00059FEC /* LaunchScreen.xib */,
@@ -1059,8 +1056,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52538ED21B4D7F5E00059FEC /* DetailViewController.swift in Sources */,
-				52538ED01B4D7F5E00059FEC /* MasterViewController.swift in Sources */,
+				521C58AE1BA57237008E0C5F /* GameResultManageViewController.swift in Sources */,
 				52538ECE1B4D7F5E00059FEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
