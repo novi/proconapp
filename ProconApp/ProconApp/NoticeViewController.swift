@@ -15,6 +15,12 @@ class NoticeViewController: ViewController {
     
     var notice: Notice?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        textView.textContainerInset = UIEdgeInsetsMake(20, 5, 20, 5)
+    }
+    
     override func reloadContents() {
         // TODO: title and date
         if textView == nil {

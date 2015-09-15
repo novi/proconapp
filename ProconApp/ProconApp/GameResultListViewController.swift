@@ -98,7 +98,12 @@ class GameResultListCell: UITableViewCell {
             if let result = self.result {
                 titleLabel.text = result.player.shortName
                 rankLabel.text = "\(result.rank)"
-                scoreLabel.text = "\(result.scoresShortString) (\(result.scoreUnit))"
+                
+                let str: String = join(" ", map(enumerate(result.scores)) { (i, s) in
+                        let noScore = "×"
+                        return "問\(Int(i+1)):\(s.flatMap { String($0) } ?? noScore)"
+                    })
+                scoreLabel.text = "\(str) (\(result.scoreUnit))"
             }
         }
     }
