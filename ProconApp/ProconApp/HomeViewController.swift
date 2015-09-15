@@ -30,6 +30,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return nil
             }
         }
+        
         var headerCellIdentifier: UITableView.HeaderViewIdentifier? {
             switch self {
             case .General:
@@ -38,6 +39,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return .HomeHeaderView
             }
         }
+        
         var sectionImage: UIImage {
             switch self {
             case .Notices:
@@ -50,16 +52,15 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return UIImage()
             }
         }
+        
         func cellIdentifierForGameResult(result: GameResult) -> UITableView.CellIdentifier {
-            if result.isInGame {
-                return .HomeGameResultCellScore
-            } else {
-                return .HomeGameResultCellRank
-            }
+            return .HomeGameResultCellRank
         }
+        
         var indexSet: NSIndexSet {
             return NSIndexSet(index: self.rawValue)
         }
+        
         var sectionName: String {
             switch self {
             case .Notices:
@@ -72,6 +73,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return ""
             }
         }
+        
         var showAllSegueIdentifier: UIViewController.SegueIdentifier {
             switch self {
             case .Notices:
@@ -84,6 +86,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return .HomeShowNothing
             }
         }
+        
         static let count = 4
     }
     

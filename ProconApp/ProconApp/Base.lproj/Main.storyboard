@@ -535,7 +535,7 @@ text</string>
                                     <segue destination="2dl-hw-sVn" kind="show" id="dNq-m9-GCb"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameResultCellScore" rowHeight="78" id="aIO-PI-NMv" customClass="GameResultScoreCell" customModule="Procon" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="not used" rowHeight="78" id="aIO-PI-NMv">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aIO-PI-NMv" id="wSh-6O-yRj">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -611,15 +611,6 @@ text</string>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="gameNameLabel" destination="YU6-uF-EYM" id="AxU-TJ-ott"/>
-                                    <outletCollection property="scores" destination="sgy-6U-XId" collectionClass="NSMutableArray" id="v6s-mB-S3N"/>
-                                    <outletCollection property="playerNames" destination="gdf-rN-R9V" collectionClass="NSMutableArray" id="mnV-qa-pSk"/>
-                                    <outletCollection property="scores" destination="9QS-xY-mcK" collectionClass="NSMutableArray" id="BvX-Es-JmC"/>
-                                    <outletCollection property="scores" destination="Vfs-u0-rRw" collectionClass="NSMutableArray" id="soC-TG-vcJ"/>
-                                    <outletCollection property="playerNames" destination="3Wi-2M-U6k" collectionClass="NSMutableArray" id="Noq-eD-hkO"/>
-                                    <outletCollection property="playerNames" destination="uEU-h2-wFG" collectionClass="NSMutableArray" id="ouq-Sk-t2f"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameResultCellRank" rowHeight="78" id="4BD-cE-xCY" customClass="GameResultRankCell" customModule="Procon" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>

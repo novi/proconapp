@@ -59,13 +59,15 @@ class SchoolTableCell: NSObject {
     @IBOutlet weak var schoolLabel: WKInterfaceLabel!
     @IBOutlet weak var rankLabel: WKInterfaceLabel!
     @IBOutlet weak var scoreLabel: WKInterfaceLabel!
+    @IBOutlet weak var unitLabel: WKInterfaceLabel!
     
     var result: GameResult.Result? {
         didSet {
             if let result = self.result {
                 schoolLabel.setText(result.player.shortName)
                 rankLabel.setText("\(result.rank)位")
-                scoreLabel.setText("\(Int(result.score))\(result.scoreUnit)")
+                scoreLabel.setText(result.scoresShortString)
+                unitLabel.setText(result.scoreUnit)
             }
         }
     }

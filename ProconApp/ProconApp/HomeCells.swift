@@ -16,7 +16,7 @@ class GameResultCell: UITableViewCell {
     let margin: CGFloat = 78
 }
 
-class GameResultScoreCell: GameResultCell {
+/*class GameResultScoreCell: GameResultCell {
     
     @IBOutlet var scores: [UILabel]!
     @IBOutlet var playerNames: [UILabel]!
@@ -43,6 +43,7 @@ class GameResultScoreCell: GameResultCell {
         }
     }
 }
+*/
 
 class GameResultRankCell: GameResultCell {
     

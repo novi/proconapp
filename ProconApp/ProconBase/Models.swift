@@ -82,7 +82,7 @@ public struct Player: Decodable, Printable {
 public struct GameResult: Decodable, Printable {
     
     public struct Result: Decodable, Printable {
-        public let score: Float
+        let scores_: [Int]
         public let rank: Int
         public let player: Player
         public let scoreUnit: String
@@ -90,7 +90,7 @@ public struct GameResult: Decodable, Printable {
         public static func decode(e: Extractor) -> Result? {
             let c = { Result($0) }
             return build(
-                e <| "score",
+                (e <|| "scores"),
                 e <| "rank",
                 e <| "player",
                 (e <|? "score_unit").map { $0 ?? "zk" } // TODO
@@ -98,7 +98,13 @@ public struct GameResult: Decodable, Printable {
         }
         
         public var description: String {
-            return "score:\(score) \(player)"
+            return "score:\(scores) \(player)"
+        }
+        public var scores: [Int?] {
+            return scores_.map { $0 < 0 ? nil : $0 }
+        }
+        public var scoresShortString: String {
+            return join(",", scores.map({ $0.flatMap({ String($0) }) ?? "-" }) )
         }
     }
     
@@ -124,14 +130,6 @@ public struct GameResult: Decodable, Printable {
     
     public var description: String {
         return "id = \(id), \(status):\(title) \(startedAt) - \(finishedAt), result count = \(results.count)"
-    }
-    
-    public var isInGame: Bool {
-        return status == 1
-    }
-    
-    public var resultsByScore: [Result] {
-        return results.sorted { $1.score > $0.score }
     }
     
     public var resultsByRank: [Result] {

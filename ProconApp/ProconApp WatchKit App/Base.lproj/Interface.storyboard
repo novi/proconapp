@@ -175,19 +175,28 @@
                                                     <label alignment="left" text="40位" id="DyA-fb-JWY">
                                                         <fontDescription key="font" type="system" pointSize="14"/>
                                                     </label>
-                                                    <label alignment="right" text="333zk" id="Tp8-aY-2zp">
+                                                    <label alignment="right" text="333" id="Tp8-aY-2zp">
                                                         <color key="textColor" red="0.36862745098039218" green="0.50588235294117645" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="font" type="system" pointSize="14"/>
                                                     </label>
                                                 </items>
                                             </group>
-                                            <label width="1" alignment="left" text="長野高専" minimumScaleFactor="0.80000000000000004" id="7mf-Wb-JN2"/>
+                                            <group width="1" alignment="left" id="5UP-W2-Zz4">
+                                                <items>
+                                                    <label alignment="left" text="長野高専" minimumScaleFactor="0.80000000000000004" id="7mf-Wb-JN2"/>
+                                                    <label alignment="right" text="zk" id="Gv3-9z-OfA">
+                                                        <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="14"/>
+                                                    </label>
+                                                </items>
+                                            </group>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="rankLabel" destination="DyA-fb-JWY" id="Pdj-SP-Q2R"/>
                                         <outlet property="schoolLabel" destination="7mf-Wb-JN2" id="JdK-mb-Cfd"/>
                                         <outlet property="scoreLabel" destination="Tp8-aY-2zp" id="2Hr-rg-rOD"/>
+                                        <outlet property="unitLabel" destination="Gv3-9z-OfA" id="XGT-Rc-Dqf"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -232,15 +241,19 @@
                                                             <label alignment="left" text="1位" id="xOh-fO-mPq">
                                                                 <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
-                                                            <label alignment="right" text="100zk" id="4Ua-I8-4eT">
+                                                            <label alignment="right" text="0,0,0" id="4Ua-I8-4eT">
                                                                 <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
                                                     </group>
-                                                    <group width="1" alignment="left" layout="vertical" id="PeF-fi-0cA">
+                                                    <group width="1" alignment="left" id="PeF-fi-0cA">
                                                         <items>
                                                             <label alignment="left" text="長野高専" id="AQH-f7-9tK">
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                                            </label>
+                                                            <label alignment="right" text="zk" id="mHa-3b-Dc4">
+                                                                <color key="textColor" red="0.36862745099999999" green="0.50588235290000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="font" type="system" pointSize="11"/>
                                                             </label>
                                                         </items>
@@ -251,6 +264,7 @@
                                                 <outlet property="rankLabel" destination="xOh-fO-mPq" id="qZb-TE-NL8"/>
                                                 <outlet property="schoolLabel" destination="AQH-f7-9tK" id="h4c-lj-P26"/>
                                                 <outlet property="scoreLabel" destination="4Ua-I8-4eT" id="7D5-6O-PJG"/>
+                                                <outlet property="unitLabel" destination="mHa-3b-Dc4" id="BaE-lY-0Z8"/>
                                             </connections>
                                         </tableRow>
                                     </items>

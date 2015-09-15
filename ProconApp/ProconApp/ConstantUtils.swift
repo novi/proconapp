@@ -25,7 +25,6 @@ extension UITableView {
         case HomeNoticeCell = "NoticeCell"
         case HomePhotoCell = "HomePhoto"
         case HomeGameResultCellRank = "GameResultCellRank"
-        case HomeGameResultCellScore = "GameResultCellScore"
         
         case NoticeListCell = "NoticeListCell"
         

@@ -96,9 +96,9 @@ class GameResultListCell: UITableViewCell {
     var result: GameResult.Result? {
         didSet {
             if let result = self.result {
-                titleLabel.text = result.player.fullName
+                titleLabel.text = result.player.shortName
                 rankLabel.text = "\(result.rank)"
-                scoreLabel.text = "\(Int(result.score))\(result.scoreUnit)"
+                scoreLabel.text = "\(result.scoresShortString) (\(result.scoreUnit))"
             }
         }
     }
@@ -119,7 +119,7 @@ class ResultHeaderView: UITableViewHeaderFooterView {
             titleLabel.text = gameResult?.title
             if let result = self.gameResult {
                 var started = "開始: \(result.startedAt.timeString)"
-                var finished = (result.finishedAt == nil || result.isInGame ) ? "(試合中)" : "終了: \(result.finishedAt!.timeString)"
+                var finished = (result.finishedAt == nil) ? "(試合中)" : "終了: \(result.finishedAt!.timeString)"
                 timeLabel.text = "\(started) - \(finished)"
             }
         }
