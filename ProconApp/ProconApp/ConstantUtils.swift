@@ -23,6 +23,8 @@ extension UITableView {
         case NotificationSettingCell = "Cell"
         case HomeGeneralCell = "GeneralCell"
         case HomeNoticeCell = "NoticeCell"
+        case HomeAboutCell = "HomeAbout"
+
         case HomePhotoCell = "HomePhoto"
         case HomeGameResultCellRank = "GameResultCellRank"
         

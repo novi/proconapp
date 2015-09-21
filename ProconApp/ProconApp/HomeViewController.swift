@@ -17,6 +17,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         case Notices = 1
         case GameResults = 2
         case Photos = 3
+        case About = 4
         
         var cellIdentifier: UITableView.CellIdentifier? {
             switch self {
@@ -26,6 +27,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
                 return .HomeNoticeCell
             case .Photos:
                 return .HomePhotoCell
+            case .About:
+                return .HomeAboutCell
             default:
                 return nil
             }
@@ -40,7 +43,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             }
         }
         
-        var sectionImage: UIImage {
+        var sectionImage: UIImage? {
             switch self {
             case .Notices:
                 return UIImage(image: .HeaderNotice)!
@@ -87,7 +90,7 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             }
         }
         
-        static let count = 4
+        static let count = 5
     }
     
     var notices: [Notice] = []
@@ -240,6 +243,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             return gameResults.count
         case .Photos:
             return photos.count
+        case .About:
+            return 1
         }
     }
 
@@ -275,6 +280,9 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!, forIndexPath: indexPath) as! PhotoCell
             cell.photoInfo = photo
             return cell
+        case .About:
+            let cell = tableView.dequeueReusableCellWithIdentifier(section.cellIdentifier!, forIndexPath: indexPath) as! UITableViewCell
+            return cell
         }
     }
     
@@ -290,6 +298,8 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             aCell!.accessButton.addTarget(self, action: action, forControlEvents: .TouchUpInside)
             aCell!.programButton.addTarget(self, action: action, forControlEvents: .TouchUpInside)
             cell = aCell
+        case .About:
+            return nil
         default:
             let aCell = nib.instantiateWithOwner(nil, options: nil)[0] as? HomeHeaderView
             aCell!.section = section
@@ -301,10 +311,14 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if (Section(rawValue: section)! == .General) {
+        switch Section(rawValue: section)! {
+        case .General:
             return 70
+        case .About:
+            return 0
+        default:
+            return 36
         }
-        return 36
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -320,13 +334,29 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
             height = 78
         case .Photos:
             height = 220
+        case .About:
+            height = 50
         }
         return height
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch Section(rawValue: indexPath.section)! {
+        case .About:
+            let web = storyboard!.instantiateViewControllerWithIdentifier(.WebView) as! WebViewController
+            web.URL = Constants.appLPURL("/docs/about")
+            web.title = "アプリについて"
+            web.hidesBottomBarWhenPushed = true
+            self.navigationController!.pushViewController(web, animated: true)
+            
+        default: break
+        }
     }
     
     func homeHeaderView(view: HomeHeaderView, didTapShowAllforSection section: HomeViewController.Section) {
         performSegueWithIdentifier(section.showAllSegueIdentifier, sender: nil)
     }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let cell = sender as? NoticeCell {
