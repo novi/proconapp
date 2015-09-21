@@ -66,6 +66,11 @@ class GameResultRankCell: GameResultCell {
                         ranks[i].text = "\(results[i].rank)"
                         playerNames[i].hidden = false
                         ranks[i].hidden = false
+                        if results[i].advance {
+                            ranks[i].backgroundColor = UIColor.advanceRankBackgroundColor
+                        } else {
+                            ranks[i].backgroundColor = UIColor.normalRankBackgroundColor
+                        }
                     } else {
                         playerNames[i].text = nil
                         ranks[i].text = nil

@@ -105,6 +105,15 @@ extension UIImage {
     
 }
 
+extension UIColor {
+    static var normalRankBackgroundColor: UIColor {
+        return UIColor(red: 46/255, green: 63/255, blue: 126/255, alpha: 0.5)
+    }
+    static var advanceRankBackgroundColor: UIColor {
+        return UIColor(red: 187/255, green: 75/255, blue: 75/255, alpha: 0.5)
+    }
+}
+
 
 /*
 extension UIViewController: ContentsReloading {

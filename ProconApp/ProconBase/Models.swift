@@ -86,6 +86,7 @@ public struct GameResult: Decodable, Printable {
         public let rank: Int
         public let player: Player
         public let scoreUnit: String
+        public let advance: Bool
         
         public static func decode(e: Extractor) -> Result? {
             let c = { Result($0) }
@@ -93,7 +94,8 @@ public struct GameResult: Decodable, Printable {
                 (e <|| "scores"),
                 e <| "rank",
                 e <| "player",
-                (e <|? "score_unit").map { $0 ?? "zk" } // TODO
+                (e <|? "score_unit").map { $0 ?? "zk" }, // TODO
+                e <| "advance"
                 ).map(c)
         }
         

@@ -96,8 +96,14 @@ class GameResultListCell: UITableViewCell {
     var result: GameResult.Result? {
         didSet {
             if let result = self.result {
-                titleLabel.text = result.player.shortName
                 rankLabel.text = "\(result.rank)"
+                if result.advance {
+                    rankLabel.backgroundColor = UIColor.advanceRankBackgroundColor
+                } else {
+                    rankLabel.backgroundColor = UIColor.normalRankBackgroundColor
+                }
+                
+                titleLabel.text = result.player.shortName
                 
                 let str: String = join(" ", map(enumerate(result.scores)) { (i, s) in
                         let noScore = "×"
