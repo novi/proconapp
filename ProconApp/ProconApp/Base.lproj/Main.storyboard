@@ -1269,7 +1269,7 @@ text</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="次の試合に進出できるチームを赤色の順位で表示しています。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-lH-BE0">
-                                    <rect key="frame" x="118.5" y="14.5" width="364" height="16"/>
+                                    <rect key="frame" x="118" y="14" width="364" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -1279,6 +1279,8 @@ text</string>
                             <constraints>
                                 <constraint firstAttribute="centerY" secondItem="5Ra-lH-BE0" secondAttribute="centerY" id="3NC-Mp-Puj"/>
                                 <constraint firstAttribute="centerX" secondItem="5Ra-lH-BE0" secondAttribute="centerX" id="AeK-8n-zG9"/>
+                                <constraint firstItem="5Ra-lH-BE0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="85y-PY-s7s" secondAttribute="leadingMargin" id="B5X-TR-lJA"/>
+                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="5Ra-lH-BE0" secondAttribute="trailing" id="dMt-XV-daJ"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -1396,8 +1398,8 @@ text</string>
         <image name="social_off" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7fL-0P-ho5"/>
         <segue reference="dNq-m9-GCb"/>
+        <segue reference="IuW-X4-kfF"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.18039215689999999" green="0.2470588235" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
 </document>
