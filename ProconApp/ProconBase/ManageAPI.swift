@@ -22,7 +22,12 @@ public class ManageAPI: API {
             
             func buildRequestHeader(req: NSMutableURLRequest?) {
                 
+                //req?.addValue("application/json", forHTTPHeaderField: "Accept")
+                //req?.addValue("application/json", forHTTPHeaderField: "Content-Type")
                 req?.addValue(Constants.ManageAPIToken, forHTTPHeaderField: "X-Auth-Token")
+                /*if let data = req?.HTTPBody {
+                    req?.addValue("\(data.length)", forHTTPHeaderField: "Content-Length")
+                }*/
                 // TODO: set timeout globally
                 req?.timeoutInterval = 15
             }
@@ -30,18 +35,19 @@ public class ManageAPI: API {
         
         public class UpdateGameResult: BaseRequest, APIKit.Request {
             public var URLRequest: NSURLRequest? {
-                let req = AppAPI.URLRequest(
+                let req = ManageAPI.URLRequest(
                     method: .PUT,
                     path: "/game_results",
-                    parameters: [:]
+                    parameters: result
                 )
                 buildRequestHeader(req) // TODO
                 return req
             }
             
-            let result: AnyObject
-            public init(result: AnyObject) {
+            let result: [String: AnyObject]
+            public init(result: [String: AnyObject]) {
                 self.result = result
+                Logger.debug("sending ... \(result)")
             }
             
             public class func responseFromObject(object: AnyObject) -> AnyObject? {

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import APIKit
 import ProconBase
 
 class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
@@ -17,6 +18,8 @@ class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputO
     var previewLayer: CALayer = CALayer()
     
     var capturedStrings: Set<String> = Set()
+    
+    var isSending: Bool = false
     
     @IBOutlet weak var previewView: UIView!
     
@@ -35,6 +38,11 @@ class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputO
         
         
         reloadButtonState()
+        
+        /*let data = NSData(contentsOfFile: "")
+        let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
+        self.processQRCode(str as! String)
+        */
     }
     
     func reloadButtonState() {
@@ -116,11 +124,17 @@ class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputO
         if capturedStrings.contains(str) {
             return // already captured
         }
+        if isSending {
+            return
+        }
         
         capturedStrings.insert(str)
         
-        let alert = UIAlertController(title: "found", message: str, preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        let alert = UIAlertController(title: "送信しますか？", message: str, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "送信", style: .Default, handler: { _ in
+            self.sendQRCode(str)
+        }))
         self.presentViewController(alert, animated: true, completion: nil)
         
         let delay = 3.0 * Double(NSEC_PER_SEC)
@@ -128,5 +142,49 @@ class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputO
         dispatch_after(time, dispatch_get_main_queue(), {
             self.capturedStrings.remove(str)
         })
+    }
+    
+    func showError(str: String) {
+        let alert = UIAlertController(title: "パースエラー", message: str, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    
+    func sendQRCode(str: String) {
+        
+        let data = str.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        if data == nil {
+            // TODO: guard
+            showError("data conversion error")
+            return
+        }
+        var error: NSError? = nil
+        let obj = NSJSONSerialization.JSONObjectWithData(data!, options: .allZeros, error: &error) as? [String: AnyObject]
+        if obj == nil || error != nil {
+            showError("\(error ?? String())")
+            return
+        }
+        
+        let req = ManageAPI.Endpoint.UpdateGameResult(result: obj!)
+        
+        self.isSending = true
+        
+        let alert = UIAlertController(title: "送信中...", message: nil, preferredStyle: .Alert)
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        AppAPI.sendRequest(req) { res in
+            self.isSending = false
+            alert.dismissViewControllerAnimated(true) {
+                switch res {
+                case .Success(_):
+                    break
+                case .Failure(let box):
+                    // TODO, error
+                    Logger.error("\(box.value)")
+                    self.showError("\(box.value)")
+                }
+            }
+        }
     }
 }
