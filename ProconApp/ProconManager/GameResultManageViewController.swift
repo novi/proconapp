@@ -43,6 +43,11 @@ class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputO
         let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
         self.processQRCode(str as! String)
         */
+        #if HOST_RELEASE
+        let alert = UIAlertController(title: "本番環境", message: nil, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        #endif
     }
     
     func reloadButtonState() {
@@ -112,9 +117,13 @@ class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputO
         
         for obj in metadataObjects {
             if let obj = obj as? AVMetadataMachineReadableCodeObject {
-                if obj.type == AVMetadataObjectTypeQRCode {
+                if obj.type == AVMetadataObjectTypeQRCode, let str = obj.stringValue {
                     // QR Code detected
-                    self.processQRCode(obj.stringValue)
+                    // base64 decode and decompress
+                    let compressed = NSData(base64EncodedString: str, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                    if let data = compressed?.pr_decompress(), let str = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
+                        self.processQRCode(str)
+                    }
                 }
             }
         }

@@ -15,6 +15,8 @@
 		520769111B8F2E04005276DF /* GAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520769101B8F2E04005276DF /* GAI.swift */; };
 		520769131B919121005276DF /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520769121B919121005276DF /* Logger.swift */; };
 		520A58681B7DFAC300869D4A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520A58671B7DFAC300869D4A /* Utils.swift */; };
+		52107D351BC138D5003D7630 /* NSData+Decompress.m in Sources */ = {isa = PBXBuildFile; fileRef = 52107D341BC138D5003D7630 /* NSData+Decompress.m */; };
+		52107D361BC13965003D7630 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5207690A1B8F2CA8005276DF /* libz.dylib */; };
 		521C58AE1BA57237008E0C5F /* GameResultManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521C58AD1BA57237008E0C5F /* GameResultManageViewController.swift */; };
 		5225B7651B77A07C00773258 /* OnMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225B7641B77A07C00773258 /* OnMemoryCache.swift */; };
 		52311B911B512DC100F2F494 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52311B901B512DC100F2F494 /* Types.swift */; };
@@ -228,6 +230,8 @@
 		520769101B8F2E04005276DF /* GAI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAI.swift; sourceTree = "<group>"; };
 		520769121B919121005276DF /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		520A58671B7DFAC300869D4A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		52107D331BC138D5003D7630 /* NSData+Decompress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Decompress.h"; sourceTree = "<group>"; };
+		52107D341BC138D5003D7630 /* NSData+Decompress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Decompress.m"; sourceTree = "<group>"; };
 		521C58AD1BA57237008E0C5F /* GameResultManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultManageViewController.swift; sourceTree = "<group>"; };
 		5225B7641B77A07C00773258 /* OnMemoryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = OnMemoryCache.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		52311B901B512DC100F2F494 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 		528151341B636E45002152DA /* NoticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NoticeViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		528151361B6375E8002152DA /* NoticeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NoticeListViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		528151381B637DA6002152DA /* GameResultListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameResultListViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		528DBC151BC136C200852B73 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		5296ADE51B8A23E9002941FE /* APIKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = APIKit.framework.dSYM; path = ../Carthage/Build/iOS/APIKit.framework.dSYM; sourceTree = "<group>"; };
 		5296ADE61B8A23E9002941FE /* Himotoki.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Himotoki.framework.dSYM; path = ../Carthage/Build/iOS/Himotoki.framework.dSYM; sourceTree = "<group>"; };
 		5296ADE71B8A23E9002941FE /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = ../Carthage/Build/iOS/Result.framework.dSYM; sourceTree = "<group>"; };
@@ -349,6 +354,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52107D361BC13965003D7630 /* libz.dylib in Frameworks */,
 				52538EF51B4D810700059FEC /* ProconBase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +565,8 @@
 				52538ED31B4D7F5E00059FEC /* Main.storyboard */,
 				52538ED61B4D7F5E00059FEC /* Images.xcassets */,
 				52538ED81B4D7F5E00059FEC /* LaunchScreen.xib */,
+				52107D331BC138D5003D7630 /* NSData+Decompress.h */,
+				52107D341BC138D5003D7630 /* NSData+Decompress.m */,
 				52538ECB1B4D7F5E00059FEC /* Supporting Files */,
 			);
 			path = ProconManager;
@@ -568,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				52538ECC1B4D7F5E00059FEC /* Info.plist */,
+				528DBC151BC136C200852B73 /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -828,6 +837,7 @@
 		524592F71AD147D000196181 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Procon;
 				TargetAttributes = {
@@ -1058,6 +1068,7 @@
 			files = (
 				521C58AE1BA57237008E0C5F /* GameResultManageViewController.swift in Sources */,
 				52538ECE1B4D7F5E00059FEC /* AppDelegate.swift in Sources */,
+				52107D351BC138D5003D7630 /* NSData+Decompress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1497,6 +1508,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconManager/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1515,6 +1527,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconManager/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Dev;
@@ -1532,6 +1545,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconManager/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
