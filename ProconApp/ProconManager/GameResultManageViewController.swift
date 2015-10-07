@@ -43,6 +43,9 @@ class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputO
         let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
         self.processQRCode(str as! String)
         */
+        
+        println(Constants.ManageAPIBaseURL)
+        
         #if HOST_RELEASE
         let alert = UIAlertController(title: "本番環境", message: nil, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
