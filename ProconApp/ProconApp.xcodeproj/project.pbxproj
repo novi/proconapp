@@ -1528,6 +1528,7 @@
 				INFOPLIST_FILE = ProconManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DDEBUG_LOG -DDEBUG -DHOST_DEV";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/ProconManager/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";

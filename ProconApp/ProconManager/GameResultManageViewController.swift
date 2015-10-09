@@ -46,8 +46,14 @@ class GameResultManageViewController: UIViewController, AVCaptureMetadataOutputO
         
         println(Constants.ManageAPIBaseURL)
         
+        #if HOST_DEV
+            self.navigationItem.title = "Dev"
+        #elseif HOST_RELEASE
+            self.navigationItem.title = "Prod"
+        #endif
+        
         #if HOST_RELEASE
-        let alert = UIAlertController(title: "本番環境", message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: "本番環境", message: Constants.ManageAPIBaseURL, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
         #endif
