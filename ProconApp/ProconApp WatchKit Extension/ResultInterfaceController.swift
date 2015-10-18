@@ -47,7 +47,7 @@ class ResultInterfaceController: InterfaceController {
             let ranks = gr.resultsByRank
             schoolTable.setNumberOfRows(ranks.count, withRowType: .ResultSchool)
             for i in 0..<ranks.count {
-                var cell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
+                let cell = schoolTable.rowControllerAtIndex(i) as! SchoolTableCell
                 cell.result = ranks[i]
             }
         }

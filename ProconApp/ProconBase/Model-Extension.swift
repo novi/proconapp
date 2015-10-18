@@ -45,7 +45,7 @@ extension Notice {
     public func buildBody() -> NSAttributedString? {
         if let html = body {
             if let data = html.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: true) {
-                return NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil, error: nil)
+                return try? NSAttributedString(data: data, options: [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType], documentAttributes: nil)
             }
         }
         return nil

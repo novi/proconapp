@@ -8,6 +8,7 @@
 
 import UIKit
 import ProconBase
+import APIKit
 
 class GameResultListViewController: TableViewController {
     
@@ -15,18 +16,18 @@ class GameResultListViewController: TableViewController {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchGameResults(user: me, count: 30)
+            let r = AppAPI.FetchGameResults(auth: me, count: 30)
             startContentsLoading()
-            AppAPI.sendRequest(r) { res in
+            API.sendRequest(r) { res in
                 self.endContentsLoading()
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)" as String)
-                    self.allGameResult = box.value
+                case .Success(let results):
+                    Logger.debug("\(results)" as String)
+                    self.allGameResult = results
                     self.reloadContents()
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error("\(box.value)")
+                    Logger.error(error)
                 }
             }
         }
@@ -105,10 +106,11 @@ class GameResultListCell: UITableViewCell {
                 
                 titleLabel.text = result.player.shortName
                 
-                let str: String = join(" ", map(enumerate(result.scores)) { (i, s) in
-                        let noScore = "×"
-                        return "問\(Int(i+1)):\(s.flatMap { String($0) } ?? noScore)"
-                    })
+                
+                let str: String = result.scores.enumerate().map({ (i,s) -> String in
+                    let noScore = "×"
+                    return "問\(Int(i+1)):\(s.flatMap { String($0) } ?? noScore)"
+                }).joinWithSeparator(",")
                 scoreLabel.text = "\(str) (\(result.scoreUnit))"
             }
         }
@@ -129,8 +131,8 @@ class ResultHeaderView: UITableViewHeaderFooterView {
         didSet {
             titleLabel.text = gameResult?.title
             if let result = self.gameResult {
-                var started = "開始: \(result.startedAt.timeString)"
-                var finished = (result.finishedAt == nil) ? "(試合中)" : "終了: \(result.finishedAt!.timeString)"
+                let started = "開始: \(result.startedAt.timeString)"
+                let finished = (result.finishedAt == nil) ? "(試合中)" : "終了: \(result.finishedAt!.timeString)"
                 timeLabel.text = "\(started) - \(finished)"
             }
         }

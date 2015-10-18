@@ -135,13 +135,13 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
         
         if let me = UserContext.defaultContext.me {
             // logged in
-            let r = AppAPI.Endpoint.FetchUserInfo(user: me)
-            AppAPI.sendRequest(r) { res in
+            let r = AppAPI.FetchUserInfo(auth: me)
+            API.sendRequest(r) { res in
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)")
-                case .Failure(let box):
-                    Logger.error("\(box.value)")
+                case .Success(let user):
+                    Logger.debug("\(user)")
+                case .Failure(let error):
+                    Logger.error(error)
                 }
             }
         } else {
@@ -155,57 +155,57 @@ class HomeViewController: TableViewController, HomeHeaderViewDelegate {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count: 3)
+            let r = AppAPI.FetchNotices(auth: me, page: 0, count: 3)
             self.startContentsLoading()
-            AppAPI.sendRequest(r) { res in
+            API.sendRequest(r) { res in
                 self.endContentsLoading()
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)")
-                    self.notices = box.value
+                case .Success(let notices):
+                    Logger.debug("\(notices)")
+                    self.notices = notices
                     //self.tableView.reloadData()
                     self.tableView.reloadSections(Section.Notices.indexSet, withRowAnimation: .None)
                     // セパレータが消失するworkaround
                     self.tableView.separatorStyle = .None;
                     self.tableView.separatorStyle = .SingleLine;
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error("\(box.value)")
+                    Logger.error(error)
                 }
             }
             
-            let rr = AppAPI.Endpoint.FetchGameResults(user: me, count: 3)
+            let rr = AppAPI.FetchGameResults(auth: me, count: 3)
             self.startContentsLoading()
-            AppAPI.sendRequest(rr) { res in
+            API.sendRequest(rr) { res in
                 self.endContentsLoading()
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)")
-                    self.gameResults = box.value
+                case .Success(let results):
+                    Logger.debug("\(results)")
+                    self.gameResults = results
                     //self.tableView.reloadData()
                     self.tableView.reloadSections(Section.GameResults.indexSet, withRowAnimation: .None)
                     self.tableView.separatorStyle = .None;
                     self.tableView.separatorStyle = .SingleLine;
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error("\(box.value)")
+                    Logger.error(error)
                 }
             }
             
-            let photoReq = AppAPI.Endpoint.FetchPhotos(user: me, count: 1)
+            let photoReq = AppAPI.FetchPhotos(auth: me, count: 1)
             self.startContentsLoading()
-            AppAPI.sendRequest(photoReq) { res in
+            API.sendRequest(photoReq) { res in
                 self.endContentsLoading()
                 switch res {
-                case .Success(let box):
-                    self.photos = box.value
+                case .Success(let photos):
+                    self.photos = photos
                     //self.tableView.reloadData()
                     self.tableView.reloadSections(Section.Photos.indexSet, withRowAnimation: .None)
                     self.tableView.separatorStyle = .None;
                     self.tableView.separatorStyle = .SingleLine;
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error("\(box.value)")
+                    Logger.error(error)
                 }
             }
         }

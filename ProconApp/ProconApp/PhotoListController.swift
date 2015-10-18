@@ -8,7 +8,7 @@
 
 import UIKit
 import ProconBase
-
+import APIKit
 
 class PhotoListViewController: TableViewController {
     
@@ -16,18 +16,18 @@ class PhotoListViewController: TableViewController {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchPhotos(user: me, count: 30)
+            let r = AppAPI.FetchPhotos(auth: me, count: 30)
             startContentsLoading()
-            AppAPI.sendRequest(r) { res in
+            API.sendRequest(r) { res in
                 self.endContentsLoading()
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)")
-                    self.photos = box.value
+                case .Success(let photos):
+                    Logger.debug("\(photos)")
+                    self.photos = photos
                     self.reloadContents()
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error("\(box.value)")
+                    Logger.error(error)
                 }
             }
         }

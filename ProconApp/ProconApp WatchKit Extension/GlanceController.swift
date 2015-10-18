@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import ProconBase
+import APIKit
 
 
 class GlanceController: InterfaceController {
@@ -40,19 +41,19 @@ class GlanceController: InterfaceController {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchGameResults(user: me, filter: .OnlyForNotification, count: 1)
-            AppAPI.sendRequest(r) { res in
+            let r = AppAPI.FetchGameResults(auth: me, filter: .OnlyForNotification, count: 1)
+            API.sendRequest(r) { res in
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)")
-                    self.gameResults = box.value
+                case .Success(let results):
+                    Logger.debug("\(results)")
+                    self.gameResults = results
                     self.noResultLabel.setHidden(self.gameResults.count != 0)
                     self.noResultLabel.setText("設定した学校の競技結果はまだありません")
                     self.createGameData()
                     self.createTableData()
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error(box.value)
+                    Logger.error(error)
                 }
             }
         } else {

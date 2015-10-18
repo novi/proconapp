@@ -9,19 +9,18 @@
 import Foundation
 import Himotoki
 
-public struct User: Decodable, Printable, UserIdentifier {
+public struct User: Decodable, CustomStringConvertible, UserIdentifier {
     public let id: Int
     public let token: String
     //let twitterID: String
     //let facebookID: String
     
     
-    public static func decode(e: Extractor) -> User? {
-        let c = { User($0) }
-        return build(
+    public static func decode(e: Extractor) throws -> User {
+        return try build(User.init)(
             e <| "user_id",
             e <| "user_token"
-        ).map(c)
+        )
     }
     
     public var description: String {
@@ -29,7 +28,7 @@ public struct User: Decodable, Printable, UserIdentifier {
     }
 }
 
-public struct Notice: Decodable, Printable {
+public struct Notice: Decodable, CustomStringConvertible {
     public let id: NoticeID
     public let title: String
     public let body: String?
@@ -37,15 +36,14 @@ public struct Notice: Decodable, Printable {
     
     let bodySize: Int
     
-    public static func decode(e: Extractor) -> Notice? {
-        let c = { Notice($0) }
-        return build(
-            (e <| "id").flatMap { NoticeID($0) },
+    public static func decode(e: Extractor) throws -> Notice {
+        return try build(Notice.init)(
+            NoticeID(e <| "id"),
             e <| "title",
-            e <| "body",
-            (e <| "published_at").flatMap { NSDate(timeIntervalSince1970: $0) },
+            e <|? "body",
+            NSDate(timeIntervalSince1970: (e <| "published_at")),
             e <| "body_size"
-            ).map(c)
+            )
     }
     
     public var description: String {
@@ -58,19 +56,18 @@ public struct Notice: Decodable, Printable {
     
 }
 
-public struct Player: Decodable, Printable {
+public struct Player: Decodable, CustomStringConvertible {
     
     public let id: PlayerID
     public let fullName: String
     public let shortName: String
     
-    public static func decode(e: Extractor) -> Player? {
-        let c = { Player($0) }
-        return build(
-            (e <| "id").flatMap { PlayerID($0) },
+    public static func decode(e: Extractor) throws -> Player {
+        return try build(Player.init)(
+            PlayerID(e <| "id"),
             e <| "name",
             e <| "short_name"
-            ).map(c)
+            )
     }
     
     public var description: String {
@@ -79,24 +76,23 @@ public struct Player: Decodable, Printable {
     
 }
 
-public struct GameResult: Decodable, Printable {
+public struct GameResult: Decodable, CustomStringConvertible {
     
-    public struct Result: Decodable, Printable {
+    public struct Result: Decodable, CustomStringConvertible {
         let scores_: [Int]
         public let rank: Int
         public let player: Player
         public let scoreUnit: String
         public let advance: Bool
         
-        public static func decode(e: Extractor) -> Result? {
-            let c = { Result($0) }
-            return build(
+        public static func decode(e: Extractor) throws -> Result {
+            return try build(Result.init)(
                 (e <|| "scores"),
                 e <| "rank",
                 e <| "player",
-                (e <|? "score_unit").map { $0 ?? "zk" }, // TODO
+                ((e <|? "score_unit") ?? "zk" ),
                 e <| "advance"
-                ).map(c)
+                )
         }
         
         public var description: String {
@@ -106,7 +102,7 @@ public struct GameResult: Decodable, Printable {
             return scores_.map { $0 < 0 ? nil : $0 }
         }
         public var scoresShortString: String {
-            return join(",", scores.map({ $0.flatMap({ String($0) }) ?? "-" }) )
+            return scores.map({ $0.flatMap({ String($0) }) ?? "-" }).joinWithSeparator("," )
         }
     }
     
@@ -118,16 +114,15 @@ public struct GameResult: Decodable, Printable {
     
     let status: Int
     
-    public static func decode(e: Extractor) -> GameResult? {
-        let c = { GameResult($0) }
-        return build(
-            (e <| "id").flatMap { GameResultID($0) },
+    public static func decode(e: Extractor) throws -> GameResult {
+        return try build(GameResult.init)(
+            GameResultID(e <| "id"),
             e <| "title",
-            (e <| "started_at").flatMap { NSDate(timeIntervalSince1970: $0) },
-            (e <| "finished_at").flatMap { NSDate(timeIntervalSince1970: $0) },
-            (e <|| "result").flatMap { $0 },
+            NSDate(timeIntervalSince1970: (e <| "started_at")),
+            (e <|? "finished_at").flatMap { NSDate(timeIntervalSince1970: $0) },
+            (e <|| "result"),
             e <| "status"
-            ).map(c)
+            )
     }
     
     public var description: String {
@@ -135,12 +130,12 @@ public struct GameResult: Decodable, Printable {
     }
     
     public var resultsByRank: [Result] {
-        return results.sorted { $1.rank > $0.rank }
+        return results.sort { $1.rank > $0.rank }
     }
     
 }
 
-public struct PhotoInfo: Decodable, Printable {
+public struct PhotoInfo: Decodable, CustomStringConvertible {
     
     let id: Int
     public let title: String
@@ -148,15 +143,14 @@ public struct PhotoInfo: Decodable, Printable {
     public let originalURL: NSURL
     public let createdAt: NSDate
     
-    public static func decode(e: Extractor) -> PhotoInfo? {
-        let c = { PhotoInfo($0) }
-        return build(
+    public static func decode(e: Extractor) throws -> PhotoInfo {
+        return try build(PhotoInfo.init)(
             e <| "id",
             e <| "title",
-            (e <| "thumbnail_url").flatMap { NSURL(string: $0)! },
-            (e <| "original_url").flatMap { NSURL(string: $0)! },
-            (e <| "created_at").flatMap { NSDate(timeIntervalSince1970: $0) }
-            ).map(c)
+            NSURL(string: (e <| "thumbnail_url"))!,
+            NSURL(string: (e <| "original_url"))!,
+             NSDate(timeIntervalSince1970: (e <| "created_at"))
+            )
     }
     
     public var description: String {
@@ -167,21 +161,20 @@ public struct PhotoInfo: Decodable, Printable {
 
 public struct Twitter {
     
-    public struct User: Decodable, Printable {
+    public struct User: Decodable, CustomStringConvertible {
         
         let idStr: String
         public let screenName: String
         public let userName: String
         public let profileImageURL: NSURL
         
-        public static func decode(e: Extractor) -> User? {
-            let c = { User($0) }
-            return build(
+        public static func decode(e: Extractor) throws -> User {
+            return try build(User.init)(
                 e <| "id_str",
                 e <| "screen_name",
                 e <| "name",
-                (e <| "profile_image_url_https").flatMap { NSURL(string: $0)! }
-                ).map(c)
+                NSURL.fromJSON( (e <| "profile_image_url_https") as String)
+                )
         }
         
         public var description: String {
@@ -190,21 +183,20 @@ public struct Twitter {
         
     }
     
-    public struct Tweet: Decodable, Printable {
+    public struct Tweet: Decodable, CustomStringConvertible {
         
         let idStr: String
         public let text: String
         public let user: User
         public let createdAt: NSDate
         
-        public static func decode(e: Extractor) -> Tweet? {
-            let c = { Tweet($0) }
-            return build(
+        public static func decode(e: Extractor) throws -> Tweet {
+            return try build(Tweet.init)(
                 e <| "id_str",
                 e <| "text",
                 e <| "user",
-                (e <| "created_at").flatMap{ Twitter.dateFormatter.dateFromString($0) ?? NSDate() }
-                ).map(c)
+                Twitter.dateFormatter.dateFromString((e <| "created_at")) ?? NSDate()
+                )
         }
         
         public var description: String {

@@ -10,7 +10,7 @@ import Foundation
 
 public struct Logger {
     
-    public static func error(error: NSError) {
+    public static func error(error: ErrorType) {
         self.error("\(error)" as String)
     }
     

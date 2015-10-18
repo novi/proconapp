@@ -42,7 +42,6 @@
 		52538EDA1B4D7F5E00059FEC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52538ED81B4D7F5E00059FEC /* LaunchScreen.xib */; };
 		52538EE61B4D7F5F00059FEC /* ProconManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52538EE51B4D7F5F00059FEC /* ProconManagerTests.swift */; };
 		52538EF01B4D803900059FEC /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		52538EF11B4D803900059FEC /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0E1B4D78F600F8621A /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52538EF21B4D803900059FEC /* Himotoki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0F1B4D78F600F8621A /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52538EF31B4D803900059FEC /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD101B4D78F600F8621A /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52538EF51B4D810700059FEC /* ProconBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52538E901B4D7B3F00059FEC /* ProconBase.framework */; };
@@ -58,7 +57,6 @@
 		5260BA3C1B68FA3400ED9EEF /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; };
 		526469711B69107400FEEBBA /* LocalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526469701B69107400FEEBBA /* LocalSettings.swift */; };
 		5273DD071B4D780E00F8621A /* APIKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD061B4D780E00F8621A /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5273DD111B4D78F600F8621A /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0E1B4D78F600F8621A /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD121B4D78F600F8621A /* Himotoki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD0F1B4D78F600F8621A /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5273DD131B4D78F600F8621A /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5273DD101B4D78F600F8621A /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		527A37FE1B74EE640089EDDB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527A37FD1B74EE640089EDDB /* BaseViewController.swift */; };
@@ -164,7 +162,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				52538EF01B4D803900059FEC /* APIKit.framework in CopyFiles */,
-				52538EF11B4D803900059FEC /* Box.framework in CopyFiles */,
 				52538EF61B4D810700059FEC /* ProconBase.framework in CopyFiles */,
 				52538EF21B4D803900059FEC /* Himotoki.framework in CopyFiles */,
 				52538EF31B4D803900059FEC /* Result.framework in CopyFiles */,
@@ -188,7 +185,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5273DD111B4D78F600F8621A /* Box.framework in CopyFiles */,
 				5273DD121B4D78F600F8621A /* Himotoki.framework in CopyFiles */,
 				52538EA81B4D7B3F00059FEC /* ProconBase.framework in CopyFiles */,
 				5273DD131B4D78F600F8621A /* Result.framework in CopyFiles */,
@@ -837,6 +833,7 @@
 		524592F71AD147D000196181 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Procon;
@@ -990,7 +987,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/../Carthage/Build/iOS/APIKit.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/Box.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Himotoki.framework",
 			);

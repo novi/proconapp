@@ -65,7 +65,7 @@ class WebViewController: ViewController, UIWebViewDelegate {
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if let url = request.URL {
             if let comp = NSURLComponents(URL: url, resolvingAgainstBaseURL: true) {
-                if let query = comp.queryItems as? [NSURLQueryItem] {
+                if let query = comp.queryItems {
                     for e in query {
                         if e.name == "open_in_browser" && e.value == "1" {
                             UIApplication.sharedApplication().openURL(url)
@@ -86,7 +86,7 @@ class WebViewController: ViewController, UIWebViewDelegate {
         startContentsLoading()
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError) {
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
         endContentsLoading()
     }
 }

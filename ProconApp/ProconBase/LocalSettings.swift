@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import APIKit
 
 public class AppGroup { // TODO: no public
     public static let sharedInstance = NSUserDefaults(suiteName: Constants.AppGroupID)!
@@ -56,14 +57,14 @@ public class LocalSetting {
     public func registerAndUploadPushDeviceTokenIfNeeded(token: String) {
         if let me = UserContext.defaultContext.me {
             if self.isNeedSendPushToken(token) {
-                let r = AppAPI.Endpoint.UpdatePushToken(user: me, pushToken: token)
-                AppAPI.sendRequest(r) { res in
+                let r = AppAPI.UpdatePushToken(auth: me, deviceToken: token)
+                API.sendRequest(r) { res in
                     switch res {
-                    case .Success(let box):
+                    case .Success(_):
                         Logger.debug("push token uploaded")
                         self.saveAsUploadedPushToken(token)
-                    case .Failure(let box):
-                        Logger.debug("push token upload error: \(box.value)")
+                    case .Failure(let error):
+                        Logger.debug("push token upload error: \(error)")
                     }
                 }
                 

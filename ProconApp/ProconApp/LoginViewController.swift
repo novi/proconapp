@@ -21,15 +21,15 @@ class LoginViewController: UIViewController {
         
         loginButton.enabled = false
         
-        let r = AppAPI.Endpoint.CreateNewUser()
-        AppAPI.sendRequest(r) { res in
+        let r = AppAPI.CreateNewUser()
+        API.sendRequest(r) { res in
             switch res {
-            case .Success(let box):
-                UserContext.defaultContext.saveAsMe(box.value)
+            case .Success(let user):
+                UserContext.defaultContext.saveAsMe(user)
                 self.performSegueWithIdentifier(.UnwindLogin, sender: nil)
-                Logger.debug("\(box.value)")
-            case .Failure(let box):
-                Logger.error("\(box.value)")
+                Logger.debug("\(user)")
+            case .Failure(let error):
+                Logger.error(error)
                 let alert = UIAlertController(title: "サーバーに接続できませんでした", message: nil, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action: UIAlertAction!) -> Void in
                     self.loginButton.enabled = true

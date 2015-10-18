@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 import ProconBase
+import APIKit
 
 class NoticeListInterfaceController: InterfaceController {
     
@@ -34,16 +35,16 @@ class NoticeListInterfaceController: InterfaceController {
 
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count: 10)
-            AppAPI.sendRequest(r) { res in
+            let r = AppAPI.FetchNotices(auth: me, page: 0, count: 10)
+            API.sendRequest(r) { res in
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)")
-                    self.notices = box.value
+                case .Success(let notices):
+                    Logger.debug("\(notices)")
+                    self.notices = notices
                     self.reloadContents()
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error(box.value)
+                    Logger.error(error)
                 }
             }
         }

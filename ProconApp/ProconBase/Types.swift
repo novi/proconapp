@@ -10,9 +10,9 @@ import Foundation
 
 // TODO: use protocol extenstion
 
-public struct PlayerID: Printable {
+public struct PlayerID: CustomStringConvertible {
     let id: Int
-    init(_ id: Int) {
+    init(_ id: Int) throws {
         self.id = id
     }
     public var description: String {
@@ -37,9 +37,9 @@ public func ==(lhs: PlayerID, rhs: PlayerID) -> Bool {
     return lhs.val == rhs.val
 }
 
-public struct NoticeID: Printable {
+public struct NoticeID: CustomStringConvertible {
     let id: Int
-    init(_ id: Int) {
+    init(_ id: Int) throws {
         self.id = id
     }
     public var description: String {
@@ -50,9 +50,9 @@ public struct NoticeID: Printable {
     }
 }
 
-public struct GameResultID: Printable {
+public struct GameResultID: CustomStringConvertible {
     let id: Int
-    init(_ id: Int) {
+    init(_ id: Int) throws {
         self.id = id
     }
     public var description: String {

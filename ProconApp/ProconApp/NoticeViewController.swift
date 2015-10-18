@@ -8,6 +8,7 @@
 
 import UIKit
 import ProconBase
+import APIKit
 
 class NoticeViewController: ViewController {
     
@@ -38,16 +39,16 @@ class NoticeViewController: ViewController {
             if notice.body == nil && notice.hasBody {
                 // fetch body
                 if let me = UserContext.defaultContext.me {
-                    let req = AppAPI.Endpoint.FetchNoticeText(user: me, notice: notice)
+                    let req = AppAPI.FetchNoticeText(auth: me, notice: notice)
                     startContentsLoading()
-                    AppAPI.sendRequest(req) { result in
+                    API.sendRequest(req) { result in
                         self.endContentsLoading()
                         switch result {
-                        case .Success(let box):
-                            self.notice = box.value
+                        case .Success(let notice):
+                            self.notice = notice
                             self.reloadContents()
-                        case .Failure(let box):
-                            Logger.error("\(box.value)")
+                        case .Failure(let error):
+                            Logger.error(error)
                         }
                     }
                 }

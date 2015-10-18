@@ -14,7 +14,7 @@ extension UIStoryboard {
     }
     
     func instantiateViewControllerWithIdentifier(identifier: StoryboardIdentifier) -> UIViewController {
-        return self.instantiateViewControllerWithIdentifier(identifier.rawValue) as! UIViewController
+        return self.instantiateViewControllerWithIdentifier(identifier.rawValue) 
     }
 }
 

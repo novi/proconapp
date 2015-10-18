@@ -8,6 +8,7 @@
 
 import UIKit
 import ProconBase
+import APIKit
 
 
 class NoticeListViewController: TableViewController {
@@ -16,18 +17,18 @@ class NoticeListViewController: TableViewController {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchNotices(user: me, page: 0, count:10)
+            let r = AppAPI.FetchNotices(auth: me, page: 0, count:10)
             startContentsLoading()
-            AppAPI.sendRequest(r) { res in
+            API.sendRequest(r) { res in
                 self.endContentsLoading()
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)")
-                    self.allNotices = box.value
+                case .Success(let notices):
+                    Logger.debug("\(notices)")
+                    self.allNotices = notices
                     self.reloadContents()
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error(box.value)
+                    Logger.error(error)
                 }
             }
         }

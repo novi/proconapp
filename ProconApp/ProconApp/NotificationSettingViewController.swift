@@ -8,6 +8,7 @@
 
 import UIKit
 import ProconBase
+import APIKit
 
 class NotificationSettingViewController: TableViewController {
     
@@ -19,7 +20,7 @@ class NotificationSettingViewController: TableViewController {
             sizeToFit()
         }
 
-        required init(coder aDecoder: NSCoder) {
+        required init?(coder aDecoder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
     }
@@ -34,44 +35,44 @@ class NotificationSettingViewController: TableViewController {
         
         if let me = UserContext.defaultContext.me {
             startContentsLoading()
-            let r = AppAPI.Endpoint.FetchAllPlayers(user: me)
-            AppAPI.sendRequest(r) { res in
+            let r = AppAPI.FetchAllPlayers(auth: me)
+            API.sendRequest(r) { res in
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)" as String)
-                    self.players = box.value
+                case .Success(let players):
+                    Logger.debug("\(players)" as String)
+                    self.players = players
                     
                     self.settings.removeAll(keepCapacity: true)
                     
-                    let r = AppAPI.Endpoint.FetchGameNotificationSettings(user: me)
-                    AppAPI.sendRequest(r) { res in
+                    let r = AppAPI.FetchGameNotificationSettings(auth: me)
+                    API.sendRequest(r) { res in
                         switch res {
-                        case .Success(let box):
-                            Logger.debug("current game settings: \(box.value)")
+                        case .Success(let setting):
+                            Logger.debug("current game settings: \(setting)")
                             for p in self.players {
-                                if box.value.count == 0 {
+                                if setting.count == 0 {
                                     self.settings[p.id] = true // 一つも設定されていない時はオールオン
                                 } else {
                                     self.settings[p.id] = false
                                 }
                             }
-                            for id in box.value {
+                            for id in setting {
                                 self.settings[id] = true
                             }
                             self.reloadContents()
-                        case .Failure(let box):
+                        case .Failure(let error):
                             // TODO, error
-                            Logger.error(box.value)
+                            Logger.error(error)
                         }
                         
                         self.endContentsLoading()
                     }
                     
                     self.reloadContents()
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
                     self.endContentsLoading()
-                    Logger.error(box.value)
+                    Logger.error(error)
                 }
             }
         }
@@ -147,18 +148,19 @@ class NotificationSettingViewController: TableViewController {
                 }
             }
             self.startContentsLoading()
-            let r = AppAPI.Endpoint.UpdateGameNotificationSettings(user: me, ids: enableIds)
-            AppAPI.sendRequest(r) { res in
+            let r = AppAPI.UpdateGameNotificationSettings(auth: me, ids: enableIds)
+            API.sendRequest(r) { res in
                 self.endContentsLoading()
                 switch res {
-                case .Success(let box):
+                case .Success(_):
                     // Done
                     LocalSetting.sharedInstance.shouldShowNotificationSettings = false
                     
                     UIApplication.sharedApplication().activatePushNotification()
                     
                     self.performSegueWithIdentifier(.UnwindNotificationSetting, sender: self)
-                case .Failure(let box):
+                case .Failure(let error):
+                    Logger.error(error)
                     let alert = UIAlertController(title: "設定できませんでした", message: nil
                         , preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "設定をキャンセル", style: .Cancel, handler: { (_) -> Void in

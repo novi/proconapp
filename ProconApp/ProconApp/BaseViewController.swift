@@ -106,7 +106,7 @@ class TableViewController: UITableViewController, ContentsReloading {
     
     var appearingViewController: UIViewController? {
         if let navc = self.tabBarController?.selectedViewController as? UINavigationController {
-            return navc.viewControllers.last as? UIViewController
+            return navc.viewControllers.last
         }
         return nil
     }

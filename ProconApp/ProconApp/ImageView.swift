@@ -42,9 +42,9 @@ class LoadingImageView: UIImageView {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     let req = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10)
                     Logger.debug("loading image \(url.absoluteString)")
-                    let task = LoadingImageView.imageURLSession.dataTaskWithRequest(req, completionHandler: { (data: NSData!, res: NSURLResponse!, error: NSError!) -> Void in
+                    let task = LoadingImageView.imageURLSession.dataTaskWithRequest(req, completionHandler: { (data: NSData?, res: NSURLResponse?, error: NSError?) -> Void in
                         
-                        if data == nil || error != nil {
+                        guard let data = data where error == nil else {
                             // error
                             Logger.error("image download error \(error)")
                             return

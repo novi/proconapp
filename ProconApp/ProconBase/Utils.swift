@@ -37,6 +37,22 @@ extension NSDate {
     }
 }
 
+extension NSURL {
+    enum Error: ErrorType {
+        case NullURLString
+        case InvalidURLString
+    }
+    static func fromJSON(str: String?) throws -> NSURL {
+        guard let urlStr = str else {
+            throw Error.NullURLString
+        }
+        guard let url = NSURL(string: urlStr) else {
+            throw Error.InvalidURLString
+        }
+        return url
+    }
+}
+
 extension Constants {
     public static func appLPURL(path: String) -> NSURL {
         return NSURL(string: Constants.AppLPURL)!.URLByAppendingPathComponent(path)

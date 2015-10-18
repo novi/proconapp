@@ -9,6 +9,7 @@
 import UIKit
 import ProconBase
 import Social
+import APIKit
 
 class TweetCell: UITableViewCell {
     
@@ -80,20 +81,20 @@ class SocialFeedViewController: TableViewController {
     
     override func fetchContents() {
         if let me = UserContext.defaultContext.me {
-            let r = AppAPI.Endpoint.FetchTwitterFeed(user: me)
+            let r = AppAPI.FetchTwitterFeed(auth: me)
             startContentsLoading()
             self.refreshControl?.beginRefreshing()
-            AppAPI.sendRequest(r) { res in
+            API.sendRequest(r) { res in
                 self.endContentsLoading()
                 self.refreshControl?.endRefreshing()
                 switch res {
-                case .Success(let box):
-                    Logger.debug("\(box.value)")
-                    self.tweets = box.value
+                case .Success(let tweets):
+                    Logger.debug("\(tweets)")
+                    self.tweets = tweets
                     self.reloadContents()
-                case .Failure(let box):
+                case .Failure(let error):
                     // TODO, error
-                    Logger.error("\(box.value)")
+                    Logger.error(error)
                 }
             }
         }
@@ -161,14 +162,14 @@ class SocialFeedViewController: TableViewController {
                 UIApplication.sharedApplication().openURL(NSURL(string: "https://twitter.com/search?q=%23\(hashTag)")!)
             }
         }
-        if let selected = tableView.indexPathForSelectedRow() {
+        if let selected = tableView.indexPathForSelectedRow {
             tableView.deselectRowAtIndexPath(selected, animated: true)
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let dst = segue.destinationViewController as? TweetViewController,
-            let selected = tableView.indexPathForSelectedRow() {
+            let selected = tableView.indexPathForSelectedRow {
             dst.tweet = tweets[selected.row]
         }
     }
